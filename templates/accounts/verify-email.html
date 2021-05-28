@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block title %} |Email verification
+{% endblock title %}
+{% block content %}
+
+<main>
+    <section class="login py-5">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-7 bg_w p-5 loginformwrapper shadow rounded d-flex align-items-center">
+            <div class="leftwrapper w-100">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="logowrapper">
+                    <img src="../media/logo.svg" alt="" class="img-fluid" />
+                  </div>
+                </div>
+
+              </div>
+
+              <br />
+              <div class="text-wrapper">
+                <h3 class="heading my-3">Verify your email account</h3>
+                <p class="text-muted mb-3">
+                  We have sent you an email that contains a verification code in order to verify that you have used your
+                  valid email account
+                </p>
+              </div>
+
+              <form action="" class="loginform needs-validation">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="email">OTP Code</label>
+                      <input type="email" class="form-control" placeholder="OTP Code" required />
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <button class="btn btn_p">Verify Now</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <a href="signup.html" class="d-flex gap align-items-center">Resend verification code to my email
+                      <i class="las la-long-arrow-alt-right"></i></a>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+          <div class="col-sm-5 loginbg rounded" style="background-image: url('../../static/img/pattern.jpg')">
+            <div class="top"></div>
+            <div class="bgtextwrapper">
+              <div class="owl-carousel">
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bottomtextlink gap">
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Data Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% endblock content %}

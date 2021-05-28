@@ -1,0 +1,282 @@
+.main-header {
+    background-color: #fff;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    z-index: 99;
+
+    .services {
+        padding: 30px 0;
+        display: none;
+        background-color: #f8f8f8;
+
+        .servicewrapper {
+            background-color: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0px 3px 30px rgba($b, 0.1);
+                transform: translateY(-3px);
+            }
+
+            .label {
+                padding: 15px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+
+            .imagepart {
+                img {
+                    height: 150px;
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    .topbar {
+        background-color: $p;
+        font-size: 14px !important;
+        padding: 5px 0;
+        color: rgba($w, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+
+        .topmenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+
+                a {
+                    color: rgba($w, 0.6);
+                    padding: 0 7px;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .socialmenu {
+            i {
+                font-size: 18px !important;
+            }
+        }
+
+        .services_trigger {
+            position: relative;
+
+            i {
+                font-size: 16px !important;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    .mainbar {
+        padding: 7px 0;
+
+        .user_menu {
+            // background-color: red;
+            .nav-item-dashboard {
+                border-radius: 100px;
+
+                .nav-link {
+                    padding: 0 !important;
+                    border-radius: 100px;
+                }
+
+                .user_info {
+                    border-radius: 5px;
+                    padding-right: 15px;
+                    line-height: 30px !important;
+                }
+
+                img {
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+
+            .nav-item {
+                margin-left: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .nav-link {
+                    position: relative;
+
+                    .count {
+                        position: absolute;
+                        height: 18px;
+                        padding: 1px 7px;
+                        background-color: #db4437;
+                        border-radius: 5px;
+                        top: -8px;
+                        right: -4px;
+                        color: #fff;
+                        font-size: 10px;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                .dropdown-item {
+                    i {
+                        font-size: 20px !important;
+                        margin-right: 10px !important;
+                    }
+                }
+            }
+
+            .nav-link {
+                padding: 7px 10px;
+                background-color: rgba($p, 0.1);
+                border-radius: 5px;
+                transition: all 0.5s ease;
+
+                &:hover {
+                    background-color: #f8f8f8;
+
+                    i {
+                        // transform: scale(0.9);
+                    }
+                }
+            }
+
+            i {
+                font-size: 25px !important;
+                color: $p;
+                margin-right: 0px !important;
+                transition: all 0.5s ease;
+                opacity: 1 !important;
+            }
+        }
+
+        .searchform {
+            margin-left: 90px;
+            position: relative;
+            width: 100%;
+
+            .form-control {
+                font-size: 14px !important;
+                height: auto !important;
+                background-color: rgba($p, 0.1);
+                padding: 10px 15px !important;
+                border: none;
+            }
+
+            .btn_search {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+
+                i {
+                    margin-right: 0px;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+
+    .navbar {
+        padding: 0;
+
+        .navbar-brand {
+            img {
+                height: 100px;
+            }
+        }
+
+        .user-menu {
+            border: none !important;
+            background-color: transparent !important;
+
+            &:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .dropdown-menu {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+
+            .dropdown-item {
+                padding: 7px 15px;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: rgba($p, 0.1);
+                }
+            }
+        }
+
+        .dropdown-item {
+            &:focus {
+                background-color: rgba($p, 0.1);
+                color: $p;
+            }
+        }
+
+        .btn {
+            @include tsn();
+            padding-top: 7px !important;
+            padding-bottom: 7px !important;
+        }
+
+        .navbar-brand {
+            .logo {
+                max-height: 40px;
+            }
+        }
+
+        .navbar-toggler {
+            border: 1px solid $p;
+            border-radius: 0.25rem;
+
+            &:focus {
+                border-color: $p;
+                outline: none;
+            }
+        }
+
+        .navbar-right {
+        }
+
+        .navbar-nav {
+            margin-left: 2em;
+        }
+    }
+}
+
+.changeHeader {
+    position: sticky;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 10px 30px rgba($p, 0.08);
+    border-bottom: 1px solid rgba($p, 0.1);
+    right: 0;
+    background-color: #fff;
+
+    .topbar {
+        display: none;
+    }
+}

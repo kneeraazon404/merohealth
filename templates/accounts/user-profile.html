@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Profile
+{% endblock title %}
+{% block content %}
+  <main class="mainbody">
+    <section class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="leftbarwrapper">
+              <div class="box mb-3">
+                <div class="box_title">
+                  <h5 class="title">Welcome Back, Hari</h5>
+                </div>
+                <div class="box_content">
+                  <ul class="list">
+                    <li>
+                      <a href="index.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="user-profile.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-address-card mr-2"></i>Profile</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Discussions</p>
+                    </div>
+                    <li>
+                      <a href="blog.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-comments mr-2"></i>Health Queries</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
+                    </div>
+                    <li>
+                      <a href="lab-requests.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-address-card mr-2"></i>Lab Requests</div>
+                        <div class="count">
+                          <small><i class="lar la-bell"></i>2</small>
+                        </div>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="lab-appointments.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-user-tag mr-2"></i>Lab Appointments</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lab-reports.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Lab Reports</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Doctor Services</p>
+                    </div>
+                    <li>
+                      <a href="doctor-appointment.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-user-nurse mr-2"></i>Doctor Appointments</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="doctor-prescriptions.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
+                    </div>
+                    <li>
+                      <a href="product-orders.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="my-product-offers.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-sm-9">
+            <div class="midwrapper">
+              <div class="profilebox bg_w p rounded d-flex align-items-center">
+                <div class="imagearea">
+                  <img src="../../media/user.png" alt="" class="img-fluid" />
+                </div>
+                <div class="textarea pl-3">
+                  <h4 class="name">Puja Bastakoti</h4>
+                  <p class="text-muted">Shantinagar, Pokhara, Nepal</p>
+                </div>
+                <div class="basicinfo pl-4 d-flex gap">
+                  <div class="info text-center">
+                    <div class="icon_info d-flex">
+                      <i class="las la-birthday-cake"></i>
+                      <div class="label">
+                        <strong> 23 Years</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info text-center">
+                    <div class="icon_info d-flex">
+                      <i class="las la-weight"></i>
+                      <div class="label">
+                        <strong> 50 Kg </strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info text-center">
+                    <div class="icon_info d-flex">
+                      <i class="las la-text-height"></i>
+                      <div class="label">
+                        <strong> 5.2ft </strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info text-center">
+                    <div class="icon_info d-flex">
+                      <i class="las la-tint"></i>
+                      <div class="label">
+                        <strong> B+ </strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% endblock content %}

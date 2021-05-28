@@ -1,0 +1,391 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Health Package
+{% endblock title %}
+{% block content %}
+
+<body class="lab-page">
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="row wrappingColumn">
+
+                <div class="col-sm-3 fullheight leftbar">
+                    <div class="top pt-3">
+                        <a href="#">
+                            <div class="logowrapper">
+                                <img src="../../media/logo.svg" alt="" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="end">
+                        <div class="spacer">
+                        </div>
+                        <div class="middle">
+                            <ul class="menuwrapper">
+                                <li>
+                                    <a href="dashboard.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-tachometer-alt"></i>
+                                        </div>
+                                        <div class="text">Dashboard</div>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="services.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-vials"></i>
+                                        </div>
+                                        <div class="text">Test Services</div>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="services.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text">Health Packages</div>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="test-requests.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-running"></i>
+                                        </div>
+                                        <div class="text">Test Requests</div>
+                                        <div class="notify">
+                                            4
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="reports.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-chart-bar"></i>
+                                        </div>
+                                        <div class="text">Reports</div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="payments.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-file-invoice-dollar"></i>
+                                        </div>
+                                        <div class="text">Payments</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="messaging.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-comments"></i>
+                                        </div>
+                                        <div class="text">Messaging</div>
+                                        <div class="notify">
+                                            35
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom">
+
+
+                            <h6 class="text-muted px-2 py-3">Powered By: </h6>
+                            <a href="#">
+                                <div class="logowrapper px-2">
+                                    <img src="../../media/logo.svg" alt="" class="img-fluid">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 fullheight middlebar">
+                    <div class="top my-3">
+                        <h6 class="title">Manage Services</h6>
+                        <a href="#" class="btn btn_p">Add New</a>
+                    </div>
+                    <div class="end">
+                        <div class="upper">
+                            <ul class="services">
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class=" mb-3">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-medkit"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <h6 class="text mb-2 text_p">Package 2</h6>
+                                                <p class="text text_dim text_small mb-0 ">RBC, WBC, Blood Count,
+                                                    Leucocyte</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="lower">2</div> -->
+                    </div>
+                </div>
+
+                <div class="col-sm-5 fullheight rightbar">
+                    <div class="top">
+                        <div class="icon">
+                            <i class="las la-medkit"></i>
+                        </div>
+                        <h6 class="title">Package 1</h6>
+                        <div class="icons d-flex justify-content-end">
+                            <button class="btn btn_p">
+                                <i class="las la-edit"></i> </button>
+                            <button class="btn btn_p">
+                                <i class="las la-trash"></i> </button>
+
+                        </div>
+                    </div>
+                    <div class="end">
+                        <div class="upper">
+                            <form action="" class="packageForm">
+                                <div class="row">
+                                    <div class="col-md-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Package Name</label>
+                                            <input type="text" class="form-control" placeholder="Service Title"
+                                                value="Package 1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Package Includes</label>
+
+
+                                            <div class="ui-widget">
+                                                <input id="serviceTags" class="form-control"
+                                                    placeholder="Start typing service name">
+                                            </div>
+
+                                            <div id="package_html"></div>
+                                            <input type="hidden" name="testServices" id="testServices" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 valuearea ">
+                                        <div class="form-group">
+                                            <label for="title">Total Price</label>
+                                            <div class="pricearea d-flex align-items-center gap">
+
+                                                <div class="totalprice discounted">
+                                                    Rs. 1000
+                                                </div>
+                                                <div class="totalpriceafterdiscount">
+                                                    Rs. 900
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Discount type for % and flat amount feature -->
+                                    <div class="col-md-6 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Discount Percentage</label>
+                                            <input type="number" class="form-control" placeholder="" value="10">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Package Desctiption</label>
+                                            <textarea name="" id="" cols="" rows="5" class="form-control">Bllod Test Short desctiption here like Lorem ipsum dolor sit amet consectetur adipisicing.
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn_p">Update Service</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="lower">2</div> -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+
+        var selected = [];
+        var availableServices = [
+            "Complete Blood Cell Count",
+            "Lipid Profile",
+            "Renel Function Test"
+        ];
+
+        $(function () {
+            $("#serviceTags").autocomplete({
+                source: availableServices,
+                select: function (event, ui) {
+                    var value = ui.item.value;
+                    selected.push(value);
+                    refreshDiv();
+                    var i = availableServices.indexOf(value);
+                    availableServices.splice(i, 1);
+                    event.preventDefault();
+                    $("#serviceTags").focusout();
+                    $("#serviceTags").val('');
+                }
+            });
+        });
+
+        function refreshDiv() {
+            $("#testServices").val(selected.join(','));
+            var email_html = selected.map(function (f, i) {
+                return "<span class='btn_p_dim f14 px-3 py-2 rounded'>" + f + "&nbsp;&nbsp; <span class='las la-times remove_service_tag' onclick=\"removePackage('" + f + "')\" ></span></span>";
+            });
+            $("#package_html").html(email_html);
+        }
+
+        function removePackage(email) {
+            availableServices.push(email);
+            var i = selected.indexOf(email);
+            selected.splice(i, 1);
+            refreshDiv();
+        }
+
+
+    </script>
+</body>
+
+{% endblock content %}

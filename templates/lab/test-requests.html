@@ -1,0 +1,530 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Test Requests
+{% endblock title %}
+{% block content %}
+
+<body class="lab-page">
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="row wrappingColumn">
+                <div class="col-sm-3 fullheight leftbar">
+                    <div class="top pt-3">
+                        <a href="#">
+                            <div class="logowrapper">
+                                <img src="../../media/logo.svg" alt="" class="img-fluid" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="end">
+                        <div class="spacer">
+                        </div>
+                        <div class="middle">
+                            <ul class="menuwrapper">
+                                <li>
+                                    <a href="dashboard.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-tachometer-alt"></i>
+                                        </div>
+                                        <div class="text">Dashboard</div>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="services.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-vials"></i>
+                                        </div>
+                                        <div class="text">Services</div>
+                                    </a>
+                                </li>
+
+                                <li class="active">
+                                    <a href="test-requests.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-running"></i>
+                                        </div>
+                                        <div class="text">Test Requests</div>
+                                        <div class="notify">4</div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="reports.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-chart-bar"></i>
+                                        </div>
+                                        <div class="text">Reports</div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="payments.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-file-invoice-dollar"></i>
+                                        </div>
+                                        <div class="text">Payments</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="messaging.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-comments"></i>
+                                        </div>
+                                        <div class="text">Messaging</div>
+                                        <div class="notify">35</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom">
+                            <h6 class="text-muted px-2 py-3">Powered By:</h6>
+                            <a href="#">
+                                <div class="logowrapper px-2">
+                                    <img src="../../media/logo.svg" alt="" class="img-fluid" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 fullheight middlebar test_request">
+                    <div class="top">
+                        <h6 class="title my-3">Test Requests</h6>
+                        <form action="" class="searchTests">
+                            <input type="text" class="form-control py-1" placeholder="Search">
+                            <button type="submit" class="btn">
+                                <i class="las la-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="end">
+
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#new" role="tab"
+                                    aria-controls="pills-home" aria-selected="true">New <div class="counter">12</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#running" role="tab"
+                                    aria-controls="pills-profile" aria-selected="false">Running <div class="counter">23
+                                    </div></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#completed"
+                                    role="tab" aria-controls="pills-contact" aria-selected="false">Completed <div
+                                        class="counter">
+                                        255
+                                    </div></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="new" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="upper">
+                                    <ul class="services">
+                                        <li class="active">
+                                            <a href="#" class="service-wrapper d-flex">
+                                                <div class="icon">
+                                                    <i class="las la-user-injured"></i>
+                                                </div>
+                                                <div class="text-wrapper">
+                                                    <div class="d-flex  justify-content-between align-items-center">
+                                                        <h6 class="text_p mb-0">Puja Bastakoti</h6>
+                                                        <div class="datetime">
+                                                            <small> <i class="fa fa-history"></i> 7 Min Ago</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="text mb-0">Blood Test <small class="text-muted">-
+                                                            Shankhamul,
+                                                            Kathmandu</small> </p>
+
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li class="">
+                                            <a href="#" class="service-wrapper d-flex">
+                                                <div class="icon">
+                                                    <i class="las la-user-injured"></i>
+                                                </div>
+                                                <div class="text-wrapper">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="text_p">Puja Bastakoti</h6>
+                                                        <div class="datetime">
+                                                            <small> <i class="fa fa-history"></i> 7 Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text mb-0 ">Blood Test <small class="text-muted">-
+                                                            Shankhamul,
+                                                            Kathmandu</small> </p>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="running" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <div class="upper">
+                                    <ul class="services">
+                                        <li class="active">
+                                            <a href="test-requests-running.html" class="service-wrapper d-flex">
+                                                <div class="icon">
+                                                    <i class="las la-user-injured"></i>
+                                                </div>
+                                                <div class="text-wrapper">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="text_p">Puja Bastakoti</h6>
+                                                        <div class="datetime">
+                                                            <small> <i class="fa fa-history"></i> 7 Min Ago</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="text mb-0 ">Blood Test <small class="text-muted">-
+                                                            Shankhamul,
+                                                            Kathmandu</small> </p>
+
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="completed" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+                                <div class="upper">
+                                    <ul class="services">
+                                        <li class="active">
+                                            <a href="#" class="service-wrapper d-flex">
+                                                <div class="icon">
+                                                    <i class="las la-user-injured"></i>
+                                                </div>
+                                                <div class="text-wrapper">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="text_p">Puja Bastakoti</h6>
+                                                        <div class="datetime">
+                                                            <small> <i class="fa fa-history"></i> 7 Min Ago</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="text  mb-0">Blood Test <small class="text-muted">-
+                                                            Shankhamul,
+                                                            Kathmandu</small> </p>
+
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="lower">2</div> -->
+                    </div>
+                </div>
+                <div class="col-sm-5 fullheight rightbar">
+                    <div class="top">
+                        <div class="user text d-flex align-items-center">
+                            <div class="icon mr-2">
+                                <i class="las la-user-injured"></i>
+                            </div>
+                            <h6 class="title mb-0">Puja Bastakoti</h6>
+                        </div>
+                        <div class="payment pl-3 d-flex align-items-center">
+                            <div class="icon mr-2">
+                                <i class="las la-wallet"></i>
+                            </div>
+                            <div class="text price d-flex gap">
+                                <div class="pricelabel">Rs. 4500/-</div>
+                                <div class="status bg_p_dim f14 px-3 full_rounded text_p">Pending</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="end">
+                        <div class="upper testsrequestedbyuser pr-3">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-sm-6 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Patient Name</label>
+                                            <input type="text" class="form-control" value="Puja Bastakoti" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Requested at</label>
+                                            <input type="text" class="form-control" data-toggle="modal"
+                                                data-placement="top" title="4 m ago" value="12 November, 12:34 PM"
+                                                disabled>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Tests Requested</label>
+                                            <ul class="tests">
+                                                <li
+                                                    class="d-flex flex-column bg_p_dim mb-2 px-3 py-2 pb-3 rounded mb-1 align-items-center justify-content-between">
+                                                    <div
+                                                        class="name w-100 d-flex justify-content-between align-items-center mb-2">
+                                                        <div
+                                                            class="labels w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="label f14 flex5">Full Blood Count</div>
+                                                            <div
+                                                                class="rightTestDetails d-flex flex5 gap align-items-center justify-content-end">
+
+                                                                <div class="price bg_w px-3  f14  full_rounded px-2 ">
+                                                                    Hematology
+                                                                </div>
+                                                                <div
+                                                                    class="price text_p bg_p_dim px-3 fw700 f14   full_rounded px-2 ">
+                                                                    Rs. 1288
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul
+                                                        class="subItems w-100 d-flex bg_w px-2 pt-2 pb-0 flex6 flex-wrap rounded">
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            Platlet Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li
+                                                    class="d-flex flex-column bg_p_dim mb-2 px-3 py-2 pb-3 rounded mb-1 align-items-center justify-content-between">
+                                                    <div
+                                                        class="name w-100 d-flex justify-content-between align-items-center mb-2">
+                                                        <div
+                                                            class="labels w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="label f14 flex5">Full Blood Count</div>
+                                                            <div
+                                                                class="rightTestDetails d-flex flex5 gap align-items-center justify-content-end">
+
+                                                                <div class="price bg_w px-3  f14  full_rounded px-2 ">
+                                                                    Hematology
+                                                                </div>
+                                                                <div
+                                                                    class="price text_p bg_p_dim px-3 fw700 f14   full_rounded px-2 ">
+                                                                    Rs. 1288
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul
+                                                        class="subItems w-100 d-flex bg_w px-2 pt-2 pb-0 flex6 flex-wrap rounded">
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            Platlet Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Packages Requested</label>
+                                            <ul class="tests">
+                                                <li
+                                                    class="d-flex flex-column bg_p_dim mb-2 px-3 py-2 pb-3 rounded mb-1 align-items-center justify-content-between">
+                                                    <div
+                                                        class="name w-100 d-flex justify-content-between align-items-center mb-2">
+                                                        <div
+                                                            class="labels w-100 d-flex justify-content-between align-items-center">
+                                                            <div class="label f14 flex5">Package Name</div>
+                                                            <div
+                                                                class="rightTestDetails d-flex flex5 gap align-items-center justify-content-end">
+
+
+                                                                <div
+                                                                    class="price text_p bg_p_dim px-3 fw700 f14   full_rounded px-2 ">
+                                                                    Rs. 1288
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul
+                                                        class="subItems w-100 d-flex bg_w px-2 pt-2 pb-0 flex6 flex-wrap rounded">
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            Platlet Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+                                                        <li class="subitem bg_p_dim full_rounded px-3 mr-2 mb-2 f14">
+                                                            WBC Count
+                                                        </li>
+
+                                                    </ul>
+
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Patient Address</label>
+                                            <input type="text" class="form-control" value="New Baneshwor, Kathmandu">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Phone Number</label>
+                                            <input type="text" class="form-control" value="9847458523" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Patient Message</label>
+                                            <textarea name="" id="" cols="" rows="3" class="form-control" disabled>I want to test my blood message here like this Short desctiption here like Lorem ipsum dolor sit amet consectetur adipisicing.
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-12 valuearea">
+                                        <div class="form-group">
+                                            <label for="title">Uploaded Document</label>
+                                            <div class="imagesend d-flex align-items-center justify-content-between">
+
+                                                <a href="#" class="btn btn_small btn-sm" data-toggle="modal"
+                                                    data-target="#exampleModal"> <i class="fa fa-paperclip"></i> View
+                                                    File</a>
+                                                <div class="filename">doctor-prescription2.jpg</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="labaction">
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12 d-flex justify-content-between gap">
+                                            <!-- Default dropup button -->
+                                            <button type="submit" class="btn btn_p flex1 "> <i class="las la-check"></i>
+                                                Approve</button>
+                                            <button type="submit"
+                                                class="btn bg_p_dim flex1 btn_decline_trigger ">Decline</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="declineformwrapper">
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <form action="" class="declineform d-block">
+                                                    <div class="form-group">
+                                                        <textarea name="" id="" cols="" rows="3"
+                                                            class="form-control my-3"
+                                                            placeholder="Explain why you want to decline this test request?"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn_p">Submit and Cancel
+                                                            Request</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="lower">2</div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Doctor Prescription</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs11042-020-10151-w/MediaObjects/11042_2020_10151_Fig1_HTML.png"
+                        alt="" class="img-fluid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}

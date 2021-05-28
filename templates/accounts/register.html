@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | Register 
+{% endblock title  %}
+{% block content %}
+  <main>
+    <section class="login py-5">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-sm-7 bg_w p-5 loginformwrapper shadow rounded d-flex align-items-center">
+            <div class="leftwrapper w-100">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="logowrapper">
+                    <img src="{% static 'img/logo.svg' %}" alt="" class="img-fluid" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="">
+                    <div class="row">
+                      <div class="col-sm-12 d-flex gap align-items-center justify-content-end">
+                        <p class="mb-0">Signup With</p>
+
+                        <div class="group gap d-flex justify-content-between align-items-center">
+                          <div class="options gap d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn bg_fb"><i class="lab la-facebook-f"></i></a>
+
+                            <a href="#" class="btn bg_g"><i class="lab la-google"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br />
+              <div class="text-wrapper">
+                <h3 class="heading my-3">Create an account</h3>
+                <p class="text-muted mb-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur cum cumque inventore.
+                </p>
+              </div>
+
+              <form action="" class="loginform needs-validation">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Full Name</label>
+                      <input type="text" class="form-control" placeholder="Enter Your Full Name" required />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Contact Number</label>
+                      <input type="text" class="form-control" placeholder="Enter Your Contact Number" required />
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" placeholder="Enter Your Email" required />
+                      <div class="invalid-feedback">Please choose a username.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Password</label>
+                      <input type="password" class="form-control" placeholder="Enter Password" required />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Confirm Password</label>
+                      <input type="password" class="form-control" placeholder="Confirm Password" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="group gap d-flex justify-content-between">
+                      <div class="form-group d-flex gap align-items-center">
+                        <input type="checkbox" name="rem" id="rem" required />
+                        <label for="rem" class="mb-0">I have read the
+                          <a href="#" style="text-decoration: underline">Terms and Conditions</a>, I agree and want to
+                          proceed.</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <a href="login.html" class="d-flex gap align-items-center">I already have an account and want to
+                      login
+                      now
+                      <i class="las la-long-arrow-alt-right"></i></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-sm-5 loginbg rounded" style="background-image: url('../../static/img/pattern.jpg')">
+            <div class="top"></div>
+            <div class="bgtextwrapper">
+              <div class="owl-carousel">
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+                <div class="item">
+                  <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+                  <p class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    rem tenetur quasi dolorem asperiores at commodi id, odit
+                    molestias quae.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bottomtextlink gap">
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Data Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+{% endblock content %}

@@ -1,0 +1,406 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Confirm Request
+{% endblock title %}
+{% block content %}
+    <main class="confirm_lab_request">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="confirm_wrapper bg_w rounded p mb-5">
+                        <div class="confirmHeading d-flex gap align-items-center">
+
+
+                            <div class="confirm_icon">
+                                <i class="lar la-check-circle"></i>
+                            </div>
+                            <div class="confirm_text">
+
+
+                                <h3 class="title f20 text_p">
+                                    Your tests selection has been received
+                                </h3>
+                                <p class="text-muted f14 mb-0">Please verify your selection and pay the amount
+                                </p>
+                            </div>
+                        </div>
+                        <div class="requestedWrapper">
+                            <div class="requested mb-3 ">
+                                <div class="requestedLab">
+                                    <div class="lab-head d-flex align-items-center justify-content-between">
+                                        <div class="textpart">
+                                            <h3 class="labname f16 mb-0"> <a href="#" data-toggle="tooltip"
+                                                    data-placement="top" title="View Profile">Pokhara Reference
+                                                    Laboratory</a> </h3>
+                                            <p class="text-muted f14 mb-0">Hospital Chowk, Pokhara</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="f14 d-block mt-3 text-muted fw600">Requested Tests</label>
+                                <ul class="tests">
+                                    <li
+                                        class="d-flex bg_p_dim px-3 py-2 rounded mb-1 align-items-center justify-content-between">
+                                        <div class="name d-flex flex3">
+                                            <i class="las la-flask"></i>
+                                            <div class="labels">
+
+                                                <div class="label">Full Blood Count</div>
+                                                <div class="text-muted"><small>Category Name</small></div>
+                                            </div>
+                                        </div>
+                                        <ul class="subItems d-flex flex6 flex-wrap">
+                                            <li class="subitem">
+                                                Platlet Count
+                                            </li>
+                                            <li class="subitem">
+                                                WBC Count
+                                            </li>
+                                            <li class="subitem">
+                                                RBC Count
+                                            </li>
+                                            <li class="subitem">
+                                                Lipid Profile Test
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                        </ul>
+                                        <div class="price btn_p flex1 full_rounded px-2 py-1">
+                                            Rs. 1288
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="d-flex bg_p_dim px-3 py-2 rounded mb-1 align-items-center justify-content-between">
+                                        <div class="name d-flex flex3">
+                                            <i class="las la-flask"></i>
+                                            <div class="labels">
+
+                                                <div class="label">Full Blood Count</div>
+                                                <div class="text-muted"><small>Category Name</small></div>
+                                            </div>
+                                        </div>
+                                        <ul class="subItems d-flex flex6 flex-wrap">
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                        </ul>
+                                        <div class="price btn_p flex1 full_rounded px-2 py-1">
+                                            Rs. 1300
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="d-flex bg_p_dim px-3 py-2 rounded mb-1 align-items-center justify-content-between">
+                                        <div class="name d-flex flex3">
+                                            <i class="las la-flask"></i>
+                                            <div class="labels">
+
+                                                <div class="label">Full Blood Count</div>
+                                                <div class="text-muted"><small>Category Name</small></div>
+                                            </div>
+                                        </div>
+                                        <ul class="subItems d-flex flex6 flex-wrap">
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+
+                                            <li class="subitem">
+                                                Test 1
+                                            </li>
+                                        </ul>
+                                        <div class="price btn_p flex1 full_rounded px-2 py-1">
+                                            Rs. 340
+                                        </div>
+                                    </li>
+                                </ul>
+                                <label class="f14 d-block mt-3 text-muted fw600">Requested Packages</label>
+                                <ul class="packages">
+                                    <li class="package bg_p_dim d-flex mb-3 flex-column align-items-start gap">
+                                        <div class="packageText flex5">
+                                            <h3
+                                                class="packageName f14 d-flex justify-content-between align-items-center">
+                                                Full Body Check up
+                                                <div class="cost">
+                                                    <i class="las la-wallet"></i> Rs. 2300
+                                                </div>
+                                            </h3>
+                                            <p class="text-muted mb-0 f14">Included lipid profile test, liver
+                                                function
+                                                test Lorem ipsum
+                                                dolor, sit amet consectetur
+                                                adipisicing.</p>
+                                        </div>
+                                    </li>
+                                    <li class="package d-flex bg_p_dim mb-3 flex-column align-items-start gap">
+                                        <div class="packageText flex5">
+                                            <h3
+                                                class="packageName f14 d-flex justify-content-between align-items-center">
+                                                Full Body Check up
+                                                <div class="cost">
+                                                    <i class="las la-wallet"></i> Rs. 2300
+                                                </div>
+                                            </h3>
+                                            <p class="text-muted mb-0 f14">Included lipid profile test, liver
+                                                function
+                                                test Lorem ipsum
+                                                dolor, sit amet consectetur
+                                                adipisicing.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <label class="f14 d-block mt-3 text-muted fw600">Pay Now</label>
+                                <div class="payBox">
+                                    <div class="payItem mb-2 align-items-center d-flex justify-content-between">
+                                        <div class="left">
+                                            <div class="label">
+                                                Total Amount
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="value bg_p_dim text_p px-3 py-1 rounded">
+                                                <i class="las la-wallet f18"></i> Rs 10000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="payItem mb-2 align-items-center d-flex justify-content-between">
+                                        <div class="left">
+                                            <div class="label">
+                                                Discount
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="value bg_p_dim text_p px-3 py-1 rounded">
+                                                <i class="las la-percentage f18"></i> 10%
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="payItem mb-2 align-items-center d-flex justify-content-between">
+                                        <div class="left">
+                                            <div class="label">
+                                                Total Amount Now
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="value bg_p_dim text_p px-3 py-1 rounded">
+                                                <i class="las la-wallet f18"></i> Rs 9000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="payItem mb-2 align-items-center d-flex justify-content-between">
+                                        <div class="left w-100 d-flex justify-content-between align-items-center">
+                                            <div class="label">
+                                                Choose Payment Method
+                                            </div>
+                                            <form action="" class="payform">
+                                                <ul class="availablePaymentMethods">
+                                                    <li>
+                                                        <label for="esewa">
+                                                            <input type="radio" id="esewa" name="paymentmethod">
+                                                            <img src="https://laxmanbaralblog.com/wp-content/uploads/2020/11/eSewa-Nepal.png"
+                                                                alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="khalti">
+                                                            <input type="radio" id="khalti" name="paymentmethod">
+                                                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Khalti_Digital_Wallet_Logo.png/640px-Khalti_Digital_Wallet_Logo.png"
+                                                                alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="connectIps">
+                                                            <input type="radio" id="connectIps" name="paymentmethod">
+                                                            <img src="https://www.prabhulife.com/wp-content/uploads/2020/05/connectips-icon.png"
+                                                                alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="cashondelivery">
+                                                            <input type="radio" id="cashondelivery"
+                                                                name="paymentmethod">
+                                                            <img src="https://w7.pngwing.com/pngs/510/354/png-transparent-food-indian-cuisine-bangladeshi-cuisine-devops-dubai-cash-on-delivery.png"
+                                                                alt="">
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <div class="finalaction">
+                                    <div class="cancelwrapper d-flex justify-content-between">
+                                        <div class="leftbuttons">
+                                            <button class="btn btn-sm cancel_trigger f12 p-0 "> <i
+                                                    class="las la-times f16"></i>
+                                                Cancel</button>
+                                        </div>
+                                        <div class="rightbuttons d-flex gap">
+                                            <button class="btn btn-sm bg_p_dim cancel_message f14"> <i
+                                                    class="las la-comment f16"></i> Attachments</button>
+
+                                            <button type="submit" class="btn btn-sm btn_p f14">
+                                                <i class="las la-wallet"></i> Pay
+                                                Now</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="formwrapper hide bg_p_dim p rounded my-3">
+                                        <div class="my-3 d-flex flex-column gap align-items-start">
+                                            <div class="form-group">
+                                                <label for="cancelmessage">
+                                                    Tell us why you want to cancel the test service
+                                                </label>
+                                                <textarea name="" id="" cols="" rows="3"
+                                                    placeholder="Please tell us why you want to cancel test requests and packages"
+                                                    class="form-control flex6"></textarea>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <button type="submit" class="btn btn_p">Cancel Now</button>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="messageForm hide bg_p_dim p rounded my-3">
+                                        <div class=" d-flex flex-column gap align-items-start">
+                                            <div class="form-group">
+                                                <label for="attchamnet" class="text-muted ">Attach Doctor's
+                                                    Prescription
+                                                    Here</label>
+
+                                                <input type="file" id="attchamnet" class="form-control"
+                                                    name="attchamnet">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message" class="text-muted">Send message to Lab
+                                                    Here</label>
+                                                <textarea name="message" id="message" cols="" rows="3"
+                                                    placeholder="Please type your message here"
+                                                    class="form-control flex6"></textarea>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <button type="submit" class="btn btn_p">Submit Attachments</button>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="bg_w mb-5 p rounded stickySidebar">
+                        <div class="head fw700 text_p">
+                            Contact details
+                        </div>
+                        <hr />
+                        <div class="addressdata">
+                            <form action="" class="my-3">
+                                <div class="form-group editableFormGroup">
+                                    <label for="" class="d-flex justify-content-between">
+                                        <div class="text">
+                                            Patient Name </div>
+                                        <div class="editIcon">
+                                            <i class="las la-pen"></i>
+                                        </div>
+                                    </label>
+                                    <div class="formvalue">
+                                        <div class=" text-muted f16 d-flex  align-items-center">
+                                            <i class="las la-user mr-2"></i> Hari Bhusal
+                                        </div>
+                                    </div>
+
+                                    <input type="text" class="form-control eidtableFormInput" value="Hari Bhusal"
+                                        placeholder="Enter Patient Name">
+                                </div>
+                                <div class="form-group editableFormGroup">
+                                    <label for="" class="d-flex justify-content-between">
+                                        <div class="text">
+                                            Sample Collection Address
+                                        </div>
+                                        <div class="editIcon">
+                                            <i class="las la-pen"></i>
+                                        </div>
+                                    </label>
+                                    <div class="formvalue">
+                                        <div class=" text-muted f16 d-flex  align-items-center">
+                                            <i class="las la-map mr-2"></i> Shantinagar, Pokhara
+                                        </div>
+                                    </div>
+
+                                    <input type="text" class="form-control eidtableFormInput"
+                                        value="Shantinagar, Pokhara" placeholder="Your Address">
+                                </div>
+                                <div class="form-group editableFormGroup">
+                                    <label for="" class="d-flex justify-content-between">
+                                        <div class="text">
+                                            Phone Number
+                                        </div>
+                                        <div class="editIcon">
+                                            <i class="las la-pen"></i>
+                                        </div>
+                                    </label>
+                                    <div class="formvalue">
+                                        <div class=" text-muted f16 d-flex  align-items-center">
+                                            <i class="las la-phone mr-2"></i> 9847458523
+                                        </div>
+                                    </div>
+
+                                    <input type="tel" class="form-control eidtableFormInput" value="9847458523"
+                                        placeholder="Your Contact Number">
+                                </div>
+                                <div class="form-group editableFormGroup">
+                                    <label for="" class="d-flex justify-content-between">
+                                        <div class="text">
+                                            Email Address
+                                        </div>
+                                        <div class="editIcon">
+                                            <i class="las la-pen"></i>
+                                        </div>
+                                    </label>
+                                    <div class="formvalue">
+                                        <div class=" text-muted f16 d-flex  align-items-center">
+                                            <i class="las la-envelope mr-2"></i> bhusalhari89@gmail.com
+                                        </div>
+                                    </div>
+
+                                    <input type="email" class="form-control eidtableFormInput"
+                                        value="bhusalhari89@gmail.com" placeholder="Your Email Address">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn_p btn-block">Save Contact Info</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="spacer"></div>
+    
+{% endblock content %}

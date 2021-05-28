@@ -1,0 +1,271 @@
+.user_test_request {
+    background-color: #fafafa;
+    // background-color: rgba($p, 0.08);
+    font-size: 14px;
+    .seemorewrapper {
+        .close {
+            display: none;
+        }
+        .seemoreText {
+            display: none;
+        }
+    }
+    .searchbar {
+        input {
+            border: none;
+        }
+    }
+    .filterlableftbar {
+        label {
+            cursor: pointer !important;
+            user-select: none;
+        }
+    }
+}
+
+.lablisting {
+    .labitem {
+        border: 1px solid #eee;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        &:hover {
+            border-color: $p;
+            // box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        .paymentActions {
+            .availablePaymentMethods {
+                display: flex;
+                align-items: stretch;
+                .pitem {
+                    // border: 1px solid $p;
+                    padding-left: 25px;
+                    cursor: pointer;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                    margin-bottom: 0px !important;
+                    input {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                    }
+                    img {
+                        width: 60px;
+                    }
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .subtitle {
+            font-size: 12px;
+            font-weight: bolder;
+            opacity: 0.6;
+        }
+        .labHeading {
+            padding: 16px 30px;
+            border-radius: 3px;
+            background-color: #fff;
+            .lablogo {
+                // border: 1px solid $p;
+                padding: 10px;
+                height: 100px;
+                background-color: rgba($p, 0.08);
+                width: 50px !important;
+                border-radius: 3px;
+            }
+            .labDetails {
+                .title {
+                    font-size: 16px;
+                    padding: 0;
+                    color: $p;
+                    margin-bottom: 5px;
+                }
+                .address {
+                    font-size: 14px;
+                }
+                .ratewrapper {
+                    opacity: 0.7;
+                    .rating {
+                        display: flex;
+                        i {
+                            font-size: 18px;
+                            margin-right: 0px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .selectLabTests {
+            padding: 15px 30px;
+            // background-color: rgba($p, 0.08);
+            .panel {
+                user-select: none;
+                margin-bottom: 5px;
+                border: 1px solid rgba($p, 0.2);
+                border-radius: 3px;
+
+                .panel_heading {
+                    background-color: rgba($p, 0.08);
+                    padding: 8px 16px;
+                    cursor: pointer;
+                    padding-left: 45px;
+                    // border: 1px solid rgba($p, 0.3);
+                    border-radius: 3px;
+                    .rightpart {
+                        .price {
+                            background-color: $p;
+                            padding: 1px 13px;
+                            border: 1px solid rgba($p, 0.3);
+                            border-radius: 100px;
+                            color: #fff;
+                            font-size: 12px;
+                        }
+                        .category {
+                            background-color: #fff;
+                            padding: 1px 13px;
+                            border: 1px solid rgba($p, 0.3);
+                            border-radius: 100px;
+                            color: $p;
+                            font-size: 12px;
+                            i {
+                                font-size: 14px;
+                                margin-right: 0px;
+                            }
+                        }
+                    }
+                }
+
+                .panelLabel {
+                    position: relative;
+                    .all {
+                        position: absolute;
+                        left: 10px;
+                        top: 8px;
+                        cursor: pointer;
+                    }
+                }
+
+                .panelBody {
+                    background-color: #fff;
+                    padding: 8px;
+                    // display: none;
+                    border-radius: 3px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    .panelItems {
+                        margin: 0;
+                        padding: 0;
+                        .panelItem {
+                            background-color: #f8f8f8;
+                            border-radius: 3px;
+                            padding: 0 8px;
+                            margin-right: 8px;
+                            margin-bottom: 8px;
+                            label {
+                                margin-bottom: 0px !important;
+                                cursor: pointer;
+                                .label {
+                                    padding: 5px 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .activePanel {
+                .panel_heading {
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+            }
+        }
+        .labTestServices {
+            padding: 16px 30px;
+
+            .selectTestService {
+                padding: 10px 0;
+                label {
+                    cursor: pointer;
+                    background-color: #fff;
+                    padding: 7px 14px;
+                    display: block;
+                    padding-left: 10px;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    border-radius: 3px;
+                    border: 1px solid transparent;
+                    &:hover {
+                        // border: 1px solid $p;
+                    }
+                    input {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .labPackages {
+            padding: 16px 30px;
+            background-color: #fff;
+            .packages {
+                margin-top: 10px;
+                // padding: 5px 30px;
+                .owl-carousel {
+                    position: relative;
+                    // background-color: red;
+                    .owl-next,
+                    .owl-prev {
+                        height: 20px !important;
+                        width: 20px !important;
+                        position: absolute !important;
+                        right: -30px !important;
+                        top: 40% !important;
+                        background-color: rgba($p, 0.08) !important;
+                        transform: translateY(50%) !important;
+                        border: none !important;
+                        i {
+                            font-size: 14px;
+                            margin-right: 0px !important;
+                        }
+                        &:focus {
+                            border: none !important;
+                            outline: none !important;
+                        }
+                    }
+                    .owl-prev {
+                        left: -30px !important;
+                    }
+                }
+                .package {
+                    background-color: #fff;
+                    border-radius: 3px;
+                    transition: all 0.3s ease;
+                    // padding: 15px;
+                    .packageDetails {
+                        // background-color: rgba($p, 0.08);
+                    }
+                    .packageIncludes {
+                        .includes {
+                            margin-top: 10px;
+                            li {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                margin-bottom: 10px;
+
+                                background-color: rgba($p, 0.08);
+                                padding: 3px 13px;
+                                border-radius: 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
