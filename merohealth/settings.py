@@ -42,6 +42,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "merohealth.urls"
+AUTH_USER_MODEL = "accounts.Account"
 
 TEMPLATES = [
     {
