@@ -12,7 +12,7 @@ SECRET_KEY = "s#ra(ryl3&y7-1ho&y9q9xl--bgx^3yo*bxmxxq1@bk+16nn+t"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 ALLOWED_HOSTS = []
 
 
@@ -114,3 +114,7 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = "/media/"
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {messages.ERROR: "danger"}

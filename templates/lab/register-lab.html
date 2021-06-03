@@ -29,12 +29,13 @@
             </p>
           </div>
 
-          <form action="" class="loginform needs-validation">
+          <form action="{% url 'registerlab' %}" method="POST" class="loginform needs-validation">
+            {% csrf_token %}
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="email">Lab Name</label>
-                  <input type="text" class="form-control" placeholder="Lab Name" required />
+                  <input type="text" name="labname" class="form-control" placeholder="Lab Name" required />
                 </div>
               </div>
             </div>
@@ -42,14 +43,15 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Licence Number</label>
-                  <input type="number" class="form-control" placeholder="Enter Licence Number" required />
+                  <input type="number" name="licence_no" class="form-control" placeholder="Enter Licence Number"
+                    required />
                   <div class="valid-feedback">Looks good!</div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Expiry Date</label>
-                  <input type="date" class="form-control" placeholder="" required />
+                  <input type="date" name="exp_date" class="form-control" placeholder="" required />
                   <div class="valid-feedback">Looks good!</div>
                 </div>
               </div>
@@ -59,7 +61,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Provience No</label>
-                  <select name="" id="" class="form-control">
+                  <select name="provience_no" id="" class="form-control">
                     <option value="1">Provience 1</option>
                     <option value="1">Provience 2</option>
                     <option value="1">Provience 3</option>
@@ -74,7 +76,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">District</label>
-                  <select name="" id="" class="form-control">
+                  <select name="district" id="" class="form-control">
                     <option value="1" selected>Kaski</option>
                     <option value="1">Syangja</option>
                     <option value="1">Baglung</option>
@@ -86,7 +88,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Rural Municipality/Municipality</label>
-                  <select name="" id="" class="form-control">
+                  <select name="rural_municipality" id="" class="form-control">
                     <option value="1" selected>
                       Pokhara Metropolitan City
                     </option>
@@ -98,7 +100,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Ward No</label>
-                  <select name="" id="" class="form-control">
+                  <select name="ward_no" id="" class="form-control">
                     <option value="1">1</option>
                     <option value="1">2</option>
                     <option value="1">2</option>
@@ -112,7 +114,8 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="text">Tole/Area/Appartment</label>
-                  <input type="text" name="" id="" class="form-control" placeholder="Area Name/ Tole / Place Name" />
+                  <input type="text" name="tole_area_apmnt" id="" class="form-control"
+                    placeholder="Area Name/ Tole / Place Name" />
                 </div>
               </div>
             </div>
@@ -121,13 +124,14 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Telephone Number</label>
-                  <input type="tel" class="form-control" placeholder="Enter Telephone Number" required />
+                  <input type="tel" name="telephone_no" class="form-control" placeholder="Enter Telephone Number"
+                    required />
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label for="email">Mobile Number Password</label>
-                  <input type="tel" class="form-control" placeholder="Mobile Number" required />
+                  <label for="email">Mobile Number</label>
+                  <input type="tel" name="c" class="form-control" placeholder="Mobile Number" required />
                 </div>
               </div>
             </div>
@@ -136,13 +140,14 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Pan No / VAT Number</label>
-                  <input type="number" class="form-control" placeholder="Enter PAN/VAT Number" required />
+                  <input type="number" name="pan_vat_no" class="form-control" placeholder="Enter PAN/VAT Number"
+                    required />
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Organization Type</label>
-                  <select name="" id="" class="form-control">
+                  <select name="org_type" id="" class="form-control">
                     <option value="1">Partnered</option>
                     <option value="1">Single</option>
                   </select>
@@ -154,7 +159,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="email">Your Role</label>
-                  <select name="" id="" class="form-control">
+                  <select name="your_role" id="" class="form-control">
                     <option value="1">Founder</option>
                     <option value="1">IT Person</option>
                     <option value="1">Accountant</option>

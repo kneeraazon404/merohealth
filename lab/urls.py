@@ -16,7 +16,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path("dashboard/", labDashboard, name="labdashboarad"),
+    path("dashboard/", labDashboard, name="labdashboard"),
     path("health-package/", healthPackage, name="health-package"),
     path("lab-member/", labMember, name="lab-member"),
     path("lab-profile/", labProfile, name="lab-profile"),
