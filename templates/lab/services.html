@@ -13,7 +13,7 @@
                     <div class="top pt-3">
                         <a href="#">
                             <div class="logowrapper">
-                                <img src="../../media/logo.svg" alt="" class="img-fluid">
+                                <img src="{% static 'img/logo.svg' %}" alt="" class="img-fluid">
                             </div>
                         </a>
                     </div>
@@ -43,6 +43,7 @@
                     <div class="end">
                         <div class="upper">
                             <ul class="services">
+                                {% for service in services %}
                                 <li class="active">
                                     <a href="#" class="service-wrapper d-flex">
                                         <div class="icon">
@@ -52,57 +53,18 @@
                                             <div class="">
                                                 <div
                                                     class="titlearea d-flex align-items-center justify-content-between">
-                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
+                                                    <h6 class="text mb-2 text_p">{{service.platelet_count}}</h6>
                                                     <strong class="">
-                                                        Rs. 230
+                                                        Rs. {{service.test_cost}}
                                                     </strong>
 
                                                 </div>
-                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
+                                                <p class="text text_dim text_small mb-0 ">{{service.category_name}}</p>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a href="#" class="service-wrapper d-flex">
-                                        <div class="icon">
-                                            <i class="las la-flask"></i>
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="">
-                                                <div
-                                                    class="titlearea d-flex align-items-center justify-content-between">
-                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
-                                                    <strong class="">
-                                                        Rs. 230
-                                                    </strong>
-
-                                                </div>
-                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#" class="service-wrapper d-flex">
-                                        <div class="icon">
-                                            <i class="las la-flask"></i>
-                                        </div>
-                                        <div class="text-wrapper">
-                                            <div class="">
-                                                <div
-                                                    class="titlearea d-flex align-items-center justify-content-between">
-                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
-                                                    <strong class="">
-                                                        Rs. 230
-                                                    </strong>
-
-                                                </div>
-                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                                {%endfor%}
                             </ul>
                         </div>
                         <!-- <div class="lower">2</div> -->

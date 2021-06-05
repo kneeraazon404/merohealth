@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Lab
+from .models import Lab, LabService
 from django.contrib import messages
+from django.views.generic import ListView
+
 
 # Create your views here.
 
@@ -37,7 +39,7 @@ def RegisterLab(request):
 
         lab.save()
         messages.success(request, "Registered! wait for Approval")
-        return redirect("labdashboarad")
+        return redirect("labdashboard")
 
     else:
 
@@ -45,7 +47,9 @@ def RegisterLab(request):
 
 
 def labDashboard(request):
-    return render(request, "lab/dashboard.html")
+    form = Lab.objects.values("labname")
+    context = {"form": form}
+    return render(request, "lab/dashboard.html", context)
 
 
 def healthPackage(request):
@@ -66,6 +70,13 @@ def Payments(request):
 
 def Reports(request):
     return render(request, "lab/reports.html")
+
+
+class LabServices(ListView):
+    model = LabService
+    template_name = "lab/services.html"
+    context_object_name = "services"
+    ordering = ["-date_created"]
 
 
 def Services(request):

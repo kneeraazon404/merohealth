@@ -13,7 +13,9 @@ from .views import (
     TestRequestsCompleted,
     TestRequestsCollectorView,
     TestRequestsRunning,
+    LabServices,
 )
+
 
 urlpatterns = [
     path("dashboard/", labDashboard, name="labdashboard"),
@@ -21,7 +23,7 @@ urlpatterns = [
     path("lab-member/", labMember, name="lab-member"),
     path("lab-profile/", labProfile, name="lab-profile"),
     path("payments/", Payments, name="payments"),
-    path("services/", Reports, name="services"),
+    path("services/", LabServices.as_view(), name="services"),
     path("reports/", Services, name="reports"),
     path("register/", RegisterLab, name="registerlab"),
     path("test-requests/", TestRequests, name="test-request"),
