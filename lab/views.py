@@ -1,9 +1,165 @@
 from django.shortcuts import render, redirect
-from .models import Lab, LabService
+from .models import Lab, LabService, ImageAlbum
 from django.contrib import messages
 from django.views.generic import ListView
+from .forms import LabMember
+from django.shortcuts import render, get_object_or_404
+from django.core.mail import send_mail
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
+
+# ? Default message/alert function
+def Emails(request):
+    sender = "email@email.com"
+    send_mail(
+        "Alert message:",
+        "Message Variable",
+        sender,
+        ["karkinirajans@gmail.com", "karki@gmail.com"],
+        fail_silently=False,
+    )
+    return render(request, "lab/emails.html")
 
 
+# ? Lab Member Management Views
+
+
+class memberListView(ListView):
+    model = LabMember
+    template_name = "lab/lab-member.html"  # <app>/<model>_<viewtype>.html
+    context_object_name = "members"
+    ordering = ["-date_added"]
+    paginate_by = 5
+
+
+class userSmemberListView(ListView):
+    model = LabMember
+    template_name = "lab/lab-member.html"  # <app>/<model>_<viewtype>.html
+    context_object_name = "members"
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get("username"))
+        return LabMember.objects.filter(author=user).order_by("-date_posted")
+
+
+class postDetailView(DetailView):
+    model = LabMember
+
+
+class postCreateView(LoginRequiredMixin, CreateView):
+    model = LabMember
+    fields = ["__all__"]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class memberUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = LabMember
+    fields = ["__all__"]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class memberDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = LabMember
+    success_url = "/"
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+def members(request):
+    return render(
+        request,
+        "lab/lab-member.html",
+    )
+
+
+#! Lab Services Views
+class servicesListView(ListView):
+    model = LabService
+    template_name = "lab/services.html"  # <app>/<model>_<viewtype>.html
+    context_object_name = "services"
+    ordering = ["-date_created"]
+    paginate_by = 5
+
+
+class userServicesListView(ListView):
+    model = LabService
+    template_name = "lab/services.html"  # <app>/<model>_<viewtype>.html
+    context_object_name = "services"
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get("username"))
+        return LabMember.objects.filter(author=user).order_by("-date_posted")
+
+
+class servicesDetailView(DetailView):
+    model = LabService
+
+
+class serviceCreateView(LoginRequiredMixin, CreateView):
+    model = LabService
+    fields = ["__all__"]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class serviceUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = LabMember
+    fields = ["__all__"]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class serviecDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = LabMember
+    success_url = "/"
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+def services(request):
+    return render(request, "lab/serivices.html", {"title": "About"})
+
+
+# Create your views here.
 # Create your views here.
 
 
@@ -56,31 +212,12 @@ def healthPackage(request):
     return render(request, "lab/health-package.html")
 
 
-def labMember(request):
-    return render(request, "lab/lab-member.html")
-
-
-def labProfile(request):
-    return render(request, "lab/lab-profile.html")
-
-
 def Payments(request):
     return render(request, "lab/payments.html")
 
 
 def Reports(request):
     return render(request, "lab/reports.html")
-
-
-class LabServices(ListView):
-    model = LabService
-    template_name = "lab/services.html"
-    context_object_name = "services"
-    ordering = ["-date_created"]
-
-
-def Services(request):
-    return render(request, "lab/services.html")
 
 
 def TestRequests(request):
