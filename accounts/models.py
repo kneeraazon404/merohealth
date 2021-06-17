@@ -27,6 +27,7 @@ class MyAccountManager(BaseUserManager):
             username=username,
             password=password,
         )
+
         user.is_admin = True
         user.is_active = True
         user.is_staff = True
@@ -43,13 +44,21 @@ def get_default_profile_image():
     return "media/default_profile_image.png"
 
 
-class User(AbstractBaseUser):
-    full_name = models.CharField(max_length=255, verbose_name="full name ")
+class Account(AbstractBaseUser):
+    first_name = models.CharField(max_length=255, verbose_name="first name ")
     email = models.EmailField(
         verbose_name="email",
         max_length=60,
         unique=True,
     )
+    last_name = models.CharField(max_length=255, verbose_name="last name ")
+    email = models.EmailField(
+        verbose_name="email",
+        max_length=60,
+        unique=True,
+    )
+    agree = models.BooleanField(default=False)
+    phone = models.CharField(max_length=255, verbose_name="phone")
     username = models.CharField(max_length=30, unique=True)
     date_joined = models.DateTimeField(verbose_name="date joined", auto_now_add=True)
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
@@ -57,13 +66,7 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    profile_image = models.ImageField(
-        max_length=255,
-        upload_to=get_profile_image_filepath,
-        null=True,
-        blank=True,
-        default=get_default_profile_image,
-    )
+
     hide_email = models.BooleanField(default=True)
 
     USERNAME_FIELD = "email"
@@ -89,8 +92,14 @@ class User(AbstractBaseUser):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default="default.jpg", upload_to="profile_pics")
+    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    image = models.ImageField(
+        max_length=255,
+        upload_to=get_profile_image_filepath,
+        null=True,
+        blank=True,
+        default=get_default_profile_image,
+    )
 
     def __str__(self):
         return f"{self.user.username} Profile"
@@ -104,8 +113,3 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
-
-
-# @receiver(post_save, sender=Account)
-# def user_save(sender, instance, **kwargs):
-#     FriendList.objects.get_or_create(user=instance)

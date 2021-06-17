@@ -1,55 +1,27 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages, auth
-from django.contrib.auth.models import User
+import datetime
+
+from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
+
+from .forms import ProfileUpdateForm, UserRegisterForm, UserUpdateForm
 
 
-def register(request):
+def RegisterView(request):
     if request.method == "POST":
-        # Get form values
-        first_name = request.POST["first_name"]
-        last_name = request.POST["last_name"]
-        phone = request.POST["phone"]
-        username = request.POST["username"]
-        email = request.POST["email"]
-        password1 = request.POST["password1"]
-        password2 = request.POST["password2"]
-
-        # Check if passwords match
-        if password1 == password2:
-            # Check username
-            if User.objects.filter(username=username).exists():
-                messages.error(request, "That username is taken")
-                return redirect("register")
-            else:
-                if User.objects.filter(email=email).exists():
-                    messages.error(request, "That email is being used")
-                    return redirect("register")
-                else:
-                    # Looks good
-                    user = User.objects.create_user(
-                        username=username,
-                        password=password1,
-                        email=email,
-                        first_name=first_name,
-                        last_name=last_name,
-                        # phone=phone,
-                    )
-                    # Login after register
-                    # auth.login(request, user)
-                    # messages.success(request, 'You are now logged in')
-                    # return redirect('index')
-                    user.save()
-                    messages.success(
-                        request, "You are now registered! Activate Account"
-                    )
-                    return redirect("login")
-        else:
-            messages.error(request, "Passwords do not match")
-            return redirect("register")
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get("username")
+            messages.success(
+                request,
+                f"Your account has been created for {username}! You are now able to log in",
+            )
+            return redirect("login")
     else:
-        return render(request, "accounts/register.html")
+        form = UserRegisterForm()
+    return render(request, "accounts/register.html", {"form": form})
 
 
 def login(request):

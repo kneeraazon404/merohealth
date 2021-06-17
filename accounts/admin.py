@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from accounts.models import User
+from accounts.models import Account
 
 from .models import Profile
 
@@ -10,7 +10,8 @@ admin.site.register(Profile)
 
 class AccountAdmin(UserAdmin):
     list_display = (
-        "full_name",
+        "first_name",
+        "last_name",
         "email",
         "username",
         "date_joined",
@@ -21,18 +22,18 @@ class AccountAdmin(UserAdmin):
     search_fields = (
         "email",
         "username",
-        "full_name",
+        "first_name",
     )
     readonly_fields = (
         "id",
         "date_joined",
         "last_login",
     )
-    list_display_links = ("full_name", "email", "username")
+    list_display_links = ("first_name", "email", "username")
 
     filter_horizontal = ()
     list_filter = ()
     fieldsets = ()
 
 
-# admin.site.register(Account, AccountAdmin)
+admin.site.register(Account, AccountAdmin)

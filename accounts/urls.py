@@ -1,29 +1,28 @@
 from django.urls import path
-from . import views
 
-# from .views import (
-#     RegistrationView,
-#     LoginView,
-#     EmailVerificationView,
-#     UserProfileView,
-#     BlogView,
-#     ConfirmRequestView,
-#     DoctorAppointments,
-#     DoctorPrescriptions,
-#     LabAppointments,
-#     productOrders,
-#     labReports,
-#     labRequests,
-#     mySettings,
-#     testRequests,
-# )
+from .views import (
+    RegisterView,
+    #     LoginView,
+    #     EmailVerificationView,
+    #     UserProfileView,
+    #     BlogView,
+    #     ConfirmRequestView,
+    #     DoctorAppointments,
+    #     DoctorPrescriptions,
+    #     LabAppointments,
+    #     productOrders,
+    #     labReports,
+    #     labRequests,
+    #     mySettings,
+    #     testRequests,
+)
 
 
 urlpatterns = [
-    path("login/", views.login, name="login"),
-    path("register/", views.register, name="register"),
-    path("logout/", views.logout, name="logout"),
-    path("profile/", views.profile, name="profile"),
+    # path("login/", views.login, name="login"),
+    path("register/", RegisterView, name="register"),
+    # path("logout/", views.logout, name="logout"),
+    # path("profile/", views.profile, name="profile"),
     # path("register/", RegistrationView, name="register"),
     # path("login/", LoginView, name="login"),
     # path("verification/", EmailVerificationView, name="verification"),
