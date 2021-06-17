@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from accounts.models import Account
+from accounts.models import User
+
+from .models import Profile
+
+# Register your models here.
+admin.site.register(Profile)
 
 
 class AccountAdmin(UserAdmin):
@@ -30,4 +35,4 @@ class AccountAdmin(UserAdmin):
     fieldsets = ()
 
 
-admin.site.register(Account, AccountAdmin)
+# admin.site.register(Account, AccountAdmin)

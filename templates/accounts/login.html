@@ -49,12 +49,13 @@
                 </p>
               </div>
 
-              <form action="" class="loginform needs-validation">
+              <form action="{% url 'login'%}" method="post" class="loginform needs-validation">
+                {% csrf_token %}
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" placeholder="Enter Your Email" required />
+                      <label for="email">Your Email</label>
+                      <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required />
                       <div class="invalid-feedback">Please choose a username.</div>
                     </div>
                   </div>
@@ -63,7 +64,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label for="email">Password</label>
-                      <input type="password" class="form-control" placeholder="Enter Password" required />
+                      <input type="password" name="password1" class="form-control" placeholder="Enter Password" required />
 
                     </div>
                   </div>

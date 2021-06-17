@@ -6,6 +6,7 @@
 {% endblock title  %}
 {% block content %}
   <main>
+    <!-- {% include 'partials/_alerts.html'%} -->
     <section class="login py-5">
       <div class="container">
         <div class="row d-flex justify-content-center">
@@ -45,18 +46,33 @@
                 </p>
               </div>
 
-              <form action="" class="loginform needs-validation">
+              <form action="{% url 'register'%}"  method="post" class="loginform needs-validation">
+                {% csrf_token %}
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="email">Full Name</label>
-                      <input type="text" class="form-control" placeholder="Enter Your Full Name" required />
+                      <label for="email">First Name</label>
+                      <input type="text" name="first_name" class="form-control" placeholder="Enter Your First Name Name" required />
+                    </div>
+                  </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="email">Last Name</label>
+                        <input type="text" name="last_name" class="form-control" placeholder="Enter Your Last Name Name" required />
+                      </div>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="email">Username</label>
+                      <input type="text"  name="username" class="form-control" placeholder="Enter Your Username" required />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="email">Contact Number</label>
-                      <input type="text" class="form-control" placeholder="Enter Your Contact Number" required />
+                      <input type="text" name="phone" class="form-control" placeholder="Enter Your Contact Number" required />
                       <div class="valid-feedback">Looks good!</div>
                     </div>
                   </div>
@@ -66,7 +82,7 @@
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" placeholder="Enter Your Email" required />
+                      <input type="email"  name="email" class="form-control" placeholder="Enter Your Email" required />
                       <div class="invalid-feedback">Please choose a username.</div>
                     </div>
                   </div>
@@ -76,13 +92,13 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="email">Password</label>
-                      <input type="password" class="form-control" placeholder="Enter Password" required />
+                      <input type="password" name="password1" class="form-control" placeholder="Enter Password" required />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="email">Confirm Password</label>
-                      <input type="password" class="form-control" placeholder="Confirm Password" required />
+                      <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required />
                     </div>
                   </div>
                 </div>
@@ -110,8 +126,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <a href="login.html" class="d-flex gap align-items-center">I already have an account and want to
-                      login
-                      now
+                      login now
                       <i class="las la-long-arrow-alt-right"></i></a>
                   </div>
                 </div>

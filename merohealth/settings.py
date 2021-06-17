@@ -1,5 +1,6 @@
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,6 +14,7 @@ SECRET_KEY = "s#ra(ryl3&y7-1ho&y9q9xl--bgx^3yo*bxmxxq1@bk+16nn+t"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
 ALLOWED_HOSTS = []
 
 
@@ -42,7 +44,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "merohealth.urls"
-AUTH_USER_MODEL = "accounts.Account"
+# AUTH_USER_MODEL = "accounts.Account"
+# AUTHENTICATION_BACKENDS = ["path.to.auth.module.EmailBackend"]
+
 
 TEMPLATES = [
     {
