@@ -2,9 +2,10 @@ import datetime
 
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.shortcuts import redirect, render
 
+# from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
+from .models import Account
 from .forms import ProfileUpdateForm, UserRegisterForm, UserUpdateForm
 
 
@@ -14,11 +15,31 @@ def RegisterView(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get("username")
-            messages.success(
-                request,
-                f"Your account has been created for {username}! You are now able to log in",
-            )
-            return redirect("login")
+            email = form.cleaned_data.get("email")
+            phone = form.cleaned_data.get("phone")
+            password1 = form.cleaned_data.get("password1")
+            password2 = form.cleaned_data.get("password2")
+
+            if Account.objects.filter(username=username).exists():
+                messages.error(request, "Username already in use")
+                return redirect("register")
+            elif Account.objects.filter(email=email).exists():
+                messages.error(request, "email already use")
+                return redirect("register")
+
+            elif password1 != password2:
+                messages.error(request, "Passwords didn't match")
+                return redirect("register")
+
+            if len(password1) < 8:
+                messages.error(request, "Password too shrt")
+                return redirect("register")
+
+        messages.success(
+            request,
+            f"Your account has been created for {username}! Activate your account",
+        )
+        return redirect("login")
     else:
         form = UserRegisterForm()
     return render(request, "accounts/register.html", {"form": form})

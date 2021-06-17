@@ -21,7 +21,7 @@ class UserRegisterForm(UserCreationForm):
         widget=forms.TextInput(
             attrs={
                 "class": "form-control",
-                type: "text",
+                "type": "text",
                 "required": True,
             },
         )
@@ -53,7 +53,7 @@ class UserRegisterForm(UserCreationForm):
             },
         )
     )
-    passwprd1 = forms.CharField(
+    password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
                 "class": "form-control",
