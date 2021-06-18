@@ -1,8 +1,10 @@
-from datetime import datetime
-
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
-from PIL import Image
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+import os
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class MyAccountManager(BaseUserManager):
@@ -24,12 +26,10 @@ class MyAccountManager(BaseUserManager):
     def create_superuser(self, email, username, password):
         user = self.create_user(
             email=self.normalize_email(email),
-            username=username,
             password=password,
+            username=username,
         )
-
         user.is_admin = True
-        user.is_active = True
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
@@ -37,28 +37,18 @@ class MyAccountManager(BaseUserManager):
 
 
 def get_profile_image_filepath(self, filename):
-    return "media/profile_images/" + str(self.pk) + "profile_image.png"
+    return "profile_images/" + str(self.pk) + "/profile_image.png"
 
 
 def get_default_profile_image():
-    return "media/default_profile_image.png"
+    return "profile/default_profile_image.png"
 
 
 class Account(AbstractBaseUser):
-    first_name = models.CharField(max_length=255, verbose_name="first name ")
-    email = models.EmailField(
-        verbose_name="email",
-        max_length=60,
-        unique=True,
-    )
-    last_name = models.CharField(max_length=255, verbose_name="last name ")
-    email = models.EmailField(
-        verbose_name="email",
-        max_length=60,
-        unique=True,
-    )
-    agree = models.BooleanField(default=False)
-    phone = models.CharField(max_length=255, verbose_name="phone")
+    first_name = models.CharField(max_length=255, blank=True, verbose_name="first_name")
+    last_name = models.CharField(max_length=255, blank=True, verbose_name="last name")
+    phone = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=30, unique=True)
     date_joined = models.DateTimeField(verbose_name="date joined", auto_now_add=True)
     last_login = models.DateTimeField(verbose_name="last login", auto_now=True)
@@ -66,7 +56,13 @@ class Account(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-
+    profile_image = models.ImageField(
+        max_length=255,
+        upload_to=get_profile_image_filepath,
+        null=True,
+        blank=True,
+        default=get_default_profile_image,
+    )
     hide_email = models.BooleanField(default=True)
 
     USERNAME_FIELD = "email"
@@ -89,27 +85,3 @@ class Account(AbstractBaseUser):
     # Does this user have permission to view this app? (ALWAYS YES FOR SIMPLICITY)
     def has_module_perms(self, app_label):
         return True
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(Account, on_delete=models.CASCADE)
-    image = models.ImageField(
-        max_length=255,
-        upload_to=get_profile_image_filepath,
-        null=True,
-        blank=True,
-        default=get_default_profile_image,
-    )
-
-    def __str__(self):
-        return f"{self.user.username} Profile"
-
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)

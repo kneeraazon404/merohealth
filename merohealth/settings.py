@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "lab",
     "accounts",
     "base",
+    "verify_email.apps.VerifyEmailConfig",
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "merohealth.wsgi.application"
 AUTH_USER_MODEL = "accounts.Account"
-
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.AllowAllUsersModelBackend",
+    "accounts.backends.CaseInsensitiveModelBackend",
+)
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -124,3 +128,14 @@ MEDIA_URL = "/media/"
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {messages.ERROR: "danger"}
+
+
+#! Email handling
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "karkinirajan1999@gmail.com"
+EMAIL_HOST_PASSWORD = "OF1n@rztWzT2EJlWZJ1TzaJ@fWacy9cZ3aF$k&IQgdPAAe"
+
+DEFAULT_FROM_EMAIL = "karkinirajan1999@gmail.com"

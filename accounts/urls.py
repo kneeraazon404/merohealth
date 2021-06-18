@@ -3,6 +3,7 @@ from django.urls import path
 from .views import (
     RegisterView,
     LoginView,
+    LogoutView,
     #     EmailVerificationView,
     #     UserProfileView,
     #     BlogView,
@@ -21,6 +22,7 @@ from .views import (
 urlpatterns = [
     path("login/", LoginView, name="login"),
     path("register/", RegisterView, name="register"),
+    path("logout/", LogoutView, name="logout"),
     # path("logout/", views.logout, name="logout"),
     # path("profile/", views.profile, name="profile"),
     # path("register/", RegistrationView, name="register"),
