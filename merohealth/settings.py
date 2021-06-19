@@ -128,9 +128,11 @@ MEDIA_URL = "/media/"
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {messages.ERROR: "danger"}
-
+LOGIN_URL = "login"
 
 #! Email handling
+# from .env import EMAIL_HOST, HOST_PASSWORD, DEFAULT_EMAIL
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587

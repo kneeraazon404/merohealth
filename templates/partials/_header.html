@@ -111,25 +111,27 @@
                     </button>
                   </form>
                 </div>
+                {% if user.is_authenticated %}
 
                 <ul class="navbar-nav user_menu ml-auto navbar-right d-flex justify-content-end w-100">
+
                   <li class="nav-item d-flex align-items-center nav-item-dashboard" data-toggle="tooltip"
                     data-placement="top" title="Go to Dashboard">
                     <a class="nav-link d-flex align-items-center" href="{% url 'home' %}">
                       <img src="{% static 'img/user.png' %}" alt="users image" />
                       <div class="user_info pl-2">
-                        <h6 class="name mb-0">username</h6>
+                        <h6 class="name mb-0">{{ user.first_name }}</h6>
                       </div>
                     </a>
                   </li>
                   <li class="nav-item d-flex align-items-center" data-toggle="tooltip" data-placement="top"
                     title="Use Service As">
-                    <a class="nav-link" href="signup.html">
+                    <a class="nav-link" href="{ url 'home' }">
                       <i class="las la-briefcase-medical"></i></a>
                   </li>
                   <li class="nav-item d-flex align-items-center" data-toggle="tooltip" data-placement="top"
                     title="Message">
-                    <a class="nav-link" href="signup.html">
+                    <a class="nav-link" href="{% url 'home' %}">
                       <i class="las la-sms"></i>
 
                       <div class="count">4</div>
@@ -137,7 +139,7 @@
                   </li>
                   <li class="nav-item d-flex align-items-center" data-toggle="tooltip" data-placement="top"
                     title="Notifications">
-                    <a class="nav-link" href="signup.html">
+                    <a class="nav-link" href="{% url 'home' %}">
                       <i class="las la-bell"></i>
                       <div class="count">35</div>
                     </a>
@@ -164,11 +166,30 @@
                           Settings</a>
                         <a class="dropdown-item" href="#"><i class="las la-adjust mr-2"></i>Dark Mode</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="las la-sign-out-alt mr-2"></i>Log Out</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}"><i class="las la-sign-out-alt mr-2"></i>Log Out</a>
                       </div>
+
                     </div>
                   </li>
                 </ul>
+                {% else %}
+                <ul class="navbar-nav user_menu ml-auto navbar-right d-flex justify-content-end w-100">
+                  <li class="nav-item d-flex align-items-center"
+                  title="Login ">
+                  <button class="btn btn_p" data-toggle="modal" data-target="#loginRegisterModel">
+                    <a class="nav-link d-flex align-items-center p-1" href="{% url 'login' %}">Login</a>
+                   </button>
+                </li>
+                <li class="nav-item d-flex align-items-center"
+                title="Login ">
+                <button class="btn btn_p" data-toggle="modal" data-target="#loginRegisterModel">
+                  <a class="nav-link d-flex align-items-center p-1" href="{% url 'register' %}">Register</a>
+                 </button>
+              </ul>
+                {% endif %}
+              
+        
+
               </div>
             </nav>
           </div>

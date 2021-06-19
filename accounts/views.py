@@ -1,20 +1,66 @@
 import datetime
-from django.contrib.auth import get_user_model
-from django.contrib import auth, messages
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
+import json
+
 from django.conf import settings
-from verify_email.email_handler import send_verification_email
+from django.contrib import auth, messages
+from django.contrib.auth import authenticate, get_user_model, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage, send_mail
+from django.views.decorators.csrf import csrf_exempt
+
 
 # from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
+from django.urls import reverse
+from django.utils.encoding import DjangoUnicodeDecodeError, force_bytes, force_text
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.views import View
+from validate_email import validate_email
+from verify_email.email_handler import send_verification_email
 
+from .forms import AccountAuthenticationForm, UserRegisterForm, UserUpdateForm
 from .models import Account
-from .forms import UserRegisterForm, AccountAuthenticationForm, UserUpdateForm
+from .utils import account_activation_token
+
+
+class EmailValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        email = data["email"]
+        if not validate_email(email):
+            return render({"email_error": "Email is invalid"}, status=400)
+        if User.objects.filter(email=email).exists():
+            return render(
+                {"email_error": "sorry email in use,choose another one "}, status=409
+            )
+        return render({"email_valid": True})
+
+
+class UsernameValidationView(View):
+    def post(self, request):
+        data = json.loads(request.body)
+        username = data["username"]
+        if not str(username).isalnum():
+            return render(
+                {
+                    "username_error": "username should only contain alphanumeric characters"
+                },
+                status=400,
+            )
+        if User.objects.filter(username=username).exists():
+            return render(
+                {"username_error": "sorry username in use,choose another one "},
+                status=409,
+            )
+        return render({"username_valid": True})
+
 
 UserModel = get_user_model()
 #! Register View
+@csrf_exempt
 def RegisterView(request, *args, **kwargs):
     user = request.user
     if user.is_authenticated:

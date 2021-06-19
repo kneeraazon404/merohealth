@@ -9,3 +9,15 @@ class LazyAccountEncoder(Serializer):
         dump_object.update({"username": str(obj.username)})
         dump_object.update({"profile_image": str(obj.profile_image.url)})
         return dump_object
+
+
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from six import text_type
+
+
+class AppTokenGenerator(PasswordResetTokenGenerator):
+    def _make_hash_value(self, user, timestamp):
+        return text_type(user.is_active) + text_type(user.pk) + text_type(timestamp)
+
+
+account_activation_token = AppTokenGenerator()
