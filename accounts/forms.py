@@ -155,7 +155,7 @@ class AccountUpdateForm(forms.ModelForm):
             "last_name",
             "phone",
             "email",
-            "profile_image",
+            # "profile_image",
             "hide_email",
         )
 
@@ -196,7 +196,7 @@ class UserUpdateForm(forms.ModelForm):
         fields = ["username", "email"]
 
 
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = Account
-        fields = ["profile_image"]
+# class ProfileUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = Account
+#         fields = ["profile_image"]

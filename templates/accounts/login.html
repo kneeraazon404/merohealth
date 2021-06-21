@@ -1,15 +1,14 @@
 {% extends "base.html" %}
- {% load static %}
-  {% block title %} | login
-   {% endblock title %}
- {% block content %}
-
+{% load static %}
+{% block title %} | login
+{% endblock title %}
+{% block content %}
+{% load socialaccount %}
 <main>
   <section class="login py-5">
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div
-          class="
+        <div class="
             col-sm-7
             bg_w
             p-5
@@ -18,60 +17,46 @@
             rounded
             d-flex
             align-items-center
-          "
-        >
+          ">
           <div class="leftwrapper w-100">
             <div class="row">
               <div class="col-sm-6">
                 <div class="logowrapper">
                   <a href="index.html">
-                    <img
-                      src="{% static 'img/logo.svg'%}"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="{% static 'img/logo.svg'%}" alt="" class="img-fluid" />
                   </a>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="">
                   <div class="row">
-                    <div
-                      class="
+                    <div class="
                         col-sm-12
                         d-flex
                         gap
                         align-items-center
                         justify-content-end
-                      "
-                    >
+                      ">
                       <p class="mb-0">Login With</p>
 
-                      <div
-                        class="
+                      <div class="
                           group
                           gap
                           d-flex
                           justify-content-between
                           align-items-center
-                        "
-                      >
-                        <div
-                          class="
+                        ">
+                        <div class="
                             options
                             gap
                             d-flex
                             justify-content-between
                             align-items-center
-                          "
-                        >
-                          <a href="#" class="btn bg_fb"
-                            ><i class="lab la-facebook-f"></i
-                          ></a>
-
-                          <a href="#" class="btn bg_g"
-                            ><i class="lab la-google"></i
-                          ></a>
+                          ">
+                          <a href="{% provider_login_url 'facebook' method='oauth2' %}" class="btn bg_fb"><i
+                              class="lab la-facebook-f"></i></a>
+                          <a href="{% provider_login_url 'google' method='oauth2' %}" class="btn bg_g"><i
+                              class="lab la-google"></i></a>
                         </div>
                       </div>
                     </div>
@@ -89,17 +74,13 @@
               </p>
             </div>
 
-            <form
-              action="{% url 'login'%}"
-              method="POST"
-              class="loginform needs-validation"
-            >
+            <form action="{% url 'login'%}" method="POST" class="loginform needs-validation">
               {% csrf_token %}
               <div class="row">
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="email">Your Email</label>
-                  {{form.email}}
+                    {{form.email}}
                     <div class="invalid-feedback">
                       Please choose a username.
                     </div>
@@ -110,7 +91,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="email">Password</label>
-                 {{form.password}}
+                    {{form.password}}
                   </div>
                 </div>
               </div>
@@ -119,23 +100,17 @@
                   <div class="group gap d-flex justify-content-between">
                     <div class="form-group d-flex gap align-items-center">
                       <input type="checkbox" name="rem" id="rem" required />
-                      <div
-                        class="
+                      <div class="
                           remforget
                           w-100
                           align-items-center
                           d-flex
                           justify-content-between
-                        "
-                      >
-                        <label for="rem" class="d-block mb-0"
-                          >Remember me
+                        ">
+                        <label for="rem" class="d-block mb-0">Remember me
                         </label>
-                        <a
-                          href="{% url 'password_reset' %}"
-                          style="text-decoration: underline"
-                          ><small>Forgot Password?</small></a
-                        >
+                        <a href="{% url 'password_reset' %}" style="text-decoration: underline"><small>Forgot
+                            Password?</small></a>
                       </div>
                     </div>
                   </div>
@@ -152,22 +127,16 @@
 
               <div class="row">
                 <div class="col-sm-12">
-                  <a
-                    href="{% url 'register' %}"
-                    class="d-flex gap align-items-center"
-                    >I do not have an account and want to create account now
-                    <i class="las la-long-arrow-alt-right"></i
-                  ></a>
+                  <a href="{% url 'register' %}" class="d-flex gap align-items-center">I do not have an account and want
+                    to create account now
+                    <i class="las la-long-arrow-alt-right"></i></a>
                 </div>
               </div>
             </form>
           </div>
         </div>
 
-        <div
-          class="col-sm-5 loginbg rounded"
-          style="background-image: url('../../static/img/pattern.jpg')"
-        >
+        <div class="col-sm-5 loginbg rounded" style="background-image: url('../../static/img/pattern.jpg')">
           <div class="top"></div>
           <div class="bgtextwrapper">
             <div class="owl-carousel">

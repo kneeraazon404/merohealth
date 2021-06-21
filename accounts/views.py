@@ -1,6 +1,6 @@
 import datetime
 import json
-
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import auth, messages
 from django.contrib.auth import authenticate, get_user_model, login, logout
@@ -25,7 +25,7 @@ from .forms import AccountAuthenticationForm, UserRegisterForm, UserUpdateForm
 from .models import Account
 from .utils import account_activation_token
 
-
+#! Email Validation view
 class EmailValidationView(View):
     def post(self, request):
         data = json.loads(request.body)
@@ -39,6 +39,7 @@ class EmailValidationView(View):
         return render({"email_valid": True})
 
 
+#! Username validation View
 class UsernameValidationView(View):
     def post(self, request):
         data = json.loads(request.body)
@@ -59,7 +60,8 @@ class UsernameValidationView(View):
 
 
 UserModel = get_user_model()
-#! Register View
+
+#! User Register View
 @csrf_exempt
 def RegisterView(request, *args, **kwargs):
     user = request.user
@@ -163,10 +165,7 @@ def LogoutView(request):
 #     return render(request, "accounts/profile.html", context)
 
 
-def EmailVerificationView(request):
-    return render(request, "accounts/verify-email.html")
-
-
+@login_required
 def UserProfileView(request):
     return render(request, "accounts/user-profile.html")
 

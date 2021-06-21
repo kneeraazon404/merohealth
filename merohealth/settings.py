@@ -26,11 +26,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # ! Our Apps
     "lab",
     "accounts",
     "base",
     "verify_email.apps.VerifyEmailConfig",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
 ]
 
 MIDDLEWARE = [
@@ -67,8 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "merohealth.wsgi.application"
 AUTH_USER_MODEL = "accounts.Account"
 AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
     "django.contrib.auth.backends.AllowAllUsersModelBackend",
     "accounts.backends.CaseInsensitiveModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -124,12 +132,12 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = "/media/"
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {messages.ERROR: "danger"}
 LOGIN_URL = "login"
-
+SITE_ID = 1
 #! Email handling
 # from .env import EMAIL_HOST, HOST_PASSWORD, DEFAULT_EMAIL
 
@@ -141,3 +149,39 @@ EMAIL_HOST_USER = "karkinirajan1999@gmail.com"
 EMAIL_HOST_PASSWORD = "OF1n@rztWzT2EJlWZJ1TzaJ@fWacy9cZ3aF$k&IQgdPAAe"
 
 DEFAULT_FROM_EMAIL = "karkinirajan1999@gmail.com"
+ACCOUNT_EMAIL_REQUIRED = True
+
+#! Django All Auth
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+    },
+    "facebook": {
+        "METHOD": "oauth2",
+        "SDK_URL": "//connect.facebook.net/{locale}/sdk.js",
+        "SCOPE": ["email", "public_profile"],
+        "AUTH_PARAMS": {"auth_type": "reauthenticate"},
+        "INIT_PARAMS": {"cookie": True},
+        "FIELDS": [
+            "id",
+            "first_name",
+            "last_name",
+            "middle_name",
+            "name",
+            "name_format",
+            "picture",
+            "short_name",
+        ],
+        "EXCHANGE_TOKEN": True,
+        "LOCALE_FUNC": "path.to.callable",
+        "VERIFIED_EMAIL": False,
+        "VERSION": "v7.0",
+    },
+}

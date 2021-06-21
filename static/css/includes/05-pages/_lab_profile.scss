@@ -1,10 +1,18 @@
+.lab-profile-public-view {
+    .middlebar {
+        height: 100% !important;
+        overflow-y: unset !important;
+        background-color: transparent !important;
+    }
+}
 .lab-profile {
     .middlebar {
         background-color: rgba($p, 0.08);
         height: 100vh;
         overflow-y: scroll;
         overflow-x: hidden;
-        .tabcontentwrapper {
+        .tabcontentwrapper,
+        .lab_gallery {
             position: relative;
             i.edit {
                 top: 0;
@@ -134,9 +142,26 @@
                 padding: 0 30px;
                 margin-top: 15px;
                 .lab_gallery {
-                    .owl-stage-outer {
+                    .owl-carousel {
                         position: relative;
                         .owl-prev {
+                            position: absolute !important;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: #fff !important;
+                            height: 30px;
+                            width: 30px;
+                            line-height: 30px;
+                            font-size: 20px;
+                            color: $p !important;
+                            &:focus {
+                                border: none !important;
+                                box-shadow: none !important;
+                                outline: none !important;
+                            }
+                        }
+                        .owl-next {
                             position: absolute !important;
                             right: 0;
                             top: 50%;
@@ -147,10 +172,14 @@
                             line-height: 30px;
                             font-size: 20px;
                             color: $p !important;
+                            &:focus {
+                                border: none !important;
+                                box-shadow: none !important;
+                                outline: none !important;
+                            }
                         }
                     }
                     .gallery_item {
-                        margin-bottom: 30px;
                     }
                     a {
                         display: block;
@@ -439,6 +468,65 @@
                             color: $p;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+.modal_overview {
+    .keyfeatures {
+        .features {
+            .feature {
+                border-left: 2px solid $p;
+                margin-bottom: 5px;
+                background-color: rgba($w, 0.7);
+
+                padding: 3px 15px;
+                i {
+                    background-color: rgba($p, 0.08);
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 30px;
+                    border: 1px solid rgba($p, 0.2);
+                    line-height: 30px;
+                    margin-right: 0px !important;
+                    font-size: 20px;
+                    color: $p;
+                }
+            }
+        }
+    }
+}
+
+.galleryItemsWrapper {
+    .galleryItems {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        .galleryItem {
+            position: relative;
+            img {
+                height: 120px;
+                width: 100%;
+                border-radius: 5px;
+                object-fit: cover;
+                object-position: center;
+            }
+            .btn_delete {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                i {
+                    background-color: rgba($p, 1);
+                    height: 30px;
+                    width: 30px;
+                    box-shadow: 0px 10px 20px rgba($b, 0.3);
+                    border-radius: 30px;
+                    line-height: 30px;
+                    margin-right: 0px !important;
+                    font-size: 20px;
+                    color: #fff;
                 }
             }
         }

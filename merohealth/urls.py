@@ -9,6 +9,7 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("lab/", include("lab.urls")),
     path("verification/", include("verify_email.urls")),
+    path("accounts/", include("allauth.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

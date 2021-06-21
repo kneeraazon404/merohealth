@@ -588,17 +588,17 @@ footer {
                     list-style: none;
 
                     a {
-                        color: #fff;
-
                         i {
                             height: 40px;
                             margin-right: 15px;
                             width: 40px;
+                            color: $p;
+
                             border-radius: 0px;
                             font-size: 1.5rem;
                             line-height: 40px;
                             text-align: center;
-                            background-color: rgba(#fff, 0.1);
+                            background-color: rgba($p, 0.1);
                         }
                     }
                 }

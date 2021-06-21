@@ -334,4 +334,16 @@ $('.editIcon').click(function () {
   $(this).parent().parent().find('.eidtableFormInput').slideToggle();
 
 
-})
+});
+
+$(function () {
+  var hash = window.location.hash;
+  hash && $('.nav a[href="' + hash + '"]').tab('show');
+
+  $('.nav a').click(function (e) {
+    $(this).tab('show');
+    var scrollmem = $('body').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+  });
+});
