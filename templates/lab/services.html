@@ -1,8 +1,22 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %} | Services
-{% endblock title %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeroHealth - Better health for better life</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../static/css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
 
 <body class="lab-page">
     <section class="hero">
@@ -13,15 +27,83 @@
                     <div class="top pt-3">
                         <a href="#">
                             <div class="logowrapper">
-                                <img src="{% static 'img/logo.svg' %}" alt="" class="img-fluid">
+                                <img src="../../media/logo.svg" alt="" class="img-fluid">
                             </div>
                         </a>
                     </div>
                     <div class="end">
                         <div class="spacer">
                         </div>
-                        <!-- Partial Sidebar Goes Here -->
-                        {% include 'partials/_lab-sidebar.html'%}
+                        <div class="middle">
+                            <ul class="menuwrapper">
+                                <li>
+                                    <a href="dashboard.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-tachometer-alt"></i>
+                                        </div>
+                                        <div class="text">Dashboard</div>
+                                    </a>
+                                </li>
+
+                                <li class="active">
+                                    <a href="services.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-vials"></i>
+                                        </div>
+                                        <div class="text">Services</div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="services.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-vials"></i>
+                                        </div>
+                                        <div class="text">Health Packages</div>
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="test-requests.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-running"></i>
+                                        </div>
+                                        <div class="text">Test Requests</div>
+                                        <div class="notify">
+                                            4
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="reports.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-chart-bar"></i>
+                                        </div>
+                                        <div class="text">Reports</div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="payments.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-file-invoice-dollar"></i>
+                                        </div>
+                                        <div class="text">Payments</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="messaging.php" class="menuwrap">
+                                        <div class="icon">
+                                            <i class="las la-comments"></i>
+                                        </div>
+                                        <div class="text">Messaging</div>
+                                        <div class="notify">
+                                            35
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="bottom">
 
 
@@ -43,7 +125,6 @@
                     <div class="end">
                         <div class="upper">
                             <ul class="services">
-                                {% for service in services %}
                                 <li class="active">
                                     <a href="#" class="service-wrapper d-flex">
                                         <div class="icon">
@@ -53,18 +134,57 @@
                                             <div class="">
                                                 <div
                                                     class="titlearea d-flex align-items-center justify-content-between">
-                                                    <h6 class="text mb-2 text_p">{{service.platelet_count}}</h6>
+                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
                                                     <strong class="">
-                                                        Rs. {{service.test_cost}}
+                                                        Rs. 230
                                                     </strong>
 
                                                 </div>
-                                                <p class="text text_dim text_small mb-0 ">{{service.category_name}}</p>
+                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                {%endfor%}
+                                <li class="">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-flask"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <div
+                                                    class="titlearea d-flex align-items-center justify-content-between">
+                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
+                                                    <strong class="">
+                                                        Rs. 230
+                                                    </strong>
+
+                                                </div>
+                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="service-wrapper d-flex">
+                                        <div class="icon">
+                                            <i class="las la-flask"></i>
+                                        </div>
+                                        <div class="text-wrapper">
+                                            <div class="">
+                                                <div
+                                                    class="titlearea d-flex align-items-center justify-content-between">
+                                                    <h6 class="text mb-2 text_p">Platelet Count</h6>
+                                                    <strong class="">
+                                                        Rs. 230
+                                                    </strong>
+
+                                                </div>
+                                                <p class="text text_dim text_small mb-0 ">Category Name</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <!-- <div class="lower">2</div> -->
@@ -145,6 +265,12 @@
         </div>
     </section>
 
+    <script src="../../static/js/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../../static/js/vendor/popper/popper.min.js"></script>
+    <script src="../../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="../../static/js/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../../static/js/scripts.js"></script>
 </body>
 
-{% endblock content %}
+
+</html>

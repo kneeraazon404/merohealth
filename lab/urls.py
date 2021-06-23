@@ -3,20 +3,25 @@ from .views import (
     RegisterLab,
     Reports,
     TestRequests,
-    labDashboard,
+    labDashboardView,
+    LabProfileView,
     healthPackage,
     Payments,
+    LabProfileView,
     TestRequestsRunningProcess,
     TestRequestsCompleted,
     TestRequestsCollectorView,
     TestRequestsRunning,
     servicesListView,
     # memberListView,
+    LabProfilePublicView,
 )
 
 
 urlpatterns = [
-    path("dashboard/", labDashboard, name="labdashboard"),
+    path("dashboard/", labDashboardView, name="labdashboard"),
+    path("profile/", LabProfileView, name="labprofile"),
+    path("profile-public/", LabProfilePublicView, name="labprofilepublic"),
     path("health-package/", healthPackage, name="health-package"),
     # path("lab-profile/", labProfile, name="lab-profile"),
     path("payments/", Payments, name="payments"),

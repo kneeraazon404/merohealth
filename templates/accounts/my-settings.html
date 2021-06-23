@@ -3,263 +3,464 @@
 {% block title %} | My Settings
 {% endblock title %}
 {% block content %}
-  <main class="dashboard-settings">
-    <section class="breadcrumb_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-                <li class="breadcrumb-item">
-                  <a href="dashboard.php">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Settings
-                </li>
-              </ol>
-            </nav>
+
+<main class="dashboard-settings">
+  <section class="user-settings">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 bg_gray">
+          <div class="settingsmenu">
+            <div class="textwrapper">
+              <div class="title f16 fw700 text_p">Settings</div>
+            </div>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link f14 active" id="v-pills-home-tab" data-toggle="pill" href="#general" role="tab"
+                aria-controls="v-pills-home" aria-selected="true"><i class="las la-cog"></i>Account Settings</a>
+              <a class="nav-link f14" id="v-pills-profile-tab" data-toggle="pill" href="#profile" role="tab"
+                aria-controls="v-pills-profile" aria-selected="false"><i class="las la-user-edit"></i>Edit Profile</a>
+              <a class="nav-link f14" id="v-pills-messages-tab" data-toggle="pill" href="#messages" role="tab"
+                aria-controls="v-pills-messages" aria-selected="false"><i class="las la-sms"></i>Messages</a>
+              <a class="nav-link f14" id="v-pills-settings-tab" data-toggle="pill" href="#notifications" role="tab"
+                aria-controls="v-pills-settings" aria-selected="false"><i class="lar la-bell"></i>Notifications</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="user-settings">
-      <div class="container">
-        <div class="row">
-          <div class="col-3 bg_gray">
-            <div class="settingsmenu">
+        <div class="col-9 bg_w">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="v-pills-home-tab">
               <div class="textwrapper">
-                <div class="title f20">Settings</div>
+                <div class="title f16 text_p">Account Settings</div>
               </div>
-              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#general" role="tab"
-                  aria-controls="v-pills-home" aria-selected="true"><i class="las la-cog"></i>Account Settings</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#profile" role="tab"
-                  aria-controls="v-pills-profile" aria-selected="false"><i class="las la-user-cog"></i>Profile</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#messages" role="tab"
-                  aria-controls="v-pills-messages" aria-selected="false"><i class="las la-sms"></i>Messages</a>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#notifications" role="tab"
-                  aria-controls="v-pills-settings" aria-selected="false"><i class="lar la-bell"></i>Notifications</a>
+              <div class="formwrapper">
+                <form action="{% url 'my_settings' %}#profile" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Username</p>
+                        </label>
+                        {{u_form.username}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2">Change Password</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Current Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="curpass" placeholder="New Password" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="newpass1">
+                          <p class="">New Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="newpass1" placeholder="Confirm Password" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="conpass">
+                          <p class="">Confirm Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="conpass" placeholder="Confirm Password" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <label for="veremail">
+                          <p class="">Add Secondary Email</p>
+                        </label>
+                        <input type="email" class="form-control" id="veremail" placeholder="{{user.email}}" />
+                      </div>
+                    </div>
+                    <div class="col-sm-3 d-flex align-items-end">
+                      <div class="form-group w-100">
+                        <button class="btn btn_p btn-sm btn_otpCode btn-block">
+                          Add and Verify
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="otpcodewrapper hide">
+
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="text-muted f14 mb-0">You will receive an email with OTP Code, Please provide us to
+                          verify your account</p>
+                        <div class="form-group mt-3">
+                          <label for="">OTP CODE</label>
+                          <input type="text" name="" id="" class="form-control" placeholder="OTP Code">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-          </div>
-          <div class="col-9 bg_w">
-            <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="textwrapper">
-                  <div class="title f20 text_p">Account Settings</div>
-                </div>
-                <div class="formwrapper">
-                  <form>
-
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <label for="username"><small class="text-muted">Username</small></label>
-                          <input type="text" class="form-control" id="username" placeholder="Username" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="textwrapper">
-                          <p class="f14">Change Password</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="curpass"><small class="text-muted">Current Password</small></label>
-                          <input type="password" class="form-control" id="curpass" placeholder="New Password" />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="newpass1"><small class="text-muted">New Password</small></label>
-                          <input type="password" class="form-control" id="newpass1" placeholder="Confirm Password" />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="conpass"><small class="text-muted">Confirm Password</small></label>
-                          <input type="password" class="form-control" id="conpass" placeholder="Confirm Password" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-9">
-                        <div class="form-group">
-                          <label for="veremail"><small class="text-muted">Verify Email</small></label>
-                          <input type="email" class="form-control" id="veremail"
-                            placeholder="Enter your email address" />
-                        </div>
-                      </div>
-                      <div class="col-sm-3 d-flex align-items-end">
-                        <div class="form-group w-100">
-                          <button class="btn btn_p btn-sm btn-block">
-                            Send OTP
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button class="btn btn_p">Submit</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Edit Profile</div>
               </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="textwrapper">
-                  <div class="title f20 text_p">Profile Settings</div>
-                </div>
-                <div class="formwrapper">
-                  <form>
+              <div class="formwrapper">
+                <form action="{% url 'my_settings' %}" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-sm-12 d-flex flex-column align-items-start gap">
+                      <div id="profile-container" class="d-flex align-items-center gap w-100">
+                        <image id="profileImage" src="{{user.profile.profile_image.url}}"
+                          class="img-fluid img-avatar" />
+                        <div class="social flex1 pl-2">
+                          <div class="">
+                            <div class="row ">
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <label for="fname">
+                                    <p class="">First Name</p>
+                                  </label>
+                                  {{u_form.first_name}}
+                                </div>
+                              </div>
 
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="username"><small class="text-muted">First Name</small></label>
-                          <input type="text" class="form-control" id="username" placeholder="First Name" />
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <label for="fname">
+                                    <p class="">Last Name</p>
+                                  </label>
+                                  {{u_form.last_name}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="username"><small class="text-muted">Middle Name</small></label>
-                          <input type="text" class="form-control" id="username" placeholder="Middle Name" />
-                        </div>
+                      <div class="form-group mb-0 overflow-hidden">
+                        {{p_form.profile_image}}
                       </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="username"><small class="text-muted">Last Name</small></label>
-                          <input type="text" class="form-control" id="username" placeholder="Last Name" />
-                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Address</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Provience</p>
+                        </label>
+                        {{p_form.provience}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">District</p>
+                        </label>
+                        {{p_form.district}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Municipality / Rural Municipality</p>
+                        </label>
+                        {{p_form.municipality}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Ward No</p>
+                        </label>
+                        {{p_form.ward_no}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Local Area</p>
+                        </label>
+                        {{p_form.local_area}}
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="textwrapper">
-                          <p class="f14">My Health Details</p>
-                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Personal</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Birthday</p>
+                        </label>
+                        {{p_form.birthday}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Weight</p>
+                        </label>
+                        {{p_form.weight}}
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="curpass"><small class="text-muted">My Height</small></label>
-                          <input type="text" class="form-control" id="curpass" placeholder="Enter Height" />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="newpass1"><small class="text-muted">My Weight</small></label>
-                          <input type="text" class="form-control" id="newpass1" placeholder="Enter Weight" />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="conpass"><small class="text-muted">Date of Birth</small></label>
-                          <input type="date" class="form-control" id="conpass" placeholder="Enter Date of Birth" />
-                        </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Height</p>
+                        </label>
+                        {{p_form.height}}
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <label for="curpass"><small class="text-muted">Blood Group</small></label>
-                          <select name="" id="" class="form-control">
-                            <option value="1">A+</option>
-                            <option value="2">A-</option>
-                            <option value="3">B+</option>
-                            <option value="4">B-</option>
-                            <option value="4">O+</option>
-                            <option value="4">O-</option>
-                            <option value="4">AB+</option>
-                            <option value="4">AB-</option>
-                          </select>
-                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Blood Group</p>
+                        </label>
+                        {{p_form.blood_type}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Gender</p>
+                        </label>
+                        {{p_form.gender}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Origin</p>
+                        </label>
+                        {{p_form.origin}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Habits</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Smoking</p>
+                        </label>
+                        {{p_form.smoking}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Drinks</p>
+                        </label>
+                        {{p_form.drinks}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Drugs</p>
+                        </label>
+                        {{p_form.drugs}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Social Link</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Facebook Link</p>
+                        </label>
+                        {{p_form.social_links_fb}}
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button class="btn btn_p">Submit</button>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Instagram Link</p>
+                        </label>
+                        {{p_form.social_links_ins}}
                       </div>
                     </div>
-                  </form>
-                </div>
+
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Linkedin Link</p>
+                        </label>
+                        {{p_form.social_links_lnk}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Youtube Link</p>
+                        </label>
+                        {{p_form.social_links_yt}}
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Personal Website</p>
+                        </label>
+                        {{p_form.social_links_pws}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Update Profile</button>
+                    </div>
+                  </div>
+                </form>
+
               </div>
-              <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="textwrapper">
-                  <div class="title f20 text_p">Messaging Settings</div>
-                </div>
-                <div class="formwrapper">
-                  <form>
-                    <div class="row">
-                      <div class="col-sm-12">
-
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                          <label class="form-check-label" for="inlineCheckbox1">Get Messages from Doctor</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                          <label class="form-check-label" for="inlineCheckbox2">Get Messages from Lab</label>
-                        </div>
-
-                      </div>
-                    </div>
-
-
-                    <br />
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button class="btn btn_p">Submit</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+            </div>
+            <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Messaging Settings</div>
               </div>
-              <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="textwrapper">
-                  <div class="title f20 text_p">Notifications Settings</div>
-                </div>
-                <div class="formwrapper">
-                  <form>
+              <div class="formwrapper">
+                <form>
+                  <div class="row">
+                    <div class="col-sm-12">
 
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                          <label class="form-check-label" for="inlineRadio1">Show Notifications</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                          <label class="form-check-label" for="inlineRadio2">Hide Notifications</label>
-                        </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label f14 text-muted" for="inlineCheckbox1">Get Messages from
+                          Doctor</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label f14 text-muted" for="inlineCheckbox2">Get Messages from
+                          Lab</label>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Notifications Settings</div>
+              </div>
+              <div class="formwrapper">
+                <form>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                          value="option1">
+                        <label class="form-check-label f14 text-muted" for="inlineRadio1">Show Notifications</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                          value="option2">
+                        <label class="form-check-label f14 text-muted" for="inlineRadio2">Hide Notifications</label>
                       </div>
                     </div>
-                    <br />
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <button class="btn btn_p">Submit</button>
-                      </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
+<script>
+
+  $("#profileImage").click(function (e) {
+    $("#imageUpload").click();
+  });
+
+  function fasterPreview(uploader) {
+    if (uploader.files && uploader.files[0]) {
+      $('#profileImage').attr('src',
+        window.URL.createObjectURL(uploader.files[0]));
+    }
+  }
+
+  $("#imageUpload").change(function () {
+    fasterPreview(this);
+  });
+
+  $('.btn_otpCode').click(function (event) {
+    event.preventDefault();
+    $('.otpcodewrapper').slideToggle();
+  })
+</script>
+</body>
+
+
+</html>
 {% endblock content%}

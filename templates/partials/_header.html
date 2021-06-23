@@ -119,7 +119,7 @@
                 <li class="nav-item d-flex align-items-center nav-item-dashboard" data-toggle="tooltip"
                   data-placement="top" title="Go to Dashboard">
                   <a class="nav-link d-flex align-items-center" href="{% url 'profile' %}">
-                    <img src="{% static 'img/user.png' %}" alt="users image" />
+                    <img src="{{user.profile.profile_image.url}}" class="rounded-circle" alt="users image" />
                     <div class="user_info pl-2">
                       <h6 class="name mb-0">{{ user.first_name }}</h6>
                     </div>
@@ -159,10 +159,10 @@
                         <i class="las la-tools mr-2"></i> My Dashboard</a>
                       <a class="dropdown-item" href="#">
                         <i class="las la-tools mr-2"></i> Notifications</a>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{% url 'profile' %}">
                         <i class="las la-tools mr-2"></i> My Profile</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{% url 'my_settings' %}">
                         <i class="las la-tools mr-2"></i> Account
                         Settings</a>
                       <a class="dropdown-item" href="#"><i class="las la-adjust mr-2"></i>Dark Mode</a>

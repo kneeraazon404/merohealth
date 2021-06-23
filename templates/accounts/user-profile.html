@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} | login
+{% block title %} | Profile
 {% endblock title %}
 {% block content %}
 {% load socialaccount %}
@@ -215,15 +215,15 @@
                               </a>
                             </li>
                             <li class="social">
-                              <a href="{{user.profile.social_links_lnk}}" target="_blank" class="bg_w p-2 rounded">
+                              <a href="{{user.profile.social_links_yt}}" target="_blank" class="bg_w p-2 rounded">
                                 <i class="lab la-youtube text_p  f18"></i>
                               </a>
                             </li>
                           </ul>
                         </div>
                         <div class="buttonwrapper mt-4 d-flex align-items-center justify-content-center">
-                          <a href="my-settings.html#profile" class="">
-                            <button class="btn btn_p f14 text-center text-muted"> <i
+                          <a href="{% url 'my_settings' %}#profile" class="">
+                            <button class=" btn btn_p f14 text-center text-muted"> <i
                                 class="las text_w la-pen f16 mr-2"></i>
                               Edit
                               Profile</button>

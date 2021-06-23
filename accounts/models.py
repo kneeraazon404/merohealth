@@ -1,12 +1,14 @@
-from django.db import models
+import os
+
+from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.core.files.storage import FileSystemStorage
-from django.conf import settings
-import os
+from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from PIL import Image
 
-
+#! Account manager
 class MyAccountManager(BaseUserManager):
     def create_user(self, email, username, password=None):
         if not email:
@@ -59,11 +61,6 @@ class Account(AbstractBaseUser):
     def __str__(self):
         return self.username
 
-    # def get_profile_image_filename(self):
-    #     return str(self.profile_image)[
-    #         str(self.profile_image).index("profile_images/" + str(self.pk) + "/") :
-    #     ]
-
     # For checking permissions. to keep it simple all admin have ALL permissons
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -73,89 +70,12 @@ class Account(AbstractBaseUser):
         return True
 
 
-#! Users Profile Get path functinos
-
-
-# def get_profile_image_filepath(self, filename):
-#     return "profile_images/" + str(self.pk) + "/profile_image.png"
-
-
-# def get_default_profile_image():
-#     return "profile/default_profile_image.png"
-
-
 #! Users Profile Model
 
 
 class Profile(models.Model):
-    smoking_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    alchol_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    provience_choices = [
-        ("provience 1", "Provience 1"),
-        ("provience 2", "Provience 2"),
-        ("provience 2", "Provience 3"),
-        ("provience 4", "Provience 4"),
-        ("provience 5", "Provience 5"),
-        ("provience 6", "Provience 6"),
-        ("provience 7", "Provience 7"),
-        ("provience 8", "Provience 8"),
-    ]
-    district_choices = [
-        ("pokhara", "pokhara"),
-        ("lalitpur", "lalitpur"),
-        ("kathmandu", "kathmandu"),
-        ("bhaktapur", "bhaktapur"),
-        ("Lalitpur", "Lalitpur"),
-        ("Syanja", "Syanja"),
-        ("palpa", "palpa"),
-        ("Ramechhap", "Ramechhap"),
-    ]
-    gender_choices = [
-        ("Male", "Male"),
-        ("Female", "Female"),
-        ("Others", "Others"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    origin_choices = [
-        ("Nepali", "Nepali"),
-        ("Indian", "Indian"),
-        ("Americal", "kathmandu"),
-    ]
-    blood_choices = [
-        ("A+", "A+"),
-        ("A-", "A-"),
-        ("B+", "B+"),
-        ("AB+", "AB+"),
-        ("O-", "O-"),
-        ("O+", "O+"),
-    ]
-    mun_choices = [
-        ("Fulbari", "Fulbari"),
-        ("Kadabari", "Kadabari"),
-        ("Aiselu Ghari", "Aiselu Ghari"),
-        ("Baghbazaar", "Baghbazaar"),
-        ("Lamachaur", "Lamachaur"),
-        ("Syanja", "Syanja"),
-        ("palpa", "palpa"),
-        ("Ramechhap", "Ramechhap"),
-    ]
 
-    drug_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
+    #! Model Fields Below
     user = models.OneToOneField(Account, on_delete=models.CASCADE)
     profile_image = models.ImageField(
         max_length=255,
@@ -172,7 +92,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=blood_choices,
         default="A+",
     )
     gender = models.CharField(
@@ -180,7 +99,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=gender_choices,
         default="Male",
     )
     origin = models.CharField(
@@ -188,7 +106,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=origin_choices,
         default="Nepali",
     )
     ward_no = models.IntegerField(
@@ -202,7 +119,6 @@ class Profile(models.Model):
     )
     municipality = models.CharField(
         verbose_name="municip",
-        choices=mun_choices,
         max_length=100,
         default="Lamachaur",
     )
@@ -210,52 +126,50 @@ class Profile(models.Model):
         max_length=200,
         verbose_name="provience",
         default="3",
-        choices=provience_choices,
     )
     district = models.CharField(
         max_length=200,
         verbose_name="Disctrict",
         default="Kaski",
-        choices=district_choices,
     )
     smoking = models.CharField(
         verbose_name="smoking",
         max_length=100,
-        choices=smoking_choices,
         default="No",
     )
     alchol = models.CharField(
         verbose_name="alchol",
         max_length=100,
-        choices=alchol_choices,
         default="No",
     )
     drug = models.CharField(
         verbose_name="Drug",
         max_length=100,
-        choices=drug_choices,
         default="No",
     )
     social_links_fb = models.CharField(
         verbose_name="Facebook", max_length=100, null=True, blank=True
     )
-    social_links_lkn = models.CharField(
-        verbose_name="Linkedin", max_length=100, null=True, blank=True
-    )
+
     social_links_tw = models.CharField(
         verbose_name="Twitter", max_length=100, null=True, blank=True
     )
     social_links_ins = models.CharField(
         verbose_name="Instagram", max_length=100, null=True, blank=True
     )
-    social_links_pws = models.CharField(
+    social_links_yt = models.CharField(
         verbose_name="Personal Site", max_length=100, null=True, blank=True
     )
 
     def __str__(self):
-        return f"{self.user.first_name}'s Profile"
+        return f"{self.user.username}'s Profile"
 
-    # def get_profile_image_filename(self):
-    #     return str(self.profile_image)[
-    #         str(self.profile_image).index("profile_images/" + str(self.pk) + "/") :
-    #     ]
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.profile_image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.profile_image.path)

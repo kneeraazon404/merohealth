@@ -21,7 +21,13 @@ from django.views import View
 from validate_email import validate_email
 from verify_email.email_handler import send_verification_email
 
-from .forms import AccountAuthenticationForm, UserRegisterForm, UserUpdateForm
+from .forms import (
+    AccountAuthenticationForm,
+    AccountUpdateForm,
+    UserRegisterForm,
+    # UserUpdateForm,
+    UserProfileUpdateForm,
+)
 from .models import Account
 from .utils import account_activation_token
 
@@ -143,35 +149,35 @@ def LogoutView(request):
     return redirect("home")
 
 
-# @login_required
-# def profile(request):
-#     if request.method == "POST":
-#         u_form = UserUpdateForm(request.POST, instance=request.user)
-#         p_form = ProfileUpdateForm(
-#             request.POST, request.FILES, instance=request.user.profile
-#         )
-#         if u_form.is_valid() and p_form.is_valid():
-#             u_form.save()
-#             p_form.save()
-#             messages.success(request, f"Your account has been updated!")
-#             return redirect("profile")
-
-#     else:
-#         u_form = UserUpdateForm(instance=request.user)
-#         p_form = ProfileUpdateForm(instance=request.user.profile)
-
-#     context = {"u_form": u_form, "p_form": p_form}
-
-#     return render(request, "accounts/profile.html", context)
-
-
-@login_required
+#!user profile View
 def UserProfileView(request):
     return render(request, "accounts/user-profile.html")
 
 
-def BlogView(request):
-    return render(request, "accounts/blog.html")
+#! User profile Update View
+
+
+@login_required
+def UserProfileUpdateView(request):
+    if request.method == "POST":
+        u_form = AccountUpdateForm(request.POST, instance=request.user)
+        p_form = UserProfileUpdateForm(
+            request.POST, request.FILES, instance=request.user.profile
+        )
+        if u_form.is_valid and p_form.is_valid:
+            u_form.save()
+            p_form.save()
+        messages.success(
+            request, f"Your account has been created! You are now able to log in"
+        )
+        return redirect("profile")
+
+    else:
+        u_form = AccountUpdateForm(instance=request.user)
+        p_form = UserProfileUpdateForm(instance=request.user.profile)
+
+    context = {"u_form": u_form, "p_form": p_form}
+    return render(request, "accounts/my-settings.html", context)
 
 
 def ConfirmRequestView(request):

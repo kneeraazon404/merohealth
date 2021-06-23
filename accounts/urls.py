@@ -6,7 +6,7 @@ from .views import (
     RegisterView,
     LoginView,
     LogoutView,
-    #     EmailVerificationView,
+    UserProfileUpdateView,
     UserProfileView,
     #     BlogView,
     #     ConfirmRequestView,
@@ -16,7 +16,7 @@ from .views import (
     #     productOrders,
     #     labReports,
     #     labRequests,
-    #     mySettings,
+    mySettings,
     #     testRequests,
 )
 
@@ -67,9 +67,6 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path("profile/", UserProfileView, name="profile"),
-    # path("register/", RegistrationView, name="register"),
-    # path("login/", LoginView, name="login"),
-    # path("verification/", EmailVerificationView, name="verification"),
     # path("profile/", UserProfileView, name="profile"),
     # path("blog/", BlogView, name="blog"),
     # path("confirm-request/", ConfirmRequestView, name="confirm-request"),
@@ -79,6 +76,6 @@ urlpatterns = [
     # path("lab-requests/", labRequests, name="lab-requests"),
     # path("lab-reports/", labReports, name="lab-reports"),
     # path("product-orders/", productOrders, name="product-orders"),
-    # path("my-settings/", mySettings, name="my_settings"),
+    path("my-settings/", UserProfileUpdateView, name="my_settings"),
     # path("test-requests/", testRequests, name="test-requests"),
 ]

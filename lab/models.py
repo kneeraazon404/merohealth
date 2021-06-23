@@ -1,18 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
-from django.db.models.deletion import CASCADE
+from django.db.models.deletion import CASCADE, SET_NULL
 
 
-def get_upload_path(instance, filename):
-    model = instance.album.model.__class__._meta
-    name = model.verbose_name_plural.replace(" ", "_")
-    return f"{name}/images/{filename}"
-
-
-# Create your models here.
 class Lab(models.Model):
-    founder = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    founder = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True
+    )
     labname = models.CharField(max_length=100, blank=True)
     licence_no = models.CharField(max_length=100, blank=True)
     exp_date = models.CharField(max_length=100, blank=True)
@@ -25,6 +20,7 @@ class Lab(models.Model):
     org_type = models.CharField(max_length=100, blank=True)
     pan_vat_no = models.CharField(max_length=100, blank=True)
     your_role = models.CharField(max_length=100, blank=True)
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.labname
@@ -36,7 +32,7 @@ class ImageAlbum(models.Model):
 
 
 class LabProfile(models.Model):
-    lab = models.OneToOneField(Lab, on_delete=CASCADE)
+    lab = models.OneToOneField(Lab, on_delete=SET_NULL, null=True)
     cover_img = models.ImageField(
         verbose_name="cover image",
         upload_to="lab-images/cover-images",
