@@ -1,8 +1,9 @@
-from django.db.models.signals import post_save
-from django.contrib.auth.models import User
-from django.dispatch import receiver
-from .models import Profile, Account
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from .models import Account, Profile
 
 UserModel = get_user_model()
 
