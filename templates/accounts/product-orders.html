@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Product Orders
+{% endblock title %}
+{% block content %}
+  <main class="mainbody">
+    <section class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+
+            <div class="leftbarwrapper">
+              <div class="box mb-3">
+                <div class="box_title">
+                  <h5 class="title">Welcome Back, Hari</h5>
+                </div>
+                <div class="box_content">
+                  <ul class="list">
+                    <li>
+                      <a href="index.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="user-profile.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-address-card mr-2"></i>Profile</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Discussions</p>
+                    </div>
+                    <li>
+                      <a href="blog.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-comments mr-2"></i>Health Queries</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
+                    </div>
+                    <li>
+                      <a href="lab-requests.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-address-card mr-2"></i>Lab Requests</div>
+                        <div class="count">
+                          <small><i class="lar la-bell"></i>2</small>
+                        </div>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="lab-appointments.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-user-tag mr-2"></i>Lab Appointments</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="lab-reports.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Lab Reports</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Doctor Services</p>
+                    </div>
+                    <li>
+                      <a href="doctor-appointment.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-user-nurse mr-2"></i>Doctor Appointments</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="doctor-prescriptions.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+                    <div class="text-wrapper">
+                      <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
+                    </div>
+                    <li>
+                      <a href="product-orders.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="my-product-offers.php" class="d-flex justify-content-between text-wrapper">
+                        <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
+                        <div class="count">
+                          <small></small>
+                        </div>
+                      </a>
+                    </li>
+                    <div class="divider"></div>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-9">
+            <div class="midwrapper">
+              <div class="lab-requests text-wrapper">
+                <div class="title d-flex align-items-center justify-content-between">
+                  <div class="left">
+                    <h3 class="title">Hygenic Product Orders</h3>
+                    <p class="small">Your order are here</p>
+                  </div>
+                  <div class="right">
+                    <a href="#">
+                      <button type="button" class="btn btn_p btn_add">
+                        Continue Shopping
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <hr />
+
+                <ul class="requests">
+                  <div class="request d-flex gap px-3 py-2 mb-2 bg_table_title">
+                    <div class="sn">SN</div>
+                    <div class="requestfor flex2">Order ID and Date</div>
+
+                    <div class="labname flex2">Order Particulars</div>
+                    <div class="price flex2">Status</div>
+                    <div class="date flex2">Price</div>
+                  </div>
+                  <li class="orderitem">
+                    <div class="request d-flex gap px-3 py-2 mb-2">
+                      <div class="sn">1</div>
+                      <div class="requestfor flex2">
+                        <div class="tests"><a href="#">0421-00001</a></div>
+                        <div class="label small text-muted">
+                          04/21/2021 06:34 PM
+                        </div>
+                      </div>
+
+                      <div class="labname flex2">
+                        <div class="name">Sanitary Pad, Masks, Globes</div>
+                        <div class="address text-muted">
+                          <small>Rs. 2450/-</small>
+                        </div>
+                      </div>
+
+                      <div class="price flex2">
+                        <div class="amount status_pending"><b>Pending</b></div>
+                        <div class="label small text-muted">
+                          Status: Payment hasn't received yet
+                        </div>
+                      </div>
+                      <div class="date flex2">
+                        <div class="amount"><b>Rs. 3400 /-</b></div>
+                        <div class="label small text-muted">Total Cost</div>
+                      </div>
+                    </div>
+                    <div class="order_full_info clearfix">
+                      <div class="product_items table-responsive">
+                        <table class="table  table-stripe table-bordered w-100">
+                          <thead>
+                            <tr>
+                              <th>SN</th>
+                              <th>Name</th>
+                              <th>Quantity</th>
+                              <th>Company</th>
+                              <th>Image</th>
+                              <th>Ordered Date & Time</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>400</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>600</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="2">Total</td>
+                              <td colspan="4">8 Items</td>
+                              <td>1400</td>
+                            </tr>
+
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="orderitem">
+                    <div class="request d-flex gap px-3 py-2 mb-2">
+                      <div class="sn">1</div>
+                      <div class="requestfor flex2">
+                        <div class="tests"><a href="#">0421-00001</a></div>
+                        <div class="label small text-muted">
+                          04/21/2021 06:34 PM
+                        </div>
+                      </div>
+
+                      <div class="labname flex2">
+                        <div class="name">Sanitary Pad, Masks, Globes</div>
+                        <div class="address text-muted">
+                          <small>Rs. 2450/-</small>
+                        </div>
+                      </div>
+
+                      <div class="price flex2">
+                        <div class="amount status_pending"><b>Pending</b></div>
+                        <div class="label small text-muted">
+                          Status: Payment hasn't received yet
+                        </div>
+                      </div>
+                      <div class="date flex2">
+                        <div class="amount"><b>Rs. 3400 /-</b></div>
+                        <div class="label small text-muted">Total Cost</div>
+                      </div>
+                    </div>
+                    <div class="order_full_info clearfix">
+                      <div class="product_items table-responsive">
+                        <table class="table  table-stripe table-bordered w-100">
+                          <thead>
+                            <tr>
+                              <th>SN</th>
+                              <th>Name</th>
+                              <th>Quantity</th>
+                              <th>Company</th>
+                              <th>Image</th>
+                              <th>Ordered Date & Time</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>400</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>600</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="2">Total</td>
+                              <td colspan="4">8 Items</td>
+                              <td>1400</td>
+                            </tr>
+
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="orderitem">
+                    <div class="request d-flex gap px-3 py-2 mb-2">
+                      <div class="sn">1</div>
+                      <div class="requestfor flex2">
+                        <div class="tests"><a href="#">0421-00001</a></div>
+                        <div class="label small text-muted">
+                          04/21/2021 06:34 PM
+                        </div>
+                      </div>
+
+                      <div class="labname flex2">
+                        <div class="name">Sanitary Pad, Masks, Globes</div>
+                        <div class="address text-muted">
+                          <small>Rs. 2450/-</small>
+                        </div>
+                      </div>
+
+                      <div class="price flex2">
+                        <div class="amount status_pending"><b>Pending</b></div>
+                        <div class="label small text-muted">
+                          Status: Payment hasn't received yet
+                        </div>
+                      </div>
+                      <div class="date flex2">
+                        <div class="amount"><b>Rs. 3400 /-</b></div>
+                        <div class="label small text-muted">Total Cost</div>
+                      </div>
+                    </div>
+                    <div class="order_full_info clearfix">
+                      <div class="product_items table-responsive">
+                        <table class="table  table-stripe table-bordered w-100">
+                          <thead>
+                            <tr>
+                              <th>SN</th>
+                              <th>Name</th>
+                              <th>Quantity</th>
+                              <th>Company</th>
+                              <th>Image</th>
+                              <th>Ordered Date & Time</th>
+                              <th>Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>400</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>600</td>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Sanitizer</td>
+                              <td>2 Pcs</td>
+                              <td>Himalaya</td>
+                              <td>
+                                <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt=""
+                                  class="orderd_products_images">
+                              </td>
+                              <td>4/21/2021 04:22 PM</td>
+                              <td>200</td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="2">Total</td>
+                              <td colspan="4">8 Items</td>
+                              <td>1400</td>
+                            </tr>
+
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}

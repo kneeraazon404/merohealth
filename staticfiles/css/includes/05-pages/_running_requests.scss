@@ -1,0 +1,51 @@
+.runningRequest {
+    background-color: red;
+    .samplestotale {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 8px;
+    }
+    .customMessage {
+        display: none;
+    }
+
+    .testsrequestedbyuser {
+        .runningSteps {
+            // background-color: red;
+            border-radius: 0px !important;
+            .card {
+                border: none !important;
+                background-color: #fff;
+                border-radius: 3px !important;
+                margin-bottom: 8px;
+            }
+            .step1data {
+                padding: 15px 15px;
+            }
+            .card-header {
+                padding: 0px !important;
+                border: none;
+                border-radius: 3px !important;
+                .btn {
+                    background-color: rgba($p, 0.08);
+                    border-radius: 3px !important;
+                    position: relative;
+                    overflow: visible;
+                    padding-left: 55px !important;
+                    .stepIcon {
+                        position: absolute;
+                        height: 30px;
+                        width: 30px;
+                        background-color: $p;
+                        border-radius: 100px;
+                        line-height: 30px;
+                        color: #fff;
+                        text-align: center;
+                        font-weight: 700;
+                        left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,527 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | login
+{% endblock title %}
+{% block content %}
+{% load socialaccount %}
+
+<main class="mainbody">
+  <section class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class=" leftbarwrapper ">
+            <div class=" box">
+              <div class="box_content rounded">
+                <ul class="list">
+                  <li class="">
+                    <a href="index.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="my-activities.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-user-clock mr-2"></i>Activities</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="my-settings.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-users mr-2"></i>Associates</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="medical-history.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-file-medical-alt mr-2"></i>History</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Discussions</p>
+                  </div>
+                  <li>
+                    <a href="health-queries.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-comments mr-2"></i>Health Queries</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
+                  </div>
+                  <li>
+                    <a href="lab-requests.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-address-card mr-2"></i>Lab Test Requests</div>
+                      <div class="count">
+                        <small><i class="lar la-bell"></i>2</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="lab-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Lab Reports</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Doctor Services</p>
+                  </div>
+                  <li>
+                    <a href="doctor-appointment.php" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-user-nurse mr-2"></i>Doctor Appointments</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="doctor-prescriptions.php" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
+                  </div>
+                  <li>
+                    <a href="shop.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-shopping-cart mr-2"></i>Go to Shop</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="product-orders.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="my-product-offers.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Hospital Services</p>
+                  </div>
+                  <li>
+                    <a href="hospital-appointments.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-hospital mr-2"></i>Hospital Appointments</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="hospital-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Hospital Report Card</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Clinic Services</p>
+                  </div>
+                  <li>
+                    <a href="clinic-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-clinic-medical mr-2"></i>Clinic Appointments</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="clinic-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Clinic Report</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-9">
+          <div class="midwrapper">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="profileBox bg_w p-3 rounded ">
+                  <div class="profiledata d-flex gap">
+                    <div class="leftprofile flex3 bg_p_dim p rounded d-flex align-items-center justify-content-center">
+
+
+                      <div class="leftprofileContent w-100">
+                        <h3 class="title mb-3 text-center f18 fw700 text_p">
+                          {{user.first_name}}'s Profile
+                        </h3>
+                        <div class="imagewrapper d-flex justify-content-center">
+                          <div class="image">
+                            <img src="{{user.profile.profile_image.url}}" alt="" class="img-fluid">
+                          </div>
+                        </div>
+                        <div class="title mt-3 text-center">
+                          <h3 class="name f20 fw700 text_p">{{user.first_name }} {{user.last_name}}</h3>
+                          <p class="address text-muted f14">{{user.profile.municipality}}, {{user.profile.district}}</p>
+                        </div>
+                        <div class="socialInfo mt-3">
+                          <ul class="socials d-flex gap justify-content-center">
+                            <li class="social">
+                              <a href="{{user.profile.social_links_fb}} " target="_blank" class="bg_w p-2 rounded">
+                                <i class="lab la-facebook-f text_p  f18"></i>
+                              </a>
+                            </li>
+                            <li class="social">
+                              <a href="{{user.profile.social_links_tw}}" target="_blank" class="bg_w p-2 rounded">
+                                <i class="lab la-twitter text_p  f18"></i>
+                              </a>
+                            </li>
+                            <li class="social">
+                              <a href="{{user.profile.social_links_ins}}" target="_blank" class="bg_w p-2 rounded">
+                                <i class="lab la-instagram text_p  f18"></i>
+                              </a>
+                            </li>
+                            <li class="social">
+                              <a href="{{user.profile.social_links_lnk}}" target="_blank" class="bg_w p-2 rounded">
+                                <i class="lab la-youtube text_p  f18"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="buttonwrapper mt-4 d-flex align-items-center justify-content-center">
+                          <a href="my-settings.html#profile" class="">
+                            <button class="btn btn_p f14 text-center text-muted"> <i
+                                class="las text_w la-pen f16 mr-2"></i>
+                              Edit
+                              Profile</button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="meta rightprofile pl-2 flex6">
+                      <div class="row title">
+                        <div class="col-sm-12">
+                          <div class="f16 mb-3  fw700 text_p">Personal Information</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-birthday-cake text_p f16"></i>
+                            <div class="label">Birthday</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.birthday | date:"M d, Y"}}
+                          </div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-weight text_p f16"></i>
+                            <div class="label">Weight</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.height}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-text-height text_p f16"></i>
+                            <div class="label">Height</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.weight}} Kgs</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-tint text_p f16"></i>
+                            <div class="label">Blood</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.blood_type}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-user text_p f16"></i>
+                            <div class="label">Gender</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.gender}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-flag text_p f16"></i>
+                            <div class="label">Origin</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.origin}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-map text_p f16"></i>
+                            <div class="label">Provience</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.provience.capitalize}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-map text_p f16"></i>
+                            <div class="label">District</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.district.capitalize}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-map text_p f16"></i>
+                            <div class="label">Municipality</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.local_area}}</div>
+                        </div>
+
+
+                      </div>
+                      <div class="row title">
+                        <div class="col-sm-12">
+                          <div class="f16 my-3 fw700 text_p">Contact Information</div>
+                        </div>
+                      </div>
+                      <div class=" row">
+                        <div class="col-sm-6 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-envelope text_p f16"></i>
+                            <div class="label">Email Address</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.email}}</div>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-phone text_p f16"></i>
+                            <div class="label">Contact Number</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.phone}}</div>
+                        </div>
+
+                      </div>
+                      <div class="row title">
+                        <div class="col-sm-12">
+                          <div class="f16 my-3 fw700 text_p">Habituals</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-joint text_p f16"></i>
+                            <div class="label">Smoking</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.smoking}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-wine-bottle text_p f16"></i>
+                            <div class="label">Alcohol</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.alchol}}</div>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                          <div class="subtitle text-muted f12 fw700 text-uppercase d-flex align-items-center">
+                            <i class="las la-tablets text_p f16"></i>
+                            <div class="label">Drugs</div>
+                          </div>
+                          <div class="data f14 px-2 bg_p_dim rounded py-1">{{user.profile.drug}}</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- Modal -->
+<div class="modal fade customModal" id="addFamilyMember" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adding Krisha Bhusal</h5>
+        </div>
+        <div class="modal-body px-4 bg_p_dim">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="rel">Relation</label>
+                <select name="" id="" class="form-control">
+                  <option value="1">Brother</option>
+                  <option value="1">Sister</option>
+                  <option value="1">Mother</option>
+                  <option value="1">Father</option>
+                  <option value="1">Father In Law</option>
+                  <option value="1">Mother In Law</option>
+                  <option value="1">Wife</option>
+                  <option value="1">Son</option>
+                  <option value="1">Daughter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex align-items-center justify-content-between">
+          <button type="button" class="btn btn_p_b" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn_p">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- btn_add_medical_report -->
+<div class="modal fade customModal" id="addMedicalReport" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adding Medical Report</h5>
+        </div>
+        <div class="modal-body px-4 bg_p_dim">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="">Report Title</label>
+                <input type="text" name="" id="" class="form-control" placeholder="Enter Title">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="">Report Description</label>
+                <textarea name="" id="" cols="" rows="5" placeholder="Explain here" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="">Upload Document</label>
+                <input type="file" name="" class="form-control" id="">
+                <small class="text-muted">Supported File Types: PDF, Docx, PNG, JPEG</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex align-items-center justify-content-between">
+          <button type="button" class="btn btn_p_b" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn_p">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- viewMedicalInformation -->
+
+<!-- btn_add_medical_report -->
+<div class="modal fade customModal" id="viewMedicalInformation" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex align-items-center justify-content-between">
+        <h5 class="modal-title" id="exampleModalLabel">Blood Test Report</h5>
+        <button class="btn btn_p_b"> <i class="las la-download"></i> Download</button>
+      </div>
+      <div class="modal-body px-4 bg_p_dim">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="">Attachment</label>
+              <div class="imagedata shadow rounded bg_w p">
+                <img
+                  src="https://www.researchgate.net/profile/Alaa-Yassin/publication/292971443/figure/tbl1/AS:614308723576853@1523474021521/Laboratory-Blood-Test-Results.png"
+                  alt="" class="img-fluid w-100">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="metas d-flex gap align-items-center">
+              <li class="meta bg_w f14 text-muted px-2 py-1 full_rounded d-flex align-items-center">
+                <i class="las la-clock"></i> 6 Hours ago
+              </li>
+              <li class="meta bg_w f14 text-muted px-2 py-1 full_rounded d-flex align-items-center">
+                <i class="las la-hospital"></i> Generated by Pokhara Reference Laboratory
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex align-items-center justify-content-end">
+        <button type="button" class="btn btn_p_b" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="../../static/js/vendor/jquery/jquery-3.6.0.min.js"></script>
+<script src="../../static/js/vendor/popper/popper.min.js"></script>
+<script src="../../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../static/js/vendor/owl-carousel/owl.carousel.min.js"></script>
+<script src="../../static/js/scripts.js"></script>
+<script>
+
+  $('.btn_search_family_member').click(function () {
+  })
+  $('.searchFamilyMemberForm').on('keyup', function () {
+    $('.searchResultwrapper').show();
+  })
+    // $('.searchFamilyMemberForm').on('blur', function () {
+    //   $('.searchResultwrapper').hide();
+    // })
+
+</script>
+</body>
+
+{% endblock content %}}

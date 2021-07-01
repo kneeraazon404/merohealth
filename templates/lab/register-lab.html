@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Register Lab
+{% endblock title %}
+{% block content %}
+
+<section class="login py-5">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-7 bg_w p-5 loginformwrapper shadow rounded d-flex align-items-center">
+        <div class="leftwrapper w-100">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="logowrapper">
+                <img src="{% static 'img/logo.svg' %}" alt="" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <div class="text-wrapper">
+            <h3 class="heading my-3">Register Your Lab</h3>
+            <p class="mb-3">
+              <small>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur cum cumque inventore.Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Aspernatur cum cumque inventore.
+              </small>
+            </p>
+          </div>
+
+          <form action="{% url 'registerlab' %}" method="POST" class="loginform needs-validation">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="email">Lab Name</label>
+                  <input type="text" name="labname" class="form-control" placeholder="Lab Name" required />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Licence Number</label>
+                  <input type="number" name="licence_no" class="form-control" placeholder="Enter Licence Number"
+                    required />
+                  <div class="valid-feedback">Looks good!</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Expiry Date</label>
+                  <input type="date" name="exp_date" class="form-control" placeholder="" required />
+                  <div class="valid-feedback">Looks good!</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Provience No</label>
+                  <select name="provience_no" id="" class="form-control">
+                    <option value="1">Provience 1</option>
+                    <option value="1">Provience 2</option>
+                    <option value="1">Provience 3</option>
+                    <option value="1" selected>Gandaki Provience</option>
+                    <option value="1">Provience 5</option>
+                    <option value="1">Provience 6</option>
+                    <option value="1">Provience 7</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose Provience</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">District</label>
+                  <select name="district" id="" class="form-control">
+                    <option value="1" selected>Kaski</option>
+                    <option value="1">Syangja</option>
+                    <option value="1">Baglung</option>
+                    <option value="1">Gorkha</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose Provience</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Rural Municipality/Municipality</label>
+                  <select name="rural_municipality" id="" class="form-control">
+                    <option value="1" selected>
+                      Pokhara Metropolitan City
+                    </option>
+                    <option value="1">Machhpuchhre Nagarpalika</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose Provience</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Ward No</label>
+                  <select name="ward_no" id="" class="form-control">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">2</option>
+                    <option value="1">2</option>
+                    <option value="1">2</option>
+                    <option value="1">2</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose Provience</div>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="text">Tole/Area/Appartment</label>
+                  <input type="text" name="tole_area_apmnt" id="" class="form-control"
+                    placeholder="Area Name/ Tole / Place Name" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Telephone Number</label>
+                  <input type="tel" name="telephone_no" class="form-control" placeholder="Enter Telephone Number"
+                    required />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Mobile Number</label>
+                  <input type="tel" name="c" class="form-control" placeholder="Mobile Number" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Pan No / VAT Number</label>
+                  <input type="number" name="pan_vat_no" class="form-control" placeholder="Enter PAN/VAT Number"
+                    required />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Organization Type</label>
+                  <select name="org_type" id="" class="form-control">
+                    <option value="1">Partnered</option>
+                    <option value="1">Single</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Your Role</label>
+                  <select name="your_role" id="" class="form-control">
+                    <option value="1">Founder</option>
+                    <option value="1">IT Person</option>
+                    <option value="1">Accountant</option>
+                    <option value="1">Managing Director</option>
+                    <option value="1">Lab Technician</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="group gap d-flex justify-content-between">
+                  <div class="form-group d-flex gap align-items-center">
+                    <input type="checkbox" name="rem" id="rem" required />
+                    <label for="rem" class="mb-0">I have read the
+                      <a href="#" style="text-decoration: underline">Terms and Conditions</a>, I agree and want to
+                      proceed.</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <button class="btn btn_p text-center w-100 d-block">
+                    Submit your lab For Approval
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-sm-5 loginbg rounded" style="background-image: url('../../static/img/pattern.jpg')">
+        <div class="top"></div>
+        <div class="bgtextwrapper">
+          <div class="owl-carousel">
+            <div class="item">
+              <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+              <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                rem tenetur quasi dolorem asperiores at commodi id, odit
+                molestias quae.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+              <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                rem tenetur quasi dolorem asperiores at commodi id, odit
+                molestias quae.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+              <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                rem tenetur quasi dolorem asperiores at commodi id, odit
+                molestias quae.
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="heading mb-3">You can meet your doctor virtually!</h3>
+              <p class="text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel
+                rem tenetur quasi dolorem asperiores at commodi id, odit
+                molestias quae.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bottomtextlink gap">
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Data Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

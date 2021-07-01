@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Reports
+{% endblock title %}
+{% block content %}
+
+
+<body class="lab-page">
+  <section class="hero">
+    <div class="container-fluid">
+      <div class="row wrappingColumn">
+
+        <div class="col-sm-2 fullheight leftbar">
+          <div class="top pt-3">
+            <a href="#">
+              <div class="logowrapper">
+                <img src="../../media/logo.svg" alt="" class="img-fluid" />
+              </div>
+            </a>
+          </div>
+          <div class="end">
+            <div class="spacer">
+              <div class="dropdown my-3">
+                <button class="btn btn_p_dim dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Abs Laboratory...
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <h6 class="dropdown-header">Subscription</h6>
+
+                  <a class="dropdown-item" href="#">Monthly <small>(23 Days Rem.)</small></a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Logout</a>
+                </div>
+              </div>
+            </div>
+            <!-- Partial Sidebar Goes Here -->
+            {% include 'partials/_lab-sidebar.html'%}
+            <div class="bottom">
+              <h6 class="text-muted px-2 py-3">Powered By:</h6>
+              <a href="#">
+                <div class="logowrapper px-2">
+                  <img src="../../media/logo.svg" alt="" class="img-fluid" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10 middlebar">
+          <div class="top d-flex justify-content-between align-items-center">
+            <div class="row w-100">
+              <div class="col-md-6">
+                <h6 class="title my-3">
+                  Welcome to ABS Laboratory's Dashboard
+                </h6>
+              </div>
+              <div class="col-md-6 d-flex justify-content-end">
+                <div class="right">
+                  <h6 class="title my-3">
+                    Welcome to ABS Laboratory's Dashboard
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="end">
+
+            <div class="row w-100">
+              <div class="col-md-12">
+                <div class="card bg_w p rounded shw alert-dismissible fade show" role="alert">
+                  <div class="notify d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-hospital"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Complete your profile</h5>
+                      <p class="text text_dim">Please complete your profile to get full features!</p>
+                    </div>
+                    <div class="closenotification">
+                      <i class="las la-times"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-wrapper">
+                <h6 class="sub_title my-3">Profit Analysis</h6>
+              </div>
+            </div>
+            <div class="row w-100">
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_p la-angle-double-up"></i>
+                      </div>
+                      <div class="text_p">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_d la-angle-double-down"></i>
+                      </div>
+                      <div class="text_d">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_p la-angle-double-up"></i>
+                      </div>
+                      <div class="text_p">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 text-wrapper">
+                <h6 class="sub_title my-3">Laboratory Overview</h6>
+              </div>
+            </div>
+            <div class="row w-100">
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_p la-angle-double-up"></i>
+                      </div>
+                      <div class="text_p">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_d la-angle-double-down"></i>
+                      </div>
+                      <div class="text_d">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card bg_w p rounded shw">
+                  <div class="stat d-flex justify-content-between align-items-center">
+                    <div class="icon">
+                      <div class="iconwrapper">
+                        <i class="las la-rupee-sign"></i>
+                      </div>
+                    </div>
+                    <div class="text text-wrapper">
+                      <h5 class="text_p title">Rs. 23000/-</h5>
+                      <p class="text text-muted">Today </p>
+                    </div>
+                    <div class="status text-wrapper">
+                      <div class="">
+                        <i class="las text_p la-angle-double-up"></i>
+                      </div>
+                      <div class="text_p">10%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+{% endblock content %}

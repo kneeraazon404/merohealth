@@ -1,0 +1,58 @@
+<div class="middle">
+    <ul class="menuwrapper">
+        <li>
+            <a href="{% url 'labdashboard' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-tachometer-alt"></i>
+                </div>
+                <div class="text">Dashboard</div>
+            </a>
+        </li>
+
+        <li class="">
+            <a href="{% url 'services' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-vials"></i>
+                </div>
+                <div class="text">Services</div>
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="{% url 'test-request' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-running"></i>
+                </div>
+                <div class="text">Test Requests</div>
+                <div class="notify">4</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'reports' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-chart-bar"></i>
+                </div>
+                <div class="text">Reports</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'payments' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-file-invoice-dollar"></i>
+                </div>
+                <div class="text">Payments</div>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'labdashboard' %}" class="menuwrap">
+                <div class="icon">
+                    <i class="las la-comments"></i>
+                </div>
+                <div class="text">Messaging</div>
+                <div class="notify">35</div>
+            </a>
+        </li>
+    </ul>
+</div>
