@@ -1,2 +1,0 @@
-# MeroHealth
-Merohealth project backend 
