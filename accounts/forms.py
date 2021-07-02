@@ -19,6 +19,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "email",
                 "required": True,
+                "placeholder": "Enter a valid email address",
             },
         ),
     )
@@ -28,6 +29,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "text",
                 "required": True,
+                "placeholder": "Enter your first name",
             },
         )
     )
@@ -37,6 +39,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "text",
                 "required": True,
+                "placeholder": "Enter your last name",
             },
         )
     )
@@ -46,6 +49,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "text",
                 "required": True,
+                "placeholder": "Enter a phone number",
             },
         )
     )
@@ -55,6 +59,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "text",
                 "required": True,
+                "placeholder": "Enter your username",
             },
         )
     )
@@ -64,6 +69,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "password",
                 "required": True,
+                "placeholder": "Enter your password",
             }
         ),
     )
@@ -73,6 +79,7 @@ class UserRegisterForm(UserCreationForm):
                 "class": "form-control",
                 "type": "password",
                 "required": True,
+                "placeholder": "Confirm your password",
             }
         ),
     )
@@ -111,16 +118,6 @@ class UserRegisterForm(UserCreationForm):
 
 class AccountAuthenticationForm(forms.ModelForm):
 
-    password = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "type": "passwprd",
-                "placeholder": "Enter Password",
-                "class": "form-control",
-                "required": True,
-            },
-        )
-    )
     email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={
@@ -130,6 +127,16 @@ class AccountAuthenticationForm(forms.ModelForm):
                 "required": True,
             }
         )
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control",
+                "type": "password",
+                "required": True,
+                "placeholder": "Enter Your Password",
+            }
+        ),
     )
 
     class Meta:
