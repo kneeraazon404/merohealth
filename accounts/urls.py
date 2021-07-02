@@ -16,7 +16,7 @@ from .views import (
     #     productOrders,
     #     labReports,
     #     labRequests,
-    #     mySettings,
+    UpdateProfileView,
     #     testRequests,
 )
 
@@ -25,7 +25,10 @@ urlpatterns = [
     path("login/", LoginView, name="login"),
     path("register/", RegisterView, name="register"),
     path("logout/", LogoutView, name="logout"),
-    # Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
+    #! profile
+    path("profile/", UserProfileView, name="profile"),
+    path("update_profile/", UpdateProfileView, name="update_profile"),
+    # ? Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path(
         "password_change/done/",
         auth_views.PasswordChangeDoneView.as_view(
@@ -66,11 +69,6 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
-    path("profile/", UserProfileView, name="profile"),
-    # path("register/", RegistrationView, name="register"),
-    # path("login/", LoginView, name="login"),
-    # path("verification/", EmailVerificationView, name="verification"),
-    # path("profile/", UserProfileView, name="profile"),
     # path("blog/", BlogView, name="blog"),
     # path("confirm-request/", ConfirmRequestView, name="confirm-request"),
     # path("doctor-appointments/", DoctorAppointments, name="doctor-appointments"),
@@ -79,6 +77,5 @@ urlpatterns = [
     # path("lab-requests/", labRequests, name="lab-requests"),
     # path("lab-reports/", labReports, name="lab-reports"),
     # path("product-orders/", productOrders, name="product-orders"),
-    # path("my-settings/", mySettings, name="my_settings"),
     # path("test-requests/", testRequests, name="test-requests"),
 ]

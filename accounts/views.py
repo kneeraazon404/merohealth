@@ -18,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 from validate_email import validate_email
 from verify_email.email_handler import send_verification_email
 
-from .forms import AccountAuthenticationForm, UserRegisterForm, UserUpdateForm
+from .forms import AccountAuthenticationForm, UserRegisterForm, UserProfileUpdateForm
 from .models import Account
 
 
@@ -128,31 +128,18 @@ def LogoutView(request):
     return redirect("home")
 
 
-# @login_required
-# def profile(request):
-#     if request.method == "POST":
-#         u_form = UserUpdateForm(request.POST, instance=request.user)
-#         p_form = ProfileUpdateForm(
-#             request.POST, request.FILES, instance=request.user.profile
-#         )
-#         if u_form.is_valid() and p_form.is_valid():
-#             u_form.save()
-#             p_form.save()
-#             messages.success(request, f"Your account has been updated!")
-#             return redirect("profile")
-
-#     else:
-#         u_form = UserUpdateForm(instance=request.user)
-#         p_form = ProfileUpdateForm(instance=request.user.profile)
-
-#     context = {"u_form": u_form, "p_form": p_form}
-
-#     return render(request, "accounts/profile.html", context)
-
-
+#! User's Profile view
 @login_required
 def UserProfileView(request):
     return render(request, "accounts/user-profile.html")
+
+
+#! User's Profile update view
+def UpdateProfileView(request):
+    if request.method == "POST":
+        form = UserProfileUpdateForm()
+        context = {"form": form}
+    return render(request, "accounts/update_profile.html", context)
 
 
 def BlogView(request):
@@ -189,7 +176,3 @@ def productOrders(request):
 
 def testRequests(request):
     return render(request, "accounts/test-requests.html")
-
-
-def mySettings(request):
-    return render(request, "accounts/my-settings.html")

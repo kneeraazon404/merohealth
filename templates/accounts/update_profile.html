@@ -1,0 +1,542 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | Update Profile
+{% endblock title %}
+{% block content %}
+{% load socialaccount %}
+
+
+<main class="dashboard-settings">
+  <section class="user-settings">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 bg_gray">
+          <div class="settingsmenu">
+            <div class="textwrapper">
+              <div class="title f16 fw700 text_p">Settings</div>
+            </div>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link f14 active" id="v-pills-home-tab" data-toggle="pill" href="#general" role="tab"
+                aria-controls="v-pills-home" aria-selected="true"><i class="las la-cog"></i>Account Settings</a>
+              <a class="nav-link f14" id="v-pills-profile-tab" data-toggle="pill" href="#profile" role="tab"
+                aria-controls="v-pills-profile" aria-selected="false"><i class="las la-user-edit"></i>Edit Profile</a>
+              <a class="nav-link f14" id="v-pills-messages-tab" data-toggle="pill" href="#messages" role="tab"
+                aria-controls="v-pills-messages" aria-selected="false"><i class="las la-sms"></i>Messages</a>
+              <a class="nav-link f14" id="v-pills-settings-tab" data-toggle="pill" href="#notifications" role="tab"
+                aria-controls="v-pills-settings" aria-selected="false"><i class="lar la-bell"></i>Notifications</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-9 bg_w">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Account Settings</div>
+              </div>
+              <div class="formwrapper">
+                <form>
+
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Username</p>
+                        </label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2">Change Password</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Current Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="curpass" placeholder="New Password" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="newpass1">
+                          <p class="">New Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="newpass1" placeholder="Confirm Password" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="conpass">
+                          <p class="">Confirm Password</p>
+                        </label>
+                        <input type="password" class="form-control" id="conpass" placeholder="Confirm Password" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <label for="veremail">
+                          <p class="">Add Secondary Email</p>
+                        </label>
+                        <input type="email" class="form-control" id="veremail" placeholder="Enter your email address" />
+                      </div>
+                    </div>
+                    <div class="col-sm-3 d-flex align-items-end">
+                      <div class="form-group w-100">
+                        <button class="btn btn_p btn-sm btn_otpCode btn-block">
+                          Add and Verify
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="otpcodewrapper hide">
+
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="text-muted f14 mb-0">You will receive an email with OTP Code, Please provide us to
+                          verify your account</p>
+                        <div class="form-group mt-3">
+                          <label for="">OTP CODE</label>
+                          <input type="text" name="" id="" class="form-control" placeholder="OTP Code">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Edit Profile</div>
+              </div>
+              <div class="formwrapper">
+                <form>
+                  <div class="row">
+                    <div class="col-sm-12 d-flex flex-column align-items-start gap">
+                      <div id="profile-container" class="d-flex align-items-center gap w-100">
+                        <image id="profileImage" src="http://lorempixel.com/100/100" class="img-fluid img-avatar" />
+                        <div class="social flex1 pl-2">
+                          <div class="">
+                            <div class="row ">
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <label for="fname">
+                                    <p class="">First Name</p>
+                                  </label>
+                                  <input type="text" class="form-control" id="fname" placeholder="First Name" />
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <label for="fname">
+                                    <p class="">Middle Name</p>
+                                  </label>
+                                  <input type="text" class="form-control" id="fname" placeholder="First Name" />
+                                </div>
+                              </div>
+                              <div class="col-sm-4">
+                                <div class="form-group">
+                                  <label for="fname">
+                                    <p class="">Last Name</p>
+                                  </label>
+                                  <input type="text" class="form-control" id="fname" placeholder="First Name" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group mb-0 overflow-hidden">
+
+                        <input class="form-control" id="imageUpload" type="file" name="profile_photo"
+                          placeholder="Photo" required="" capture>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="row mt-3">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Address</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Provience</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">District</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+                          <option value="1">District 1</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Municipality / Rural Municipality</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">Galyang Nagarpalika</option>
+                          <option value="1">Putalibazar Gaunpalika</option>
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                          <option value="1">Provience 1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Ward No</p>
+                        </label>
+                        <input type="number" class="form-control" id="username" placeholder="Ward No" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Local Area</p>
+                        </label>
+                        <input type="text" class="form-control" id="username" placeholder="Tole/Chowk/Place" />
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Personal</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="birthday">
+                          <p class="">Birthday</p>
+                        </label>
+                        <input type="date" class="form-control" id="birthday" placeholder="Your Birthday" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Weight</p>
+                        </label>
+                        <input type="Number" class="form-control" id="username" placeholder="Your Weight (in KG)" />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="username">
+                          <p class="">Height</p>
+                        </label>
+                        <input type="text" class="form-control" id="username"
+                          placeholder="Enter your Height (in Ft.In.)" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Blood Group</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">A+</option>
+                          <option value="2">A-</option>
+                          <option value="3">B+</option>
+                          <option value="4">B-</option>
+                          <option value="4">O+</option>
+                          <option value="4">O-</option>
+                          <option value="4">AB+</option>
+                          <option value="4">AB-</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Gender</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                          <option value="3">Others</option>
+                          <option value="3">Prefer not to say</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Origin</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">Nepalese</option>
+                          <option value="2">Indian</option>
+                          <option value="3">American</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Habits</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Smoking</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">No</option>
+                          <option value="1">Yes</option>
+                          <option value="1">Sometimes</option>
+                          <option value="1">Prefer not to say</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Drinks</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">No</option>
+                          <option value="1">Yes</option>
+                          <option value="1">Sometimes</option>
+                          <option value="1">Prefer not to say</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="curpass">
+                          <p class="">Drigs</p>
+                        </label>
+                        <select name="" id="" class="form-control">
+                          <option value="1">No</option>
+                          <option value="1">Yes</option>
+                          <option value="1">Sometimes</option>
+                          <option value="1">Prefer not to say</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="textwrapper">
+                        <p class="f14 fw700 mb-2 text_p">Social Link</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Facebook Link</p>
+                        </label>
+                        <input type="url" class="form-control" id="fname" placeholder="Facebook Profile Link" />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Instagram Link</p>
+                        </label>
+                        <input type="url" class="form-control" id="fname" placeholder="Instagram Profile Link" />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Linkedin Link</p>
+                        </label>
+                        <input type="url" class="form-control" id="fname" placeholder="Linkedin Profile Link" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Yourube Link</p>
+                        </label>
+                        <input type="url" class="form-control" id="fname" placeholder="Youtube Channel Link" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="fname">
+                          <p class="">Personal Website</p>
+                        </label>
+                        <input type="url" class="form-control" id="fname" placeholder="Website" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Update Profile</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Messaging Settings</div>
+              </div>
+              <div class="formwrapper">
+                <form>
+                  <div class="row">
+                    <div class="col-sm-12">
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label f14 text-muted" for="inlineCheckbox1">Get Messages from
+                          Doctor</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label f14 text-muted" for="inlineCheckbox2">Get Messages from
+                          Lab</label>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="textwrapper">
+                <div class="title f16 text_p">Notifications Settings</div>
+              </div>
+              <div class="formwrapper">
+                <form>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                          value="option1">
+                        <label class="form-check-label f14 text-muted" for="inlineRadio1">Show Notifications</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                          value="option2">
+                        <label class="form-check-label f14 text-muted" for="inlineRadio2">Hide Notifications</label>
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn_p">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+
+    $("#profileImage").click(function (e) {
+      $("#imageUpload").click();
+    });
+
+    function fasterPreview(uploader) {
+      if (uploader.files && uploader.files[0]) {
+        $('#profileImage').attr('src',
+          window.URL.createObjectURL(uploader.files[0]));
+      }
+    }
+
+    $("#imageUpload").change(function () {
+      fasterPreview(this);
+    });
+
+    $('.btn_otpCode').click(function (event) {
+      event.preventDefault();
+      $('.otpcodewrapper').slideToggle();
+    })
+  </script>
+</main>
+
+{% endblock content %}

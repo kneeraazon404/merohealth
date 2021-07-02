@@ -88,74 +88,6 @@ class Account(AbstractBaseUser):
 
 
 class Profile(models.Model):
-    smoking_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    alchol_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    provience_choices = [
-        ("provience 1", "Provience 1"),
-        ("provience 2", "Provience 2"),
-        ("provience 2", "Provience 3"),
-        ("provience 4", "Provience 4"),
-        ("provience 5", "Provience 5"),
-        ("provience 6", "Provience 6"),
-        ("provience 7", "Provience 7"),
-        ("provience 8", "Provience 8"),
-    ]
-    district_choices = [
-        ("pokhara", "pokhara"),
-        ("lalitpur", "lalitpur"),
-        ("kathmandu", "kathmandu"),
-        ("bhaktapur", "bhaktapur"),
-        ("Lalitpur", "Lalitpur"),
-        ("Syanja", "Syanja"),
-        ("palpa", "palpa"),
-        ("Ramechhap", "Ramechhap"),
-    ]
-    gender_choices = [
-        ("Male", "Male"),
-        ("Female", "Female"),
-        ("Others", "Others"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
-    origin_choices = [
-        ("Nepali", "Nepali"),
-        ("Indian", "Indian"),
-        ("Americal", "kathmandu"),
-    ]
-    blood_choices = [
-        ("A+", "A+"),
-        ("A-", "A-"),
-        ("B+", "B+"),
-        ("AB+", "AB+"),
-        ("O-", "O-"),
-        ("O+", "O+"),
-    ]
-    mun_choices = [
-        ("Fulbari", "Fulbari"),
-        ("Kadabari", "Kadabari"),
-        ("Aiselu Ghari", "Aiselu Ghari"),
-        ("Baghbazaar", "Baghbazaar"),
-        ("Lamachaur", "Lamachaur"),
-        ("Syanja", "Syanja"),
-        ("palpa", "palpa"),
-        ("Ramechhap", "Ramechhap"),
-    ]
-
-    drug_choices = [
-        ("yes", "Yes"),
-        ("no", "No"),
-        ("Rarely", "Rarely"),
-        ("Prefer not to say", "Prefer not to say"),
-    ]
     user = models.OneToOneField(Account, on_delete=models.CASCADE)
     profile_image = models.ImageField(
         max_length=255,
@@ -172,7 +104,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=blood_choices,
         default="A+",
     )
     gender = models.CharField(
@@ -180,7 +111,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=gender_choices,
         default="Male",
     )
     origin = models.CharField(
@@ -188,7 +118,6 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=255,
-        choices=origin_choices,
         default="Nepali",
     )
     ward_no = models.IntegerField(
@@ -202,7 +131,6 @@ class Profile(models.Model):
     )
     municipality = models.CharField(
         verbose_name="municip",
-        choices=mun_choices,
         max_length=100,
         default="Lamachaur",
     )
@@ -210,30 +138,25 @@ class Profile(models.Model):
         max_length=200,
         verbose_name="provience",
         default="3",
-        choices=provience_choices,
     )
     district = models.CharField(
         max_length=200,
         verbose_name="Disctrict",
         default="Kaski",
-        choices=district_choices,
     )
     smoking = models.CharField(
         verbose_name="smoking",
         max_length=100,
-        choices=smoking_choices,
         default="No",
     )
     alchol = models.CharField(
         verbose_name="alchol",
         max_length=100,
-        choices=alchol_choices,
         default="No",
     )
     drug = models.CharField(
         verbose_name="Drug",
         max_length=100,
-        choices=drug_choices,
         default="No",
     )
     social_links_fb = models.CharField(
