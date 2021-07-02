@@ -143,7 +143,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "karkinirajan1999@gmail.com"
-EMAIL_HOST_PASSWORD = "OF1n@rztWzT2EJlWZJ1TzaJ@fWacy9cZ3aF$k&IQgdPAAe"
+EMAIL_HOST_PASSWORD = "z3TCXvb97ib7Rk#oXjcyHQNTFw#Z#8n"
 
 DEFAULT_FROM_EMAIL = "karkinirajan1999@gmail.com"
 ACCOUNT_EMAIL_REQUIRED = True

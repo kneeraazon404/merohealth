@@ -70,12 +70,12 @@ def RegisterView(request, *args, **kwargs):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            is_active = form.cleaned_data.get("is_active")
-            email = form.cleaned_data.get("email").lower()
-            raw_password = form.cleaned_data.get("password1")
-            is_active = send_verification_email(request, form)
-            # account = authenticate(email=email, password=raw_password)
-            # login(request, account)
+            # is_active = form.cleaned_data.get("is_active")
+            # email = form.cleaned_data.get("email").lower()
+            # raw_password = form.cleaned_data.get("password1")
+            # is_active = send_verification_email(request, form)
+            # # account = authenticate(email=email, password=raw_password)
+            # # login(request, account)
             destination = kwargs.get("next")
             if destination:
                 messages.success(
