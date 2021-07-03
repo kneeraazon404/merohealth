@@ -3,441 +3,441 @@
 {% block title %} | Test Requests
 {% endblock title %}
 {% block content %}
-  <main class="mainbody user_test_request">
-    <section class="">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <form action="">
-              <div class="row">
-                <div class="col-sm-7">
-                  <div class="searchbar d-flex gap">
+<main class="mainbody user_test_request">
+  <section class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <form action="">
+            <div class="row">
+              <div class="col-sm-7">
+                <div class="searchbar d-flex gap">
 
-                    <input type="text" name="" placeholder="Search Test Name, Package or Lab you know"
-                      class="form-control" id="">
-                    <button type="submit" class="btn btn_p">Search</button>
+                  <input type="text" name="" placeholder="Search Test Name, Package or Lab you know"
+                    class="form-control" id="">
+                  <button type="submit" class="btn btn_p">Search</button>
+                </div>
+              </div>
+              <div class="col-sm-5 d-flex gap justify-content-end">
+                <div class="dropdown w-100">
+                  <button class="btn btn-block text_p dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="las la-map-marked f20 text_p"></i> Filter Location
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="search">
+                      <input type="text" name="" class="form-control mb-3" placeholder="Search Location" id="">
+                    </div>
+                    <a class="dropdown-item" href="#">Shantinagar</a>
+                    <a class="dropdown-item" href="#">Buspark</a>
+                    <a class="dropdown-item" href="#">Prithibi Chowk</a>
                   </div>
                 </div>
-                <div class="col-sm-5 d-flex gap justify-content-end">
-                  <div class="dropdown w-100">
-                    <button class="btn btn-block text_p dropdown-toggle" type="button" id="dropdownMenuButton"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="las la-map-marked f20 text_p"></i> Filter Location
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <div class="search">
-                        <input type="text" name="" class="form-control mb-3" placeholder="Search Location" id="">
-                      </div>
-                      <a class="dropdown-item" href="#">Shantinagar</a>
-                      <a class="dropdown-item" href="#">Buspark</a>
-                      <a class="dropdown-item" href="#">Prithibi Chowk</a>
+                <div class="dropdown w-100">
+                  <button class="btn btn-block btn_p dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter Test Categories
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="search">
+                      <input type="text" name="" class="form-control mb-3" placeholder="Type Category" id="">
                     </div>
-                  </div>
-                  <div class="dropdown w-100">
-                    <button class="btn btn-block btn_p dropdown-toggle" type="button" id="dropdownMenuButton"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Filter Test Categories
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <div class="search">
-                        <input type="text" name="" class="form-control mb-3" placeholder="Type Category" id="">
-                      </div>
-                      <a class="dropdown-item" href="#">Category 1</a>
-                      <a class="dropdown-item" href="#">Category 2</a>
-                      <a class="dropdown-item" href="#">Category 3</a>
-                    </div>
+                    <a class="dropdown-item" href="#">Category 1</a>
+                    <a class="dropdown-item" href="#">Category 2</a>
+                    <a class="dropdown-item" href="#">Category 3</a>
                   </div>
                 </div>
               </div>
+            </div>
+        </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="leftcontent f14 d-flex align-items-center">
+              <span>Search Results for</span>
+              <div class="textsearch px-2">
+                <b>
+                  Blood Count
+                </b>
+              </div> under
+              <div class="category px-2">
+                <b>
+                  Hematology
+                </b>
+              </div>Category
+              <button class="btn px-2 ml-3  py-1 f14 rounded">
+                <i class="las la-times f14"></i>
+                Clear all</button>
+
+            </div>
+
           </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section class="lablisting py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="subtitle text-muted f14 fw600 text-uppercase mb-3">
+            Popular Laboratories near you
+          </div>
+          <form action="" class="filterlableftbar">
+            <label for="lab1" class="d-flex gap bg_w p rounded">
+              <input type="checkbox" name="lab1" id="lab1">
+              <div class="labwrapp">
+                <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
+                <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
+              </div>
+            </label>
+            <label for="lab2" class="d-flex gap bg_w p rounded">
+              <input type="checkbox" name="lab2" id="lab2">
+              <div class="labwrapp">
+                <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
+                <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
+              </div>
+            </label>
+            <label for="lab3" class="d-flex gap bg_w p rounded">
+              <input type="checkbox" name="lab3" id="lab3">
+              <div class="labwrapp">
+                <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
+                <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
+              </div>
+            </label>
+            <label for="lab4" class="d-flex gap bg_w p rounded">
+              <input type="checkbox" name="lab4" id="lab4">
+              <div class="labwrapp">
+                <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
+                <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
+              </div>
+            </label>
           </form>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="leftcontent f14 d-flex align-items-center">
-                <span>Search Results for</span>
-                <div class="textsearch px-2">
-                  <b>
-                    Blood Count
-                  </b>
-                </div> under
-                <div class="category px-2">
-                  <b>
-                    Hematology
-                  </b>
-                </div>Category
-                <button class="btn px-2 ml-3  py-1 f14 rounded">
-                  <i class="las la-times f14"></i>
-                  Clear all</button>
-
+        <div class="col-sm-9">
+          <div class="subtitle text-muted f14 fw600 d-flex gap text-uppercase mb-3">
+            Selected Laboratories:
+            <div class="selectedlabs d-flex gap align-items-center text-capitalize">
+              <div class="lab1">
+                Pokhara Reference Lab
               </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-    </section>
-
-    <section class="lablisting py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="subtitle text-muted f14 fw600 text-uppercase mb-3">
-              Popular Laboratories near you
-            </div>
-            <form action="" class="filterlableftbar">
-              <label for="lab1" class="d-flex gap bg_w p rounded">
-                <input type="checkbox" name="lab1" id="lab1">
-                <div class="labwrapp">
-                  <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
-                  <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
-                </div>
-              </label>
-              <label for="lab2" class="d-flex gap bg_w p rounded">
-                <input type="checkbox" name="lab2" id="lab2">
-                <div class="labwrapp">
-                  <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
-                  <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
-                </div>
-              </label>
-              <label for="lab3" class="d-flex gap bg_w p rounded">
-                <input type="checkbox" name="lab3" id="lab3">
-                <div class="labwrapp">
-                  <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
-                  <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
-                </div>
-              </label>
-              <label for="lab4" class="d-flex gap bg_w p rounded">
-                <input type="checkbox" name="lab4" id="lab4">
-                <div class="labwrapp">
-                  <h6 class="name f15 mb-0">Pokhara Reference Laboratory</h6>
-                  <p class="text-muted mb-0"><span>Hospital Chowk Pokhara</span></p>
-                </div>
-              </label>
-            </form>
-          </div>
-          <div class="col-sm-9">
-            <div class="subtitle text-muted f14 fw600 d-flex gap text-uppercase mb-3">
-              Selected Laboratories:
-              <div class="selectedlabs d-flex gap align-items-center text-capitalize">
-                <div class="lab1">
-                  Pokhara Reference Lab
-                </div>
-                <div class="lab1">
-                  Pokhara Reference Lab
-                </div>
-                <div class="lab1">
-                  Pokhara Reference Lab
-                </div>
+              <div class="lab1">
+                Pokhara Reference Lab
+              </div>
+              <div class="lab1">
+                Pokhara Reference Lab
               </div>
             </div>
-            <div class="results">
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="labitem mb-3">
-                    <div class="userSelectServiceFrom">
-                      <div class="labHeading d-flex gap">
-                        <div class="lab_info d-flex gap flex3">
-                          <div class="lablogo flex2 d-flex align-items-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" alt=""
-                              class="img-fluid">
-                          </div>
-                          <div class="labDetails flex7 d-flex align-items-center">
-                            <div class="detailwrapper">
+          </div>
+          <div class="results">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="labitem mb-3">
+                  <div class="userSelectServiceFrom">
+                    <div class="labHeading d-flex gap">
+                      <div class="lab_info d-flex gap flex3">
+                        <div class="lablogo flex2 d-flex align-items-center">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png" alt=""
+                            class="img-fluid">
+                        </div>
+                        <div class="labDetails flex7 d-flex align-items-center">
+                          <div class="detailwrapper">
 
 
-                              <h6 class="title f16 mb-2">
-                                <a href="#">
-                                  Pokhara Reference Laboratories
-                                </a>
-                              </h6>
+                            <h6 class="title f16 mb-2">
+                              <a href="#">
+                                Pokhara Reference Laboratories
+                              </a>
+                            </h6>
 
-                              <div class="text-muted address mb-0">
+                            <div class="text-muted address mb-0">
 
-                                Hospital Chowk, Pokhara
+                              Hospital Chowk, Pokhara
 
+                            </div>
+                            <div class="ratewrapper d-flex gap align-items-center">
+
+                              <div class="rating" data-toggle="tooltip" data-placement="top" title="Good Service">
+                                <i class="las la-star"></i>
+                                <i class="las la-star"></i>
+                                <i class="las la-star"></i>
+                                <i class="las la-star"></i>
+                                <i class="las la-star"></i>
                               </div>
-                              <div class="ratewrapper d-flex gap align-items-center">
+                              <span class="ratingcount">(87 Reviews)</span>
 
-                                <div class="rating" data-toggle="tooltip" data-placement="top" title="Good Service">
-                                  <i class="las la-star"></i>
-                                  <i class="las la-star"></i>
-                                  <i class="las la-star"></i>
-                                  <i class="las la-star"></i>
-                                  <i class="las la-star"></i>
-                                </div>
-                                <span class="ratingcount">(87 Reviews)</span>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="paymentActions flex3 d-flex align-items-center">
+                        <div class="rightwrapper w-100">
+                          <div class="lab_actions d-flex gap justify-content-end align-items-center flex2">
+                            <div class="action">
+                              <div
+                                class="amount text-center f18 text_p fw700 text-uppercase fw600 bg_p_dim px-3 py-2 rounded"
+                                data-toggle="tooltip" data-placement="top" title="Total Amount">
+                                <i class="las la-wallet"></i> Rs. 2100
 
                               </div>
                             </div>
-
-                          </div>
-                        </div>
-                        <div class="paymentActions flex3 d-flex align-items-center">
-                          <div class="rightwrapper w-100">
-                            <div class="lab_actions d-flex gap justify-content-end align-items-center flex2">
-                              <div class="action">
-                                <div
-                                  class="amount text-center f18 text_p fw700 text-uppercase fw600 bg_p_dim px-3 py-2 rounded"
-                                  data-toggle="tooltip" data-placement="top" title="Total Amount">
-                                  <i class="las la-wallet"></i> Rs. 2100
-
-                                </div>
-                              </div>
-                              <div class="action">
-                                <!-- Nirajan:  play with classes => add class  btn_selected_package  if user choose any test or package-->
-                                <button type="submit" class="btn  text_p btn_select_package " data-placement="top"
-                                  data-toggle="tooltip" title="Proceed your Test">Proceed <i
-                                    class="las la-arrow-right f16"></i> </button>
-                              </div>
+                            <div class="action">
+                              <!-- Nirajan:  play with classes => add class  btn_selected_package  if user choose any test or package-->
+                              <button type="submit" class="btn  text_p btn_select_package " data-placement="top"
+                                data-toggle="tooltip" title="Proceed your Test">Proceed <i
+                                  class="las la-arrow-right f16"></i> </button>
                             </div>
                           </div>
                         </div>
                       </div>
+                    </div>
 
-                      <div class="selectLabTests">
-                        <ul class="filter-content">
-                          <li class="filter">
-                            <div class="panel someclass">
-                              <div class="d-flex flex-column panelLabel">
-                                <input type="checkbox" name="level-1" class="all" id="panelid1" data-placement="top"
-                                  data-toggle="tooltip" title="Select all test items">
-                                <div class="panel_heading text_p d-flex justify-content-between">
-                                  <div class="left">
-                                    <div class="inputPart d-flex gap align-items-center">
-                                      Complete Blood Cell Count
-                                    </div>
-                                  </div>
-                                  <div class="rightpart d-flex align-items-center gap">
-
-                                    <div class="category">
-                                      <i class="las la-tag"></i>
-                                      Category
-                                    </div>
-                                    <div class="price">
-                                      Rs. 2700
-                                    </div>
+                    <div class="selectLabTests">
+                      <ul class="filter-content">
+                        <li class="filter">
+                          <div class="panel someclass">
+                            <div class="d-flex flex-column panelLabel">
+                              <input type="checkbox" name="level-1" class="all" id="panelid1" data-placement="top"
+                                data-toggle="tooltip" title="Select all test items">
+                              <div class="panel_heading text_p d-flex justify-content-between">
+                                <div class="left">
+                                  <div class="inputPart d-flex gap align-items-center">
+                                    Complete Blood Cell Count
                                   </div>
                                 </div>
-                                <!-- bhai, panelBody ma "hide" bhanne class pathaunu parchha to hide -->
-                                <div class="panelBody">
-                                  <ul class="panelItems d-flex flex-wrap">
-                                    <li class="panelItem">
-                                      <label for="testid1" class="d-flex align-items-center " data-toggle="tooltip"
-                                        data-placement="bottom" title="Rs. 330 /-">
-                                        <input type="checkbox" name="level-2" class="subTestItems" id="testid1">
-                                        <div class="label"> Test Id 1</div>
-                                      </label>
+                                <div class="rightpart d-flex align-items-center gap">
+
+                                  <div class="category">
+                                    <i class="las la-tag"></i>
+                                    Category
+                                  </div>
+                                  <div class="price">
+                                    Rs. 2700
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- bhai, panelBody ma "hide" bhanne class pathaunu parchha to hide -->
+                              <div class="panelBody">
+                                <ul class="panelItems d-flex flex-wrap">
+                                  <li class="panelItem">
+                                    <label for="testid1" class="d-flex align-items-center " data-toggle="tooltip"
+                                      data-placement="bottom" title="Rs. 330 /-">
+                                      <input type="checkbox" name="level-2" class="subTestItems" id="testid1">
+                                      <div class="label"> Test Id 1</div>
+                                    </label>
+                                  </li>
+                                  <li class="panelItem">
+                                    <label for="2" class="d-flex align-items-center ">
+                                      <input type="checkbox" name="level-2" class="subTestItems" id="2">
+                                      <div class="label">Test Id 1</div>
+                                    </label>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="filter">
+                          <div class="panel someclass">
+                            <div class="d-flex flex-column panelLabel">
+                              <input type="checkbox" name="level-1" class="all" id="panelid1" data-placement="top"
+                                data-toggle="tooltip" title="Select all test items">
+                              <div class="panel_heading text_p d-flex justify-content-between">
+                                <div class="left">
+                                  <div class="inputPart d-flex gap align-items-center">
+                                    Complete Blood Cell Count
+                                  </div>
+                                </div>
+                                <div class="rightpart d-flex align-items-center gap">
+                                  <div class="category">
+                                    Category
+                                  </div>
+                                  <div class="price">
+                                    Rs. 2700
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- bhai, panelBody ma "hide" bhanne class pathaunu parchha to hide -->
+                              <div class="panelBody hide ">
+                                <ul class="panelItems d-flex flex-wrap">
+                                  <li class="panelItem">
+                                    <label for="testid1" class="d-flex align-items-center ">
+                                      <input type="checkbox" name="level-2" class="subTestItems" id="testid1">
+                                      <div class="label"> Test Id 1</div>
+                                    </label>
+                                  </li>
+                                  <li class="panelItem">
+                                    <label for="2" class="d-flex align-items-center ">
+                                      <input type="checkbox" name="level-2" class="subTestItems" id="2">
+                                      <div class="label">Test Id 1</div>
+                                    </label>
+                                  </li>
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+
+                    </div>
+
+
+                    <div class="labPackages">
+                      <div class="packages lab_packages_user_select bg_w">
+                        <div class="owl-carousel">
+                          <div class="package_item">
+                            <div class="d-flex w-100 gap package">
+                              <div class="w-100">
+                                <div class="packageDetails mb-2 d-flex justify-content-between align-items-center">
+                                  <h4 class="name f16 text_p mb-0">
+                                    Full Body Checkup
+                                  </h4>
+                                  <div class="buttonsPrice d-flex gap">
+                                    <div class="btn btn_p_dim rounded text_p fw700">
+                                      <i class="las la-wallet"></i> Rs. 2300
+                                    </div>
+                                    <button
+                                      class="btn bg_p_dim btn_select_package btn_selected_package">Selected</button>
+                                  </div>
+
+                                </div>
+                                <div class="packageIncludes flex7">
+                                  <p class="package_text text-muted f14 mb-3">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus iste
+                                    dolorum
+                                    nam reprehenderit reiciendis corporis. Saepe ab inventore asperiores maxime
+                                    excepturi doloremque cum vitae molestias!
+
+                                  </p>
+                                  <ul class="includes d-flex flex-wrap my-2">
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Complete Blood Cell Count
+                                      </div>
                                     </li>
-                                    <li class="panelItem">
-                                      <label for="2" class="d-flex align-items-center ">
-                                        <input type="checkbox" name="level-2" class="subTestItems" id="2">
-                                        <div class="label">Test Id 1</div>
-                                      </label>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Renel Function Test
+                                      </div>
+                                    </li>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Lipid Profile Test
+                                      </div>
+                                    </li>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Liver Function Test
+                                      </div>
                                     </li>
 
                                   </ul>
+
+
+
                                 </div>
                               </div>
-                            </div>
-                          </li>
-
-                          <li class="filter">
-                            <div class="panel someclass">
-                              <div class="d-flex flex-column panelLabel">
-                                <input type="checkbox" name="level-1" class="all" id="panelid1" data-placement="top"
-                                  data-toggle="tooltip" title="Select all test items">
-                                <div class="panel_heading text_p d-flex justify-content-between">
-                                  <div class="left">
-                                    <div class="inputPart d-flex gap align-items-center">
-                                      Complete Blood Cell Count
-                                    </div>
-                                  </div>
-                                  <div class="rightpart d-flex align-items-center gap">
-                                    <div class="category">
-                                      Category
-                                    </div>
-                                    <div class="price">
-                                      Rs. 2700
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- bhai, panelBody ma "hide" bhanne class pathaunu parchha to hide -->
-                                <div class="panelBody hide ">
-                                  <ul class="panelItems d-flex flex-wrap">
-                                    <li class="panelItem">
-                                      <label for="testid1" class="d-flex align-items-center ">
-                                        <input type="checkbox" name="level-2" class="subTestItems" id="testid1">
-                                        <div class="label"> Test Id 1</div>
-                                      </label>
-                                    </li>
-                                    <li class="panelItem">
-                                      <label for="2" class="d-flex align-items-center ">
-                                        <input type="checkbox" name="level-2" class="subTestItems" id="2">
-                                        <div class="label">Test Id 1</div>
-                                      </label>
-                                    </li>
-
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-
-                      </div>
-
-
-                      <div class="labPackages">
-                        <div class="packages lab_packages_user_select bg_w">
-                          <div class="owl-carousel">
-                            <div class="package_item">
-                              <div class="d-flex w-100 gap package">
-                                <div class="w-100">
-                                  <div class="packageDetails mb-2 d-flex justify-content-between align-items-center">
-                                    <h4 class="name f16 text_p mb-0">
-                                      Full Body Checkup
-                                    </h4>
-                                    <div class="buttonsPrice d-flex gap">
-                                      <div class="btn btn_p_dim rounded text_p fw700">
-                                        <i class="las la-wallet"></i> Rs. 2300
-                                      </div>
-                                      <button
-                                        class="btn bg_p_dim btn_select_package btn_selected_package">Selected</button>
-                                    </div>
-
-                                  </div>
-                                  <div class="packageIncludes flex7">
-                                    <p class="package_text text-muted f14 mb-3">
-                                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus iste
-                                      dolorum
-                                      nam reprehenderit reiciendis corporis. Saepe ab inventore asperiores maxime
-                                      excepturi doloremque cum vitae molestias!
-
-                                    </p>
-                                    <ul class="includes d-flex flex-wrap my-2">
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Complete Blood Cell Count
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Renel Function Test
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Lipid Profile Test
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Liver Function Test
-                                        </div>
-                                      </li>
-
-                                    </ul>
-
-
-
-                                  </div>
-                                </div>
-                              </div>
-
-                            </div>
-                            <div class="package_item">
-                              <div class="d-flex w-100 gap package">
-                                <div class="w-100">
-                                  <div class="packageDetails mb-2 d-flex justify-content-between align-items-center">
-                                    <h4 class="name f16 text_p mb-0">
-                                      Full Body Checkup
-                                    </h4>
-                                    <div class="buttonsPrice d-flex gap">
-                                      <div class="btn btn_p_dim rounded text_p fw700">
-                                        <i class="las la-wallet"></i> Rs. 2300
-                                      </div>
-                                      <button class="btn bg_p_dim text_p btn_select_package">Select Package</button>
-                                    </div>
-
-                                  </div>
-                                  <div class="packageIncludes flex7">
-                                    <p class="package_text text-muted f14 mb-3">
-                                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus iste
-                                      dolorum
-                                      nam reprehenderit reiciendis corporis. Saepe ab inventore asperiores maxime
-                                      excepturi doloremque cum vitae molestias!
-
-                                    </p>
-                                    <ul class="includes d-flex flex-wrap my-2">
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Complete Blood Cell Count
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Renel Function Test
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Lipid Profile Test
-                                        </div>
-                                      </li>
-                                      <li class="include d-flex rounded full_rounded p-0">
-                                        <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
-                                        <div class="label pr-3 pt-1">
-                                          Liver Function Test
-                                        </div>
-                                      </li>
-
-                                    </ul>
-
-
-
-                                  </div>
-                                </div>
-                              </div>
-
                             </div>
 
                           </div>
+                          <div class="package_item">
+                            <div class="d-flex w-100 gap package">
+                              <div class="w-100">
+                                <div class="packageDetails mb-2 d-flex justify-content-between align-items-center">
+                                  <h4 class="name f16 text_p mb-0">
+                                    Full Body Checkup
+                                  </h4>
+                                  <div class="buttonsPrice d-flex gap">
+                                    <div class="btn btn_p_dim rounded text_p fw700">
+                                      <i class="las la-wallet"></i> Rs. 2300
+                                    </div>
+                                    <button class="btn bg_p_dim text_p btn_select_package">Select Package</button>
+                                  </div>
+
+                                </div>
+                                <div class="packageIncludes flex7">
+                                  <p class="package_text text-muted f14 mb-3">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus iste
+                                    dolorum
+                                    nam reprehenderit reiciendis corporis. Saepe ab inventore asperiores maxime
+                                    excepturi doloremque cum vitae molestias!
+
+                                  </p>
+                                  <ul class="includes d-flex flex-wrap my-2">
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Complete Blood Cell Count
+                                      </div>
+                                    </li>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Renel Function Test
+                                      </div>
+                                    </li>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Lipid Profile Test
+                                      </div>
+                                    </li>
+                                    <li class="include d-flex rounded full_rounded p-0">
+                                      <i class="las la-flask text_p bg_w p-2 full_rounded f14"></i>
+                                      <div class="label pr-3 pt-1">
+                                        Liver Function Test
+                                      </div>
+                                    </li>
+
+                                  </ul>
+
+
+
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                      <li class="page-item "><a class="page-link active" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                  </nav>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item "><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-          </div>
+        </div>
+        <div class="col-sm-6">
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 {% endblock content %}

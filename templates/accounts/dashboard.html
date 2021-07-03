@@ -1,0 +1,1164 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} | My Dashboard
+{% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+<main class="mainbody userDashboardPage">
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class=" leftbarwrapper ">
+                        <div class=" box">
+                            <div class="box_content rounded">
+                                <ul class="list">
+                                    <li class="active">
+                                        <a href="index.html" class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i
+                                                    class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="my-activities.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"><i class="las la-user-clock mr-2"></i>Activities</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="family-associates.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"><i class="las la-users mr-2"></i>Associates</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="medical-history.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"><i class="las la-file-medical-alt mr-2"></i>History
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="divider"></div>
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Discussions</p>
+                                    </div>
+                                    <li>
+                                        <a href="health-queries.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-comments mr-2"></i>Health Queries
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="divider"></div>
+
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
+                                    </div>
+                                    <li>
+                                        <a href="lab-requests.html" class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="lar la-address-card mr-2"></i>Test Requests
+                                            </div>
+                                            <div class="count">
+                                                <small><i class="lar la-bell"></i>2</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="lab-reports.html" class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Test
+                                                Reports</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <div class="divider"></div>
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Doctor Services</p>
+                                    </div>
+                                    <li>
+                                        <a href="doctor-appointment.php"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-user-nurse mr-2"></i>Appointments
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="doctor-prescriptions.php"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="divider"></div>
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
+                                    </div>
+                                    <li>
+                                        <a href="shop.html" class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-shopping-cart mr-2"></i>Go to Shop
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="product-orders.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="my-product-offers.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="divider"></div>
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Hospital Services</p>
+                                    </div>
+                                    <li>
+                                        <a href="hospital-appointments.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="las la-hospital mr-2"></i>Appointments
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="hospital-reports.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="lar la-file-alt mr-2"></i>Report Card</div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <div class="divider"></div>
+                                    <div class="text-wrapper">
+                                        <p class="f12 text-muted fbold text_dim">Clinic Services</p>
+                                    </div>
+                                    <li>
+                                        <a href="clinic-reports.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"><i class="las la-clinic-medical mr-2"></i>Appointments
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="clinic-reports.html"
+                                            class="d-flex justify-content-between text-wrapper">
+                                            <div class="text"> <i class="lar la-file-alt mr-2"></i>Reports Card
+                                            </div>
+                                            <div class="count">
+                                                <small></small>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-9">
+                    <div class="midwrapper">
+
+                        <div class="welcoming">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="helloarea">
+                                        <h3 class="title fw500 text_p f25">Hello, <span
+                                                class="name fw700">{{user.first_name}}!</span></h3>
+                                        <p class="text-muted f14">This is what we've got for you</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 justify-content-end d-flex align-items-center">
+                                    <a href="#">
+                                        <button class="btn btn_p btn_switch_account">Switch Account</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toggleSwitchAccount hide">
+                            <div class="userswitch  mt-3">
+                                <div class="dashwrapper p lab_user rounded">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="flex2">
+                                            <div class="logo ">
+                                                <img src="../../media/lab-logo.png" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="name flex8 pl-2 ">
+                                            <h3 class="f16 fw700 name">Pokhara Reference Laboratory</h3>
+                                            <p class="f14 address">Shantinagar, Pokhara</p>
+
+                                            <ul class="d-flex mt-2 gap labNoti">
+                                                <li class=" py-1 px-2 f14 full_rounded">
+                                                    <i class="las la-user f18"></i>
+                                                    <span class="count mr-0">Admin</span>
+                                                </li>
+                                                <li class=" py-1 px-2 f14 full_rounded">
+                                                    <i class="las la-eye f18"></i>
+                                                    <span class="count mr-0">7</span>
+                                                </li>
+                                                <li class=" py-1 px-2 f14 full_rounded">
+                                                    <i class="las la-comments  f18"></i>
+                                                    <span class="count mr-0">47</span>
+                                                </li>
+                                                <li class=" py-1 px-2 f14 full_rounded">
+                                                    <i class="las la-bell  f18"></i>
+                                                    <span class="count mr-0">7</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex4 d-flex align-items-center justify-content-end">
+                                            <a href="#">
+                                                <button class="btn btn_switch mr-3 d-flex align-items-center">
+                                                    <div class="label pr-2">Switch Account</div>
+                                                    <i class="las la-arrow-right"></i>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="counterarea mt-3">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="counters d-flex gap flex-wrap">
+                                        <a href="listing.html" class="counter counterBox bg_w p flex1 rounded">
+                                            <div class="subtitle d-flex justify-content-between f14 text-muted fw700">
+                                                <div class="label">Queries Asked</div>
+                                            </div>
+                                            <div class="title fw700 text_p f40 queries " id="queries">
+                                                409
+                                            </div>
+                                            <div class="boxIcon">
+                                                <i class="las la-question"></i>
+                                            </div>
+                                        </a>
+                                        <a href="lab-requests.html" class="counter counterBox bg_w p flex1 rounded">
+                                            <div class="subtitle d-flex justify-content-between f14 text-muted fw700">
+                                                <div class="label">Lab requests</div>
+                                            </div>
+                                            <div class="title fw700 text_p f40 labRequests" id="labRequests">
+                                                40
+                                            </div>
+                                            <div class="boxIcon">
+                                                <i class="las la-flask"></i>
+                                            </div>
+                                        </a>
+                                        <a href="coming-soon.html" class="counter counterBox bg_w p flex1 rounded">
+                                            <div class="subtitle d-flex justify-content-between f14 text-muted fw700">
+                                                <div class="label">Doctor Appointments</div>
+
+                                            </div>
+                                            <div class="title fw700 text_p f40">
+                                                11
+                                            </div>
+                                            <div class="boxIcon">
+                                                <i class="las la-user-nurse"></i>
+                                            </div>
+                                        </a>
+                                        <a href="product-orders.html" class="counter counterBox bg_w p flex1 rounded">
+                                            <div class="subtitle d-flex justify-content-between f14 text-muted fw700">
+                                                <div class="label">Product Purchased</div>
+
+                                            </div>
+                                            <div class="title fw700 text_p f40">
+                                                08
+                                            </div>
+                                            <div class="boxIcon">
+                                                <i class="las la-shopping-cart"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recentActivities  mt-5">
+                            <div class="subtitle d-flex align-items-center justify-content-between">
+                                <div class="left">
+                                    <div class="text-muted f14 fw700">Recent Test Requests</div>
+                                </div>
+                                <div class="right">
+                                    <a href="lab-requests.html" class="fw700 d-flex align-items-center">
+                                        <div class="label">See All (20)</div> <i
+                                            class="las la-arrow-right ml-2 f18 text_p"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="recentDash my-3">
+                                <div class="item box bg_w p rounded">
+                                    <div class="title fw600  d-flex align-items-center justify-content-between">
+                                        <div class="label text-muted f16"> <i
+                                                class="las la-flask f18 text_p bg_p_dim p-1 rounded"></i>
+                                            <a href="lab-requests.html" class=""> Complete
+                                                Blood
+                                                Cell Count</a>
+                                        </div>
+                                        <div class="category fw500 text-muted f12  text_p  rounded"> <i
+                                                class="las la-tag f16 mr-0"></i>
+                                            Hematology</div>
+                                    </div>
+                                    <div class="tags py-3">
+                                        <li class="tag bg_p_dim rounded  text-muted">Platelet Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">WBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">RBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">Haemoglobin Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">WBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">RBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">Haemoglobin Count</li>
+                                    </div>
+                                    <div
+                                        class="labDetails bg_p_dim d-flex align-items-center justify-content-between rounded p text-muted">
+                                        <div class="labnamewrapper w-100">
+                                            <div class="labIconname d-flex">
+                                                <div
+                                                    class="icon px-1 bg_w rounded d-flex align-items-center justify-content-center ">
+                                                    <i class="las la-hospital text_p mr-0"></i>
+                                                </div>
+                                                <div class="labname pl-2">
+                                                    <h3 class="name f14 fw500 text-muted"> <a
+                                                            href="../lab/lab-profile-public-view.html">
+                                                            Pokhara Reference Laboratory</a></h3>
+                                                    <p class="text-muted f12 fw400">Shantinagar, Pokhara</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="meta w-100 mt-2 d-flex gap">
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="las la-clock f16"></i> 6 hr. ago
+                                                </div>
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="las la-wallet f16"></i> Paid
+                                                </div>
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="lab la-font-awesome-flag f16"></i>Collector Assigned
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item box bg_w p rounded">
+                                    <div class="title fw600  d-flex align-items-center justify-content-between">
+                                        <div class="label text-muted f16"> <i
+                                                class="las la-flask f18 text_p bg_p_dim p-1 rounded"></i>
+                                            <a href="lab-requests.html" class=""> Complete
+                                                Blood
+                                                Cell Count</a>
+                                        </div>
+                                        <div class="category fw500 text-muted f12  text_p  rounded"> <i
+                                                class="las la-tag f16 mr-0"></i>
+                                            Hematology</div>
+
+                                    </div>
+                                    <div class="tags py-3">
+                                        <li class="tag bg_p_dim rounded  text-muted">Platelet Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">WBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">RBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">Haemoglobin Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">WBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">RBC Count</li>
+                                        <li class="tag bg_p_dim rounded  text-muted">Haemoglobin Count</li>
+                                    </div>
+                                    <div
+                                        class="labDetails bg_p_dim d-flex align-items-center justify-content-between rounded p text-muted">
+                                        <div class="labnamewrapper w-100">
+                                            <div class="labIconname d-flex">
+                                                <div
+                                                    class="icon px-1 bg_w rounded d-flex align-items-center justify-content-center ">
+                                                    <i class="las la-hospital text_p mr-0"></i>
+                                                </div>
+                                                <div class="labname pl-2">
+                                                    <h3 class="name f14 fw500 text-muted"> <a
+                                                            href="../lab/lab-profile-public-view.html">
+                                                            Pokhara Reference Laboratory</a></h3>
+                                                    <p class="text-muted f12 fw400">Shantinagar, Pokhara</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="meta w-100 mt-2 d-flex gap">
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="las la-clock f16"></i> 6 hr. ago
+                                                </div>
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="las la-wallet f16"></i> Paid
+                                                </div>
+                                                <div
+                                                    class="status bg_w f10 text-muted rounded px-2 py-1 d-flex align-items-center">
+                                                    <i class="lab la-font-awesome-flag f16"></i>Collector Assigned
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="recentActivities  mt-5">
+                            <div class="subtitle d-flex align-items-center justify-content-between">
+                                <div class="left">
+                                    <div class="text-muted f14 fw700">Recently Purchased</div>
+                                </div>
+
+                                <div class="right">
+                                    <a href="product-orders.html" class="fw700 d-flex align-items-center">
+                                        <div class="label">See All (202)</div> <i
+                                            class="las la-arrow-right ml-2 f18 text_p"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="posts mt-3">
+                                <article class="article bg_w rounded p">
+
+
+                                    <div class="productDetails d-flex align-items-center">
+                                        <div class="imagearea flex3">
+                                            <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="flex6 pl-3">
+                                            <h3
+                                                class="name fw500 f16  mb-2 text_p d-flex align-items-center justify-content-between">
+                                                <a href="single-product.html">
+                                                    Product Name 1
+                                                </a>
+                                                <p class="text-muted f14"><i class="las la-wallet f16 text_p"></i>
+                                                    Rs. 2300</p>
+                                            </h3>
+                                            <ul class="meta d-inline-flex gap flex-column">
+                                                <li class="rounded py-1 f12 text-muted mr-0"><i
+                                                        class="las la-tags f16 text_p"></i>Hygenic,
+                                                    Eye Care
+                                                </li>
+
+                                                <li class="">
+
+                                                    <ul class="d-flex gap">
+                                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0">
+                                                            <i class="las la-truck f16 text_p"></i>Shipping
+                                                        </li>
+                                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0">
+                                                            <i class="las la-clock f16 text_p"></i>7
+                                                            Days Ago
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="article bg_w rounded p">
+
+
+                                    <div class="productDetails d-flex align-items-center">
+                                        <div class="imagearea flex3">
+                                            <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="flex6 pl-3">
+                                            <h3
+                                                class="name fw500 f16  mb-2 text_p d-flex align-items-center justify-content-between">
+                                                <a href="single-product.html">
+                                                    Product Name 1
+                                                </a>
+                                                <p class="text-muted f14"><i class="las la-wallet f16 text_p"></i>
+                                                    Rs. 2300</p>
+                                            </h3>
+                                            <ul class="meta d-inline-flex gap flex-column">
+                                                <li class="rounded py-1 f12 text-muted mr-0"><i
+                                                        class="las la-tags f16 text_p"></i>Hygenic,
+                                                    Eye Care
+                                                </li>
+
+                                                <li class="">
+
+                                                    <ul class="d-flex gap">
+                                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0">
+                                                            <i class="las la-truck f16 text_p"></i>Shipping
+                                                        </li>
+                                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0">
+                                                            <i class="las la-clock f16 text_p"></i>7
+                                                            Days Ago
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="recentActivities  mt-5">
+                            <div class="subtitle d-flex align-items-center justify-content-between">
+                                <div class="left">
+                                    <div class="text-muted f14 fw700">Recent Health Queries</div>
+                                </div>
+                                <ul class="d-flex align-items-center gap">
+                                    <li>
+                                        <a href="listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                </ul>
+                                <div class="right">
+                                    <a href="listing.html" class="fw700 d-flex align-items-center">
+                                        <div class="label">See All (202)</div> <i
+                                            class="las la-arrow-right ml-2 f18 text_p"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="posts mt-3">
+                                <article class="article bg_w rounded p">
+                                    <div class="name fw600 f16 mb-3 text_p">
+                                        <a href="single-query.html">
+                                            Hey Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa eos
+                                            voluptas
+                                            qui
+                                            laborum?
+                                        </a>
+                                    </div>
+                                    <ul class="meta d-flex gap mt-2">
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-clock f16 text_p"></i>6
+                                            Min Ago
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-user f16 text_p"></i>Hari Bhusal
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-tags f16 text_p"></i>Eye Problem
+                                        </li>
+                                    </ul>
+                                    <div class="articleDetail">
+                                        <div
+                                            class="articlefooter mt-3 d-flex align-items-center justify-content-between">
+                                            <a href="single-query.html"
+                                                class="readmore m-0 f14 fw700 text_p btn_p_b py-2 px-3 d-inline-block rounded">
+                                                7 Answers <i class="las la-arrow-right f16"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+                                <article class="article bg_w rounded p">
+                                    <div class="name fw600 f16 mb-3 text_p">
+                                        <a href="single-query.html">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa eos
+                                            voluptas
+                                            qui
+                                            laborum?
+                                        </a>
+                                    </div>
+                                    <ul class="meta d-flex gap mt-2">
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-clock f16 text_p"></i>6
+                                            Min Ago
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-user f16 text_p"></i>Hari Bhusal
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-tags f16 text_p"></i>Eye Problem
+                                        </li>
+                                    </ul>
+                                    <div class="articleDetail">
+                                        <div
+                                            class="articlefooter mt-3 d-flex align-items-center justify-content-between">
+                                            <a href="single-query.html"
+                                                class="readmore m-0 f14 fw700 text_p btn_p_b py-2 px-3 d-inline-block rounded">
+                                                7 Answers <i class="las la-arrow-right f16"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+                        </div>
+
+                        <div class="recentActivities  mt-5">
+                            <div class="subtitle d-flex align-items-center justify-content-between">
+                                <div class="left">
+                                    <div class="text-muted f14 fw700">Recent Articles</div>
+                                </div>
+                                <ul class="d-flex align-items-center gap">
+                                    <li>
+                                        <a href="blog-listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-listing.html" class="bg_w rounded px-2 py-1 text_p f12">Eye
+                                            Problem</a>
+                                    </li>
+                                </ul>
+                                <div class="right">
+                                    <a href="blog-listing.html" class="fw700 d-flex align-items-center">
+                                        <div class="label">See All (202)</div> <i
+                                            class="las la-arrow-right ml-2 f18 text_p"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="posts mt-3">
+                                <article class="article bg_w rounded p">
+                                    <div class="name fw600 mb-3 f16 text_p">
+                                        <a href="single-blog.html">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa eos
+                                            voluptas
+                                            qui
+                                            laborum?
+                                        </a>
+                                    </div>
+                                    <ul class="meta d-flex gap mt-2">
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-clock f16 text_p"></i>6
+                                            Min Ago
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-user f16 text_p"></i>Hari Bhusal
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-tags f16 text_p"></i>Eye Problem
+                                        </li>
+                                    </ul>
+                                    <figure class="my-3">
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid rounded">
+                                    </figure>
+                                    <div class="articleDetail">
+
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, ut.
+                                            Facilis voluptate nostrum non
+                                            voluptatum facere tempora atque enim ab quidem, fugit aperiam distinctio
+                                            dolore nam laborum
+                                            voluptas corrupti nemo!
+                                        </p>
+                                        <div
+                                            class="articlefooter mt-3 d-flex align-items-center justify-content-between">
+                                            <a href="single-blog.html"
+                                                class="readmore m-0 fw700 text_p btn_p_b py-2 px-3 d-inline-block rounded">
+                                                Read More <i class="las la-arrow-right f16"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+                                <article class="article bg_w rounded p">
+                                    <div class="name fw600 mb-3 f16 text_p">
+                                        <a href="single-blog.html">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa eos
+                                            voluptas
+                                            qui
+                                            laborum?
+                                        </a>
+                                    </div>
+                                    <ul class="meta d-flex gap mt-2">
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-clock f16 text_p"></i>6
+                                            Min Ago
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-user f16 text_p"></i>Hari Bhusal
+                                        </li>
+                                        <li class="shw bg_p_dim rounded px-2 py-1 f12 text-muted mr-0"><i
+                                                class="las la-tags f16 text_p"></i>Eye Problem
+                                        </li>
+                                    </ul>
+                                    <figure class="my-3">
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid rounded">
+                                    </figure>
+                                    <div class="articleDetail">
+
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, ut.
+                                            Facilis voluptate nostrum non
+                                            voluptatum facere tempora atque enim ab quidem, fugit aperiam distinctio
+                                            dolore nam laborum
+                                            voluptas corrupti nemo!
+                                        </p>
+                                        <div
+                                            class="articlefooter mt-3 d-flex align-items-center justify-content-between">
+                                            <a href="single-blog.html "
+                                                class="readmore m-0 fw700 text_p btn_p_b py-2 px-3 d-inline-block rounded">
+                                                Read More <i class="las la-arrow-right f16"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </article>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="appointmentmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Doctor Appointment</h5>
+                    <button type="button" class="close f12" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="doctor-profile d-flex align-items-center">
+                        <img src="../../media/7771683223d86b237a3304d6f32828b9.svg" alt="" class="img-fluid flex1" />
+                        <div class="details text-wrapper flex4 px-3">
+                            <h3 class="title name mb-0">Dr. Rakesh Maharjan</h3>
+                            <p class="text-muted">Physician, MBBS (TU)</p>
+                            <p>
+                                <small>He is one of the most experienced doctor with merohealth and
+                                    has been working as seior physician at Bir Hospital,
+                                    Kathmandu, Nepal</small>
+                            </p>
+                        </div>
+                        <div class="buttonwraper mt-3">
+                            <a href="#">
+                                <button type="button" class="btn btn_p btn-sm px-2 py-1">
+                                    View Profile
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="appointmentinfo my-3 text-wrapper">
+                        <hr />
+                        <div class="title text_bold">Appointment Info</div>
+                        <hr />
+                        <div class="info py-2 d-flex gap">
+                            <div class="label flex4">Appointment Date :</div>
+                            <div class="value flex6">6th June 2021</div>
+                        </div>
+                        <div class="info py-2 d-flex gap">
+                            <div class="label flex4">Appointment Time :</div>
+                            <div class="value flex6">06:36 PM</div>
+                        </div>
+                        <div class="info py-2 d-flex gap">
+                            <div class="label flex4">Appointment Note :</div>
+                            <div class="value flex6">Khali Pet ma aaunu hola.</div>
+                        </div>
+                        <div class="info py-2 d-flex gap">
+                            <div class="label flex4">Appointment Status :</div>
+                            <div class="value flex6">Appointment Granted</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary f12" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forwardmodal -->
+    <div class="modal fade p-3" id="forwardmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex gap align-items-center">
+                    <h5 class="modal-title" id="exampleModalLabel">Forward Report</h5>
+                    <form action="#" class="d-flex gap">
+                        <input type="text" class="form-control py-2 mb-0" placeholder="Search..." />
+                        <button type="submit" class="btn px-3 py-2 bg_p_dim">
+                            Forward
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-body text-wrapper">
+                    <div class="row p-3">
+                        <div class="col-sm-6">
+                            <div class="heading d-flex gap justify-content-between">
+                                <h6 class="mb-3 text-muted">
+                                    <strong>Nearest Lab</strong>
+                                </h6>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="heading d-flex gap justify-content-between">
+                                <h6 class="mb-3 text-muted">
+                                    <strong>Recent Doctors</strong>
+                                </h6>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text">
+                                            <strong>Dr. Mukesh Chaudhary</strong>
+                                        </div>
+                                        <p class="text-muted">Physician, MBBS (TU)</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <div class="labinfo">
+                                        <div class="text"><strong>Abs Laboradoty</strong></div>
+                                        <p class="text-muted">Shantinagar, Pokhara</p>
+                                    </div>
+                                    <button class="btn btn_forward py-2 px-3 bg_p_dim">
+                                        <i class="las la-share"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary f12" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Modal Popup-->
+<div class="modal fade" id="useServiceAs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body bg_p_dim p-0">
+                <div class="title bg_w p rounded f18 fw700 d-flex align-items-center justify-content-between">
+                    <div class="flex2 d-flex justify-content-start">
+
+                        <div class="logo ">
+
+                            <img src="../../media/logo.svg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+
+                    <div class="flex10 d-flex justify-content-end">
+
+                        <button type="button" class="btn btn_p_b f12 " data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+                <div class="userTypes my-3 px-3">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="userTypeGrid">
+
+
+                                <div class="typewrapper bg_w p rounded">
+                                    <figure>
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="details">
+                                        <h3 class="title f18 text_p mb-2 fw700">Join as Hospital</h3>
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe possimus
+                                            nam consequatur
+                                            tempore!
+                                            Placeat eveniet, vero a fugiat odio assumenda?
+                                        </p>
+                                        <div class="buttonwrapper mt-3">
+                                            <a href="#">
+                                                <button class="btn btn_p">
+                                                    Register Now
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="typewrapper bg_w p rounded">
+                                    <figure>
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="details">
+                                        <h3 class="title f18 text_p mb-2 fw700">Join as Clinic</h3>
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe possimus
+                                            nam consequatur
+                                            tempore!
+                                            Placeat eveniet, vero a fugiat odio assumenda?
+                                        </p>
+                                        <div class="buttonwrapper mt-3">
+                                            <a href="#">
+                                                <button class="btn btn_p">
+                                                    Register Now
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="typewrapper bg_w p rounded">
+                                    <figure>
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="details">
+                                        <h3 class="title f18 text_p mb-2 fw700">Join as Laboratory</h3>
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe possimus
+                                            nam consequatur
+                                            tempore!
+                                            Placeat eveniet, vero a fugiat odio assumenda?
+                                        </p>
+                                        <div class="buttonwrapper mt-3">
+                                            <a href="../../templates/lab/register-lab.html">
+                                                <button class="btn btn_p">
+                                                    Register Now
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="typewrapper doctor_user bg_w p ml-3 rounded">
+                                    <figure>
+                                        <img src="../../media/taking-blood.png" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="details">
+                                        <h3 class="title f18 text_p mb-2 fw700">Join as Doctor</h3>
+                                        <p class="text-muted f14">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe possimus
+                                            nam consequatur
+                                            tempore!
+                                            Placeat eveniet, vero a fugiat odio assumenda?
+                                        </p>
+                                        <div class="buttonwrapper mt-3">
+                                            <a href="#">
+                                                <button class="btn btn_p">
+                                                    Register Now
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="joinFooter bg_w p mt-3 rounded">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="linkswrapper ">
+                                <ul class="d-flex align-items-center justify-content-center gap">
+                                    <li>
+                                        <a href="#" class="f14 text_p">
+                                            How it works?
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="f14 text_p">
+                                            About us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="f14 text_p">
+                                            Help and Support </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="f14 text_p">
+                                            Why choose us </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.btn_switch_account').click(function () {
+        $('.toggleSwitchAccount').slideToggle();
+    })
+
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    const queries = document.getElementsById("queries");
+    animateValue(queries, 0, 409, 5000);
+
+    const labRequests = document.getElementsById("labRequests");
+    animateValue(labRequests, 0, 40, 2000);
+
+</script>
+{% endif %}
+{% endblock content %}

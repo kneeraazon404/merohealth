@@ -15,10 +15,10 @@ from .views import (
     #     LabAppointments,
     #     productOrders,
     #     labReports,
-    #     labRequests,
+    labRequests,
     UserDashboardView,
     UpdateProfileView,
-    #     testRequests,
+    TestRequests,
 )
 
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path("logout/", LogoutView, name="logout"),
     #! profile
     path("profile/", UserProfileView, name="profile"),
-    path("dashboard/", UserProfileView, name="dashboard"),
+    path("dashboard/", UserDashboardView, name="dashboard"),
     path("update_profile/", UpdateProfileView, name="update_profile"),
     # ? Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path(
@@ -76,8 +76,8 @@ urlpatterns = [
     # path("doctor-appointments/", DoctorAppointments, name="doctor-appointments"),
     # path("prescriptions/", DoctorPrescriptions, name="prescriptions"),
     # path("lab-appointments/", LabAppointments, name="lab-appointments"),
-    # path("lab-requests/", labRequests, name="lab-requests"),
+    path("lab-requests/", labRequests, name="newlabrequest"),
     # path("lab-reports/", labReports, name="lab-reports"),
     # path("product-orders/", productOrders, name="product-orders"),
-    # path("test-requests/", testRequests, name="test-requests"),
+    path("test-requests/", TestRequests, name="newtestrequests"),
 ]

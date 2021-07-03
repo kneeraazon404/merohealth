@@ -14,6 +14,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.contrib.auth.decorators import login_required
+
 
 # ? Default message/alert function
 def Emails(request):
@@ -163,6 +165,7 @@ def services(request):
 # Create your views here.
 
 
+@login_required
 def RegisterLab(request):
     if request.method == "POST":
         labname = request.POST["labname"]
@@ -195,7 +198,7 @@ def RegisterLab(request):
 
         lab.save()
         messages.success(request, "Registered! wait for Approval")
-        return redirect("labdashboard")
+        return redirect("home")
 
     else:
 

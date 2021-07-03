@@ -177,5 +177,5 @@ def productOrders(request):
     return render(request, "accounts/product-orders.html")
 
 
-def testRequests(request):
+def TestRequests(request):
     return render(request, "accounts/test-requests.html")

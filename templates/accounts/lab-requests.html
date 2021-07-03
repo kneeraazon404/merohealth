@@ -1,362 +1,456 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} | lab Requests
+{% block title %} | Test Requests
 {% endblock title %}
 {% block content %}
-  <main class="mainbody">
-    <section class="py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
+<main class="mainbody">
+  <section class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
 
 
-            <div class="leftbarwrapper">
-              <div class="box mb-3">
-                <div class="box_title">
-                  <h5 class="title">Welcome Back, Hari</h5>
-                </div>
-                <div class="box_content">
-                  <ul class="list">
-                    <li>
-                      <a href="index.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="user-profile.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="lar la-address-card mr-2"></i>Profile</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <div class="divider"></div>
-                    <div class="text-wrapper">
-                      <p class="f12 text-muted fbold text_dim">Discussions</p>
-                    </div>
-                    <li>
-                      <a href="blog.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-comments mr-2"></i>Health Queries</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <div class="divider"></div>
-
-                    <div class="text-wrapper">
-                      <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
-                    </div>
-                    <li>
-                      <a href="lab-requests.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="lar la-address-card mr-2"></i>Lab Requests</div>
-                        <div class="count">
-                          <small><i class="lar la-bell"></i>2</small>
-                        </div>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="lab-appointments.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-user-tag mr-2"></i>Lab Appointments</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="lab-reports.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Lab Reports</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-
-                    <div class="divider"></div>
-                    <div class="text-wrapper">
-                      <p class="f12 text-muted fbold text_dim">Doctor Services</p>
-                    </div>
-                    <li>
-                      <a href="doctor-appointment.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-user-nurse mr-2"></i>Doctor Appointments</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="doctor-prescriptions.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <div class="divider"></div>
-                    <div class="text-wrapper">
-                      <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
-                    </div>
-                    <li>
-                      <a href="product-orders.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="my-product-offers.php" class="d-flex justify-content-between text-wrapper">
-                        <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
-                        <div class="count">
-                          <small></small>
-                        </div>
-                      </a>
-                    </li>
-                    <div class="divider"></div>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-9">
-            <div class="midwrapper">
-              <div class="lab-requests text-wrapper">
-                <div class="title d-flex align-items-center justify-content-between">
-                  <div class="left">
-                    <h3 class="title">My Lab Request</h3>
-                    <p class="small">Recent lab requests appears here</p>
-                  </div>
-                  <div class="right">
-                    <a href="#">
-                      <button type="button" class="btn btn_p btn_add">
-                        Add New Request
-                      </button>
+          <div class=" leftbarwrapper ">
+            <div class=" box">
+              <div class="box_content rounded">
+                <ul class="list">
+                  <li class="">
+                    <a href="index.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-tachometer-alt mr-2 text-p"></i>Dashboard</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
                     </a>
+                  </li>
+                  <li class="">
+                    <a href="my-activities.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-user-clock mr-2"></i>Activities</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="family-associates.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-users mr-2"></i>Associates</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="medical-history.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-file-medical-alt mr-2"></i>History</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Discussions</p>
                   </div>
-                </div>
-                <hr />
+                  <li>
+                    <a href="health-queries.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-comments mr-2"></i>Health Queries</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
 
-                <ul class="requests">
-                  <li class="request d-flex gap px-3 py-2 mb-2 bg_table_title">
-                    <div class="requestfor flex3">Tests</div>
-
-                    <div class="labname flex2">Lab Details</div>
-                    <div class="date flex2">Date and Time</div>
-                    <div class="price flex2">Price</div>
-                    <div class="status flex2">Status</div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Laboratory Services</p>
+                  </div>
+                  <li class="active">
+                    <a href="lab-requests.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-address-card mr-2"></i>Test Requests</div>
+                      <div class="count">
+                        <small><i class="lar la-bell"></i>2</small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="lab-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-file-medical-alt mr-2"></i>Test Reports</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
                   </li>
 
-                  <li class="request m-0 p-0">
-                    <div class="upper">
-                      <div class="uppercontent d-flex gap">
-                        <div class="icon">
-                          <i class="las la-angle-down"></i>
-                        </div>
-                        <div class="requestfor flex3">
-                          <div class="tests">Blood Test, Urine Test</div>
-                          <div class="label small text-muted">
-                            Requested Tests
-                          </div>
-                        </div>
-
-                        <div class="labname flex2">
-                          <div class="name">ABS Laboratory</div>
-                          <div class="address text-muted">
-                            <small>Shantinagar, Pokhara</small>
-                          </div>
-                        </div>
-                        <div class="date flex2">
-                          <div class="date"><b>7 Min Ago</b></div>
-                          <div class="label small text-muted">Requested at</div>
-                        </div>
-                        <div class="price flex2">
-                          <div class="amount"><b>Rs. 3400</b></div>
-                          <div class="label small text-muted">Price</div>
-                        </div>
-                        <div class="status flex2">
-                          <div class="amount"><b>Pending</b></div>
-                          <div class="label small text-muted">Status</div>
-                        </div>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Doctor Services</p>
+                  </div>
+                  <li>
+                    <a href="doctor-appointment.php" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-user-nurse mr-2"></i>Appointments</div>
+                      <div class="count">
+                        <small></small>
                       </div>
-                    </div>
-                    <div class="lower">
-                      <div class="more_info_lab">
-                        <div class="row">
-                          <div class="col-sm-4">
-                            <h6>Request Details</h6>
-                            <ul class="appointment_details">
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Requested Date: </strong>
-                                  May 3, 2021- Sunday
-                                </small>
-                              </li>
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Requested For:</strong>
-                                  May 5, 2021- Tuesday
-                                </small>
-                              </li>
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Payment Method</strong>
-                                  Cash on Delivery
-                                </small>
-                              </li>
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Payment Status</strong>
-                                  Success
-                                </small>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col-sm-4">
-                            <h6>Appointment Details</h6>
-                            <ul class="appointment_details">
-                              <li>
-                                <small class="text-muted">
-                                  <strong>Appointed Date</strong>
-                                  May 5, 2021- Tuesday
-                                </small>
-                              </li>
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Approved at:</strong>
-                                  3 Min Ago
-                                </small>
-                              </li>
-                              <li>
-                                <small class="text-muted">
-                                  <strong> Approved at: </strong>
-                                  3 Min Ago
-                                </small>
-                              </li>
-                            </ul>
-                          </div>
-
-                          <div class="col-sm-4">
-                            <h6>Lab Report</h6>
-                            <ul class="appointment_details d-flex gap justify-content-start">
-                              <li>
-                                <a href="#">
-                                  <button type="button" class="btn btn-xsm ">
-                                    <i class="las la-cloud-download-alt"></i>
-                                    Download
-                                  </button>
-                                </a>
-                              </li>
-                              <li class="">
-                                <a href="#">
-                                  <button type="button" class="btn btn-xsm ">
-                                    <i class="las la-share"></i>
-                                    Forward
-                                  </button>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </a>
                   </li>
-                  <li class="request m-0 p-0">
-                    <div class="upper">
-                      <div class="uppercontent d-flex gap">
-                        <div class="icon">
-                          <i class="las la-angle-down"></i>
-                        </div>
-                        <div class="requestfor flex3">
-                          <div class="tests">Blood Test, Urine Test</div>
-                          <div class="label small text-muted">
-                            Requested Tests
-                          </div>
-                        </div>
-
-                        <div class="labname flex2">
-                          <div class="name">ABS Laboratory</div>
-                          <div class="address text-muted">
-                            <small>Shantinagar, Pokhara</small>
-                          </div>
-                        </div>
-                        <div class="date flex2">
-                          <div class="date"><b>7 Min Ago</b></div>
-                          <div class="label small text-muted">Requested at</div>
-                        </div>
-                        <div class="price flex2">
-                          <div class="amount"><b>Rs. 3400</b></div>
-                          <div class="label small text-muted">Price</div>
-                        </div>
-                        <div class="status flex2">
-                          <div class="amount"><b>Pending</b></div>
-                          <div class="label small text-muted">Status</div>
-                        </div>
+                  <li>
+                    <a href="doctor-prescriptions.php" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Prescriptions</div>
+                      <div class="count">
+                        <small></small>
                       </div>
-                    </div>
-                    <div class="lower">
-                      <div class="more_info_lab">
-                        <div class="row">
-                          <div class="col-sm-4">hey</div>
-                          <div class="col-sm-4">hey</div>
-                          <div class="col-sm-4">hey</div>
-                        </div>
-                      </div>
-                    </div>
+                    </a>
                   </li>
-                  <li class="request m-0 p-0">
-                    <div class="upper">
-                      <div class="uppercontent d-flex gap">
-                        <div class="icon">
-                          <i class="las la-angle-down"></i>
-                        </div>
-                        <div class="requestfor flex3">
-                          <div class="tests">Blood Test, Urine Test</div>
-                          <div class="label small text-muted">
-                            Requested Tests
-                          </div>
-                        </div>
-
-                        <div class="labname flex2">
-                          <div class="name">ABS Laboratory</div>
-                          <div class="address text-muted">
-                            <small>Shantinagar, Pokhara</small>
-                          </div>
-                        </div>
-                        <div class="date flex2">
-                          <div class="date"><b>7 days 3 hours</b></div>
-                          <div class="label small text-muted">Requested at</div>
-                        </div>
-                        <div class="price flex2">
-                          <div class="amount"><b>Rs. 3400</b></div>
-                          <div class="label small text-muted">Price</div>
-                        </div>
-                        <div class="status flex2">
-                          <div class="amount"><b>Pending</b></div>
-                          <div class="label small text-muted">Status</div>
-                        </div>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Hygenic Products</p>
+                  </div>
+                  <li>
+                    <a href="shop.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-shopping-cart mr-2"></i>Go to Shop</div>
+                      <div class="count">
+                        <small></small>
                       </div>
-                    </div>
-                    <div class="lower">
-                      <div class="more_info_lab">
-                        <div class="row">
-                          <div class="col-sm-4">hey</div>
-                          <div class="col-sm-4">hey</div>
-                          <div class="col-sm-4">hey</div>
-                        </div>
-                      </div>
-                    </div>
+                    </a>
                   </li>
+                  <li>
+                    <a href="product-orders.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-luggage-cart mr-2"></i>My Orders</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="my-product-offers.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-percent mr-2"></i>Offers</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Hospital Services</p>
+                  </div>
+                  <li>
+                    <a href="hospital-appointments.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="las la-hospital mr-2"></i>Appointments</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="hospital-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Report Card</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="divider"></div>
+                  <div class="text-wrapper">
+                    <p class="f12 text-muted fbold text_dim">Clinic Services</p>
+                  </div>
+                  <li>
+                    <a href="clinic-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"><i class="las la-clinic-medical mr-2"></i>Appointments</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="clinic-reports.html" class="d-flex justify-content-between text-wrapper">
+                      <div class="text"> <i class="lar la-file-alt mr-2"></i>Reports Card</div>
+                      <div class="count">
+                        <small></small>
+                      </div>
+                    </a>
+                  </li>
+
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <div class="col-sm-9">
+          <div class="midwrapper">
+            <div class="lab-requests text-wrapper">
+              <div class="title d-flex align-items-center justify-content-between">
+                <div class="left">
+                  <h3 class="title">My Lab Request</h3>
+                  <p class="small">Recent lab requests appears here</p>
+                </div>
+                <div class="right">
+                  <a href="{% url 'newtestrequests' %}">
+                    <button type="button" class="btn btn_p btn_add">
+                      Add New Request
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <hr />
+
+              <ul class="requests">
+                <li class="request d-flex gap px-3 py-2 mb-2 bg_table_title">
+                  <div class="requestfor flex3"> <i class="las la-flask"></i>Tests</div>
+
+                  <div class="labname flex2"> <i class="las la-building f16"></i> Lab Details</div>
+                  <div class="date flex2"> <i class="las la-clock f16"></i> Date &amp; Time</div>
+                  <div class="price flex2"> <i class="las la-wallet f16 "></i>Price</div>
+                  <div class="status flex2"><i class="las la-sync-alt f16"></i>Status</div>
+                </li>
+
+                <li class="request m-0 p-0">
+                  <div class="upper">
+                    <div class="uppercontent d-flex gap align-items-center">
+                      <div class="icon">
+                        <i class="las la-angle-down"></i>
+
+                      </div>
+                      <div class="requestfor flex3 f14">
+                        <div class="tests"> Complete Blood Cell Count, WBC Count, RBC Count</div>
+
+                      </div>
+
+                      <div class="labname flex2 f14">
+                        <div class="name"> ABS Laboratory</div>
+                        <div class="label small text-muted">Pritivi Chowk, Pokhara</div>
+
+
+                      </div>
+                      <div class="date flex2">
+                        <div class="date f14"> 7 Min Ago</div>
+                      </div>
+                      <div class="price flex2">
+                        <div class="amount"> Rs. 3400</div>
+                      </div>
+                      <div class="status flex2 text-center">
+                        <div class="amount  py-1 px-0 f14 full_rounded">Collector Assigned</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lower">
+                    <div class="more_info_lab">
+                      <div class="steps">
+                        <div class="step">
+                          <div class="bg_w px-3 py-2 f14">
+                            <div class="step_title d-flex align-items-center justify-content-between">
+                              <p class="text-muted mb-0">
+                                Step 1 <i class="las la-angle-right f12"></i> Approval
+                              </p>
+                              <i class="las la-question-circle" data-toggle="tooltip" title="Approval Status"></i>
+                            </div>
+
+
+                            <div class="status bg_p_dim py-2 text-center my-2 text_p f14">Request Approved</div>
+
+
+                            <p class="text-muted mb-2">
+                              Approval Details
+                            </p>
+                            <ul class="m-0 text-muted">
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+
+                                  <i class="lar la-calendar-check mr-2"></i> May 25, 2020
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+
+                                  <i class="lar la-clock mr-2"></i> 08:23 PM
+                                </div>
+
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="lar la-user mr-2"></i> Admin
+                                </div>
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="step">
+                          <div class="bg_w px-3 py-2 f14">
+                            <div class="step_title d-flex align-items-center justify-content-between">
+                              <p class="text-muted mb-0">
+                                Step 2 <i class="las la-angle-right f12"></i> Collector
+                              </p>
+                              <i class="las la-question-circle" data-toggle="tooltip"
+                                title="See who is assigned to take your sample"></i>
+                            </div>
+
+                            <div class="status bg_p_dim py-2 text-center my-2 text_p f14">Collector Assigned</div>
+
+
+                            <p class="text-muted mb-2">
+                              Assigned to
+                            </p>
+                            <ul class="m-0 text-muted">
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="lar la-user mr-2"></i> Ram Bahadur Sharma
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="las la-briefcase-medical mr-2"></i> Lab Technician
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="las la-phone mr-2"></i> 983735823
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+
+                                  <i class="lar la-calendar-check mr-2"></i> May 27, 2020
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+
+                                  <i class="lar la-clock mr-2"></i> 06:23 AM
+                                </div>
+
+                                </p>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="step">
+                          <div class="bg_w px-3 py-2 f14">
+                            <div class="step_title d-flex align-items-center justify-content-between">
+                              <p class="text-muted mb-0">
+                                Step 3 <i class="las la-angle-right f12"></i> Samples
+                              </p>
+                              <i class="las la-question-circle" data-toggle="tooltip"
+                                title="Confirm your tests and Payment Details"></i>
+                            </div>
+
+                            <div class="status bg_p_dim py-2 text-center my-2 text_p f14">Collected Samples</div>
+
+
+                            <p class="text-muted mb-2">
+                              Samples Collected
+                            </p>
+                            <ul class="m-0 text-muted">
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="las la-vials mr-2"></i> Blood
+                                </div>
+                                </p>
+                              </li>
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="las la-vials mr-2"></i> Urine
+                                </div>
+                                </p>
+                              </li>
+
+                            </ul>
+                            <p class="text-muted mt-2">
+                              Payment Collected
+                            </p>
+                            <ul class="m-0 text-muted py-2">
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <i class="las la-wallet mr-2"></i> Rs. 4500
+                                </div>
+                                </p>
+                              </li>
+
+                            </ul>
+                            <p class="text-muted mt-2">
+                              Report Arrival Time
+                            </p>
+                            <ul class="m-0 text-muted py-2">
+                              <li>
+                                <p class="text-muted f14 mb-0">
+                                <div class="d-flex align-items-center">
+                                  <!-- calculate here current time and lab estimation time, and show user that the actual time to generate report they need to wait for -->
+                                  <i class="las la-clock mr-2"></i> 5:00 PM (estimated)
+                                </div>
+                                </p>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="step">
+                          <div class="bg_w px-3 py-2 f14">
+                            <div class="step_title d-flex align-items-center justify-content-between">
+                              <p class="text-muted mb-0">
+                                Step 4 <i class="las la-angle-right f12"></i> Report
+                              </p>
+                              <i class="las la-question-circle" data-toggle="tooltip"
+                                title="Confirm your tests and Payment Details"></i>
+                            </div>
+
+
+
+                            <div class="status bg_p_dim py-2 text-center my-2 text_p f14">Generated Report</div>
+
+
+                            <p class="text-muted mb-2">
+                              Report Actions
+                            </p>
+                            <ul class="m-0 text-muted">
+                              <li>
+                                <a class="text-muted f14 mb-0" href="#">
+                                  <div class="d-flex align-items-center">
+                                    <i class="las la-cloud-download-alt mr-2"></i> Download
+                                  </div>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="text-muted f14 mb-0" href="#">
+                                  <div class="d-flex align-items-center">
+                                    <i class="las la-share mr-2"></i> Forward
+                                  </div>
+                                </a>
+                              </li>
+
+                            </ul>
+
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
+
 {% endblock content %}
