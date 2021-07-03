@@ -87,7 +87,15 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = UserModel
-        fields = "__all__"
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "phone",
+            "email",
+            "password1",
+            "password2",
+        ]
 
     def clean_email(self):
         email = self.cleaned_data["email"].lower()
@@ -152,7 +160,7 @@ class AccountUpdateForm(forms.ModelForm):
             "last_name",
             "phone",
             "email",
-            "profile_image",
+            # "profile_image",
             "hide_email",
         )
 

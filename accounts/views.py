@@ -71,7 +71,6 @@ def RegisterView(request, *args, **kwargs):
         if form.is_valid():
             form.save()
             inactive_user = send_verification_email(request, form)
-            destination = kwargs.get("next")
             messages.success(request, "Successfully registered | Activate Your Account")
             return redirect("login")
     else:
@@ -138,12 +137,16 @@ def UserProfileView(request):
 def UpdateProfileView(request):
     if request.method == "POST":
         form = UserProfileUpdateForm()
-        context = {"form": form}
-    return render(request, "accounts/update_profile.html", context)
+        # context = {"form": form}
+    return render(request, "accounts/update_profile.html")
 
 
 def BlogView(request):
     return render(request, "accounts/blog.html")
+
+
+def UserDashboardView(request):
+    return render(request, "accounts/dashboard.html")
 
 
 def ConfirmRequestView(request):

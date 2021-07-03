@@ -12,13 +12,14 @@ from .views import (
     TestRequestsRunning,
     servicesListView,
     # memberListView,
+    LabProfile,
 )
 
 
 urlpatterns = [
     path("dashboard/", labDashboard, name="labdashboard"),
+    path("profile/", LabProfile, name="labprofile"),
     path("health-package/", healthPackage, name="health-package"),
-    # path("lab-profile/", labProfile, name="lab-profile"),
     path("payments/", Payments, name="payments"),
     path("services/", servicesListView.as_view(), name="services"),
     path("member/", servicesListView.as_view(), name="lab-member"),

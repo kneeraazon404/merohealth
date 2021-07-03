@@ -16,6 +16,7 @@ from .views import (
     #     productOrders,
     #     labReports,
     #     labRequests,
+    UserDashboardView,
     UpdateProfileView,
     #     testRequests,
 )
@@ -27,6 +28,7 @@ urlpatterns = [
     path("logout/", LogoutView, name="logout"),
     #! profile
     path("profile/", UserProfileView, name="profile"),
+    path("dashboard/", UserProfileView, name="dashboard"),
     path("update_profile/", UpdateProfileView, name="update_profile"),
     # ? Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py)
     path(

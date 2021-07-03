@@ -208,6 +208,10 @@ def labDashboard(request):
     return render(request, "lab/dashboard.html", context)
 
 
+def LabProfile(request):
+    return render(request, "lab/profile.html")
+
+
 def healthPackage(request):
     return render(request, "lab/health-package.html")
 
