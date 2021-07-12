@@ -1,25 +1,16 @@
-import datetime
 import json
 
-from django.conf import settings
-from django.contrib import auth, messages
+from django.contrib import messages
 from django.contrib.auth import authenticate, get_user_model, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMessage, send_mail
 from django.shortcuts import redirect, render
-from django.template.loader import render_to_string
-from django.urls import reverse
-from django.utils.encoding import DjangoUnicodeDecodeError, force_bytes, force_text
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from validate_email import validate_email
 from verify_email.email_handler import send_verification_email
 
 from .forms import AccountAuthenticationForm, UserRegisterForm, UserProfileUpdateForm
-from .models import Account
 
 
 #! Email Validation view
@@ -63,7 +54,7 @@ UserModel = get_user_model()
 def RegisterView(request, *args, **kwargs):
     user = request.user
     if user.is_authenticated:
-        return render("You are already authenticated as " + str(user.email))
+        return render("You are already authenticated as " + str(user.username))
 
     context = {}
     if request.POST:
